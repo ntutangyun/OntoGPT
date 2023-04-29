@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {Layout,} from "antd";
+import ContentComponent from "./ContentComponent";
+
+const {Header, Footer} = Layout;
+
+const headerStyle = {
+    textAlign: "center",
+    color: "#fff",
+    height: 64,
+    paddingInline: 50,
+    lineHeight: "64px",
+    backgroundColor: "#385975",
+};
+
+const footerStyle = {
+    textAlign: "center",
+    color: "#fff",
+    backgroundColor: "#385975",
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Layout>
+            <Header style={headerStyle}><h1 style={{display: "inline"}}>OntoGPT</h1> - Domain Ontology Distillation
+                Assistant</Header>
+            <ContentComponent/>
+            <Footer style={footerStyle}>Footer</Footer>
+        </Layout>
+    );
 }
 
 export default App;
