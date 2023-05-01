@@ -1,17 +1,11 @@
 import "./App.css";
 import {Layout,} from "antd";
-import ContentComponent from "./ContentComponent";
+import HeaderComponent from "./HeaderComponent";
+import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
+import ConceptHierarchyExtractionComponent from "./ConceptHierarchyExtraction/ConceptHierarchyExtractionComponent";
+import React from "react";
 
-const {Header, Footer} = Layout;
-
-const headerStyle = {
-    textAlign: "center",
-    color: "#fff",
-    height: 64,
-    paddingInline: 50,
-    lineHeight: "64px",
-    backgroundColor: "#385975",
-};
+const {Footer} = Layout;
 
 const footerStyle = {
     textAlign: "center",
@@ -21,12 +15,20 @@ const footerStyle = {
 
 function App() {
     return (
-        <Layout>
-            <Header style={headerStyle}><h1 style={{display: "inline"}}>OntoGPT</h1> - Domain Ontology Distillation
-                Assistant</Header>
-            <ContentComponent/>
-            <Footer style={footerStyle}>Footer</Footer>
-        </Layout>
+        <HashRouter>
+            <Layout>
+                <HeaderComponent/>
+                <Routes>
+                    <Route path={"/concept-hierarchy-extraction"} element={<ConceptHierarchyExtractionComponent/>}/>
+                    <Route path={"/concept-definition-extraction"} element={<p>UI Under Development</p>}/>
+                    <Route path={"/concept-relation-extraction"} element={<p>UI Under Development</p>}/>
+                    <Route path={"/concept-property-extraction"} element={<p>UI Under Development</p>}/>
+                    <Route path={"*"} element={<Navigate to={"/concept-hierarchy-extraction"} replace={true}/>}/>
+                </Routes>
+                <Footer style={footerStyle}>Yun Tang (yun.tang at warwick.ac.uk) @ WMG, University of Warwick, United
+                    Kingdom</Footer>
+            </Layout>
+        </HashRouter>
     );
 }
 
