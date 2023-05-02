@@ -11,6 +11,7 @@
     "antd": "^5.4.6",
     "d3": "^7.8.4",
     "d3-graphviz": "^5.0.2",
+    "dotparser": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.0",

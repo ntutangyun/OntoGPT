@@ -1,10 +1,11 @@
 // this is the content component
 
 import React, {useEffect, useState} from "react";
-import {Button, Col, Form, Layout, message, Modal, Row, Tabs,} from "antd";
+import {Button, Col, Form, Layout, message, Modal, Row, Table, Tabs,} from "antd";
 
 import * as d3 from "d3";
 import * as d3Graphviz from "d3-graphviz";
+
 
 import {Input} from "antd";
 import {
@@ -13,6 +14,7 @@ import {
     DomainContextTemplate, HierarchyTemplate, PromptSeparator, ResponseSeparator
 } from "./PromptTemplates";
 import {extractDigraphString} from "../ResponseUtils";
+import * as dotparser from "dotparser";
 
 const {TextArea} = Input;
 const {Content} = Layout;
@@ -24,7 +26,7 @@ const contentStyle = {
 const graphStyle = {
     border: "1px solid #ddd",
     backgroundColor: "white",
-    maxHeight: "calc(100vh - 220px)",
+    maxHeight: "calc(100vh - 280px)",
     maxWidth: "100%",
     overflowX: "hidden",
     overflowY: "hidden",
@@ -41,7 +43,59 @@ const CommonTextAreaStyle = {
     height: "calc(100vh - 280px)",
 };
 
-export default function ConceptHierarchyExtractionComponent() {
+const extractConceptFromAst = (ast) => {
+    console.log(ast);
+    const conceptDescriptionDict = {};
+    const edges = ast[0].children.filter((stmt) => stmt.type === "edge_stmt");
+    edges.forEach((edge) => {
+        const [from, to] = edge.edge_list;
+        if (from.type === "node_id") {
+            if (!conceptDescriptionDict.hasOwnProperty(from.id)) {
+                conceptDescriptionDict[from.id] = null;
+            }
+        }
+        if (to.type === "node_id") {
+            if (!conceptDescriptionDict.hasOwnProperty(to.id)) {
+                conceptDescriptionDict[to.id] = null;
+            }
+        }
+    });
+
+    const nodes = ast[0].children.filter(stmt => stmt.type === "node_stmt");
+    nodes.forEach(node => {
+        if (!conceptDescriptionDict.hasOwnProperty(node.node_id.id)) {
+            conceptDescriptionDict[node.node_id.id] = null;
+        }
+    });
+    return conceptDescriptionDict;
+};
+
+const prepareTableData = (conceptDict) => {
+    const tableData = [];
+    Object.keys(conceptDict).forEach((concept) => {
+        tableData.push({
+            key: concept,
+            concept: concept,
+            definition: conceptDict[concept]
+        });
+    });
+    return tableData;
+};
+
+const tableColumns = [
+    {
+        title: "Concept",
+        dataIndex: "concept",
+        key: "col-concept",
+    },
+    {
+        title: "Definition",
+        dataIndex: "definition",
+        key: "col-definition",
+    }
+];
+
+export default function ConceptDefinitionExtractionComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
     const [conceptHierarchyExtractionInstructionInput, setExtractionInstructionInput] =
@@ -51,15 +105,20 @@ export default function ConceptHierarchyExtractionComponent() {
     const [generatedPrompt, setGeneratedPrompt] = useState("");
     const [historyString, setHistoryString] = useState("");
     const [responseModalOpen, setResponseModalOpen] = useState(false);
+    const [conceptDict, setConceptDict] = useState({});
+    const [conceptDefinitionTableData, setConceptDefinitionTableData] = useState([]);
 
     useEffect(() => {
         try {
             d3.select("#graph").graphviz({fit: true})
                 .renderDot(hierarchyInput);
+            const ast = dotparser(hierarchyInput);
+            const conceptDict = extractConceptFromAst(ast);
+            setConceptDict(conceptDict);
+            setConceptDefinitionTableData(prepareTableData(conceptDict));
         } catch (error) {
             console.log(error);
         }
-
     }, [hierarchyInput]);
 
     useEffect(() => {
@@ -126,6 +185,7 @@ export default function ConceptHierarchyExtractionComponent() {
         message.success("Response added");
         setResponseModalOpen(false);
     };
+
     const AddResponseFormModal = ({open, onAddResponse, onCancel}) => {
         const [form] = Form.useForm();
         return (
@@ -227,6 +287,19 @@ export default function ConceptHierarchyExtractionComponent() {
         },
     ];
 
+    const visualizationTabItems = [
+        {
+            key: "dot",
+            label: "DOT",
+            children: <div id="graph" style={graphStyle}/>
+        },
+        {
+            key: "Table",
+            label: "Table",
+            children: <Table size={"small"} columns={tableColumns} dataSource={conceptDefinitionTableData}/>
+        }
+    ];
+
     return (
         <Content style={contentStyle}>
             <Row>
@@ -241,7 +314,7 @@ export default function ConceptHierarchyExtractionComponent() {
                 </Col>
                 <Col span={9} style={colStyle}>
                     <h1>Visualisation</h1>
-                    <div id="graph" style={graphStyle}/>
+                    <Tabs defaulActiveKey={"dot"} items={visualizationTabItems}/>
                 </Col>
             </Row>
         </Content>

@@ -4,6 +4,7 @@ import HeaderComponent from "./HeaderComponent";
 import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
 import ConceptHierarchyExtractionComponent from "./ConceptHierarchyExtraction/ConceptHierarchyExtractionComponent";
 import React from "react";
+import ConceptDefinitionExtractionComponent from "./ConceptDefinitionExtraction/ConceptDefinitionExtractionComponent";
 
 const {Footer} = Layout;
 
@@ -20,7 +21,7 @@ function App() {
                 <HeaderComponent/>
                 <Routes>
                     <Route path={"/concept-hierarchy-extraction"} element={<ConceptHierarchyExtractionComponent/>}/>
-                    <Route path={"/concept-definition-extraction"} element={<p>UI Under Development</p>}/>
+                    <Route path={"/concept-definition-extraction"} element={<ConceptDefinitionExtractionComponent/>}/>
                     <Route path={"/concept-relation-extraction"} element={<p>UI Under Development</p>}/>
                     <Route path={"/concept-property-extraction"} element={<p>UI Under Development</p>}/>
                     <Route path={"*"} element={<Navigate to={"/concept-hierarchy-extraction"} replace={true}/>}/>
