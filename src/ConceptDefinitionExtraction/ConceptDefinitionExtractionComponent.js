@@ -98,14 +98,15 @@ const tableColumns = [
 export default function ConceptDefinitionExtractionComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
-    const [conceptHierarchyExtractionInstructionInput, setExtractionInstructionInput] =
+    const [instructionInput, setinstructionInput] =
         useState(InstructionTemplate);
-    const [conceptHierarchyExtractionFormatInput, setExtractionFormatInput] =
+    const [conceptInput, setConceptInput] = useState("");
+    const [formatInput, setFormatInput] =
         useState(FormatTemplate);
     const [generatedPrompt, setGeneratedPrompt] = useState("");
     const [historyString, setHistoryString] = useState("");
     const [responseModalOpen, setResponseModalOpen] = useState(false);
-    const [conceptDict, setConceptDict] = useState({});
+    const [conceptDict, setConceptDict] = useState(null);
     const [conceptDefinitionTableData, setConceptDefinitionTableData] = useState([]);
 
     useEffect(() => {
@@ -115,20 +116,27 @@ export default function ConceptDefinitionExtractionComponent() {
             const ast = dotparser(hierarchyInput);
             const conceptDict = extractConceptFromAst(ast);
             setConceptDict(conceptDict);
-            setConceptDefinitionTableData(prepareTableData(conceptDict));
         } catch (error) {
             console.log(error);
         }
     }, [hierarchyInput]);
 
     useEffect(() => {
+        if (conceptDict) {
+            setConceptDefinitionTableData(prepareTableData(conceptDict));
+        }
+    }, [conceptDict]);
+
+    useEffect(() => {
         setGeneratedPrompt(domainContextInput + "\n\n"
             + hierarchyInput + "\n\n"
-            + conceptHierarchyExtractionInstructionInput + "\n"
-            + conceptHierarchyExtractionFormatInput);
+            + instructionInput + "\n"
+            + conceptInput + "\n\n"
+            + formatInput);
     }, [domainContextInput,
-        conceptHierarchyExtractionInstructionInput,
-        conceptHierarchyExtractionFormatInput,
+        instructionInput,
+        conceptInput,
+        formatInput,
         hierarchyInput
     ]);
 
@@ -158,14 +166,20 @@ export default function ConceptDefinitionExtractionComponent() {
             key: "instruction",
             label: `Instruction`,
             children: <TextArea style={CommonTextAreaStyle}
-                                value={conceptHierarchyExtractionInstructionInput}
-                                onChange={e => setExtractionInstructionInput(e.target.value)}/>,
+                                value={instructionInput}
+                                onChange={e => setinstructionInput(e.target.value)}/>,
+        },
+        {
+            key: "concepts",
+            label: `Concepts`,
+            children: <TextArea style={CommonTextAreaStyle} value={conceptInput}
+                                onChange={e => setConceptInput(e.target.value)}/>,
         },
         {
             key: "format",
             label: `Format`,
-            children: <TextArea style={CommonTextAreaStyle} value={conceptHierarchyExtractionFormatInput}
-                                onChange={e => setExtractionFormatInput(e.target.value)}/>,
+            children: <TextArea style={CommonTextAreaStyle} value={formatInput}
+                                onChange={e => setFormatInput(e.target.value)}/>,
         },
         {
             key: "prompt",
@@ -230,10 +244,8 @@ export default function ConceptDefinitionExtractionComponent() {
         );
     };
 
-    const onUpdateHierarchy = () => {
-        const latestHierarchyString = extractDigraphString(historyString.split("\n"));
-        console.log(latestHierarchyString);
-        setHierarchyInput(latestHierarchyString);
+    const onUpdateConcepts = () => {
+        // todo 
         message.success("Hierarchy updated");
     };
 
@@ -242,6 +254,18 @@ export default function ConceptDefinitionExtractionComponent() {
             key: "controls",
             label: `Controls`,
             children: <div style={{textAlign: "left"}}>
+                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
+                    <Col span={12}>
+                        <Button onClick={onUpdateConcepts} style={{width: "90%"}}>
+                            Update Concepts
+                        </Button>
+                    </Col>
+                    <Col span={12}>
+                        <div style={{paddingLeft: "0.5rem"}}>Click to update the concept list for definition
+                            extraction.
+                        </div>
+                    </Col>
+                </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={12}>
                         <Button onClick={onCopyPromptGenerated} style={{width: "90%"}}>Copy & Execute</Button>
@@ -265,16 +289,6 @@ export default function ConceptDefinitionExtractionComponent() {
                     </Col>
                     <Col span={12}>
                         <div style={{paddingLeft: "0.5rem"}}>Click to add the ChatGPT response into the log.</div>
-                    </Col>
-                </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={onUpdateHierarchy} style={{width: "90%"}}>
-                            Update Hierarchy
-                        </Button>
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to extract the latest hierarchy from the log.</div>
                     </Col>
                 </Row>
             </div>

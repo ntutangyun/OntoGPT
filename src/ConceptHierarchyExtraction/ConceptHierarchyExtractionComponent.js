@@ -44,9 +44,9 @@ const CommonTextAreaStyle = {
 export default function ConceptHierarchyExtractionComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
-    const [conceptHierarchyExtractionInstructionInput, setExtractionInstructionInput] =
+    const [instructionInput, setExtractionInstructionInput] =
         useState(InstructionTemplate);
-    const [conceptHierarchyExtractionFormatInput, setExtractionFormatInput] =
+    const [formatInput, setFormatInput] =
         useState(FormatTemplate);
     const [generatedPrompt, setGeneratedPrompt] = useState("");
     const [historyString, setHistoryString] = useState("");
@@ -71,11 +71,11 @@ export default function ConceptHierarchyExtractionComponent() {
     useEffect(() => {
         setGeneratedPrompt(domainContextInput + "\n\n"
             + hierarchyInput + "\n\n"
-            + conceptHierarchyExtractionInstructionInput + "\n"
-            + conceptHierarchyExtractionFormatInput);
+            + instructionInput + "\n"
+            + formatInput);
     }, [domainContextInput,
-        conceptHierarchyExtractionInstructionInput,
-        conceptHierarchyExtractionFormatInput,
+        instructionInput,
+        formatInput,
         hierarchyInput
     ]);
 
@@ -105,14 +105,14 @@ export default function ConceptHierarchyExtractionComponent() {
             key: "instruction",
             label: `Instruction`,
             children: <TextArea style={CommonTextAreaStyle}
-                                value={conceptHierarchyExtractionInstructionInput}
+                                value={instructionInput}
                                 onChange={e => setExtractionInstructionInput(e.target.value)}/>,
         },
         {
             key: "format",
             label: `Format`,
-            children: <TextArea style={CommonTextAreaStyle} value={conceptHierarchyExtractionFormatInput}
-                                onChange={e => setExtractionFormatInput(e.target.value)}/>,
+            children: <TextArea style={CommonTextAreaStyle} value={formatInput}
+                                onChange={e => setFormatInput(e.target.value)}/>,
         },
         {
             key: "prompt",
