@@ -59,10 +59,10 @@ WarningSign -> DeerCrossingSign;
 InformationalSign -> ExitSign;
 }`;
 
-export const InstructionTemplate = `In the ontology context, describe the following concepts.
+export const InstructionTemplate = `In the ontology context, describe the following concepts:
 `;
 
-export const FormatTemplate = `Format your response in the following way: \n@ concept name @ concept description @`;
+export const FormatTemplate = `Format your response in the following way. Keep concept name and description in one line. \n@ concept name @ concept description @`;
 
 export const ResponseTemplate = `@ Aggressive @ Refers to a type of driver behavior that involves reckless or hostile actions towards other road users, such as speeding, tailgating, and weaving through traffic. Aggressive driving increases the risk of accidents and can lead to road rage incidents.
 @ AirQuality @ Refers to the level of pollutants and other harmful particles present in the air, which can affect the health and safety of road users. Poor air quality can result from emissions from vehicles and other sources, and can lead to respiratory problems and other health issues.

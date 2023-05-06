@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@thi.ng/dot": "^2.1.34",
     "antd": "^5.4.6",
     "d3": "^7.8.4",
     "d3-graphviz": "^5.0.2",
