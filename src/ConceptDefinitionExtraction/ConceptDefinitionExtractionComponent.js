@@ -1,48 +1,24 @@
-// this is the content component
-
 import React, {useEffect, useState} from "react";
 import {Button, Col, Form, Layout, message, Modal, Row, Table, Tabs} from "antd";
 import {serializeGraph} from "@thi.ng/dot";
 
-
 import * as d3 from "d3";
 import * as d3Graphviz from "d3-graphviz";
-
+import * as dotparser from "dotparser";
 
 import {Input} from "antd";
 import {
     FormatTemplate,
-    InstructionTemplate, ResponseTemplate,
-    DomainContextTemplate, HierarchyTemplate, PromptSeparator, ResponseSeparator
+    InstructionTemplate,
+    ResponseTemplate,
+    HierarchyTemplate,
 } from "./PromptTemplates";
-import * as dotparser from "dotparser";
+import {DomainContextTemplate, PromptSeparator, ResponseSeparator} from "../Common/PromptTemplates";
+import {colStyle, CommonTextAreaStyle, contentStyle, graphStyle} from "../Common/Styles";
+
 
 const {TextArea} = Input;
 const {Content} = Layout;
-
-const contentStyle = {
-    padding: "10px",
-};
-
-const graphStyle = {
-    border: "1px solid #ddd",
-    backgroundColor: "white",
-    maxHeight: "calc(100vh - 280px)",
-    maxWidth: "100%",
-    overflowX: "hidden",
-    overflowY: "hidden",
-    textAlign: "left",
-};
-
-const colStyle = {
-    padding: "0 1rem 1rem 1rem",
-    textAlign: "center"
-};
-
-const CommonTextAreaStyle = {
-    fontFamily: "monospace",
-    height: "calc(100vh - 280px)",
-};
 
 function extractConceptFromAst(ast) {
     console.log(ast);
@@ -135,19 +111,17 @@ export default function ConceptDefinitionExtractionComponent() {
         const ast = dotparser(hierarchyInput);
         const newConceptDict = extractConceptFromAst(ast);
         mergeConceptDict(newConceptDict);
-
-        try {
-            d3.select("#graph").graphviz({fit: true})
-                .renderDot(hierarchyInput);
-        } catch (error) {
-            console.log(error);
-        }
     }, [hierarchyInput]);
 
     useEffect(() => {
         try {
             d3.select("#graph-definition").graphviz({fit: true})
-                .renderDot(hierarchyWithDefinition);
+                .renderDot(hierarchyWithDefinition)
+                .transition(function () {
+                    return d3.transition()
+                        .ease(d3.easeLinear)
+                        .duration(100);
+                });
         } catch (error) {
             console.log(error);
         }
@@ -298,10 +272,7 @@ export default function ConceptDefinitionExtractionComponent() {
         if (line.endsWith(delimiter) && lineSplit.length === (numEntries + 2)) {
             return true;
         }
-        if (!line.endsWith(delimiter) && lineSplit.length === (numEntries + 1)) {
-            return true;
-        }
-        return false;
+        return !line.endsWith(delimiter) && lineSplit.length === (numEntries + 1);
     };
 
     const extractTableLineEntries = (line, separator = "|", numCols = 4) => {
@@ -373,10 +344,12 @@ export default function ConceptDefinitionExtractionComponent() {
         const nodes = {};
         Object.entries(conceptDict).forEach(([className, classDescription]) => {
             nodes[className] = {
-                shape: "record",
                 color: "black",
-                label: classDescription ? `${className} | ${insertNewLineEveryNWords(classDescription, 5)}` : className,
             };
+            if (classDescription) {
+                nodes[className].label = `${className} | ${insertNewLineEveryNWords(classDescription, 5)}`;
+                nodes[className].shape = "record";
+            }
         });
         // console.log(nodes);
         const edges = ast[0].children.filter(child => {
@@ -474,11 +447,6 @@ export default function ConceptDefinitionExtractionComponent() {
             children: <div id="graph-definition" style={graphStyle}/>
         },
         {
-            key: "dot",
-            label: "Hierarchy",
-            children: <div id="graph" style={graphStyle}/>
-        },
-        {
             key: "Table",
             label: "Definition Table",
             children: <Table size={"small"}
@@ -500,7 +468,6 @@ export default function ConceptDefinitionExtractionComponent() {
                 <Col span={6} style={colStyle}>
                     <h1 style={{textAlign: "center"}}>Execution</h1>
                     <Tabs defaultActiveKey={"controls"} items={executionTabs}/>
-
                 </Col>
                 <Col span={9} style={colStyle}>
                     <h1>Visualisation</h1>

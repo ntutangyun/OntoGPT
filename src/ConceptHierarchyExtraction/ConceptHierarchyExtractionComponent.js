@@ -1,5 +1,3 @@
-// this is the content component
-
 import React, {useEffect, useState} from "react";
 import {Button, Col, Form, Layout, message, Modal, Row, Tabs,} from "antd";
 
@@ -9,37 +7,16 @@ import * as d3Graphviz from "d3-graphviz";
 import {Input} from "antd";
 import {
     FormatTemplate,
-    InstructionTemplate, ResponseTemplate,
-    DomainContextTemplate, HierarchyTemplate, PromptSeparator, ResponseSeparator
+    InstructionTemplate,
+    ResponseTemplate,
+    HierarchyTemplate,
 } from "./PromptTemplates";
 import {extractDigraphString} from "../ResponseUtils";
+import {DomainContextTemplate, PromptSeparator, ResponseSeparator} from "../Common/PromptTemplates";
+import {colStyle, CommonTextAreaStyle, contentStyle, graphStyle} from "../Common/Styles";
 
 const {TextArea} = Input;
 const {Content} = Layout;
-
-const contentStyle = {
-    padding: "10px",
-};
-
-const graphStyle = {
-    border: "1px solid #ddd",
-    backgroundColor: "white",
-    maxHeight: "calc(100vh - 220px)",
-    maxWidth: "100%",
-    overflowX: "hidden",
-    overflowY: "hidden",
-    textAlign: "left",
-};
-
-const colStyle = {
-    padding: "0 1rem 1rem 1rem",
-    textAlign: "center"
-};
-
-const CommonTextAreaStyle = {
-    fontFamily: "monospace",
-    height: "calc(100vh - 280px)",
-};
 
 export default function ConceptHierarchyExtractionComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
@@ -132,6 +109,7 @@ export default function ConceptHierarchyExtractionComponent() {
         message.success("Response added");
         setResponseModalOpen(false);
     };
+
     const AddResponseFormModal = ({open, onAddResponse, onCancel}) => {
         const [form] = Form.useForm();
         return (

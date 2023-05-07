@@ -1,5 +1,3 @@
-// this is the content component
-
 import React, {useEffect, useState} from "react";
 import {Button, Col, Form, Layout, message, Modal, Row, Table, Tabs} from "antd";
 import {serializeGraph} from "@thi.ng/dot";
@@ -18,34 +16,11 @@ import {
     PromptSeparator,
     ResponseSeparator
 } from "./PromptTemplates";
+import {colStyle, CommonTextAreaStyle, contentStyle, graphStyle} from "../Common/Styles";
 
 
 const {TextArea} = Input;
 const {Content} = Layout;
-
-const contentStyle = {
-    padding: "10px",
-};
-
-const graphStyle = {
-    border: "1px solid #ddd",
-    backgroundColor: "white",
-    maxHeight: "calc(100vh - 280px)",
-    maxWidth: "100%",
-    overflowX: "hidden",
-    overflowY: "hidden",
-    textAlign: "left",
-};
-
-const colStyle = {
-    padding: "0 1rem 1rem 1rem",
-    textAlign: "center"
-};
-
-const CommonTextAreaStyle = {
-    fontFamily: "monospace",
-    height: "calc(100vh - 280px)",
-};
 
 function extractConceptFromAst(ast) {
     console.log(ast);
@@ -115,7 +90,7 @@ const definitionTableColumns = [
     }
 ];
 
-export default function ConceptDefinitionExtractionComponent() {
+export default function ConceptRelationshipExtractionComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
     const [instructionInput, setInstructionInput] =
@@ -299,10 +274,7 @@ export default function ConceptDefinitionExtractionComponent() {
         if (line.endsWith(delimiter) && lineSplit.length === (numEntries + 2)) {
             return true;
         }
-        if (!line.endsWith(delimiter) && lineSplit.length === (numEntries + 1)) {
-            return true;
-        }
-        return false;
+        return !line.endsWith(delimiter) && lineSplit.length === (numEntries + 1);
     };
 
     const extractTableLineEntries = (line, separator = "|", numCols = 4) => {
@@ -356,8 +328,8 @@ export default function ConceptDefinitionExtractionComponent() {
 
         setConceptDict(newConceptDict);
 
-        // get 10 new concepts from the concept dict without description
-        const conceptListToExtractDefinitions = Object.keys(newConceptDict).filter(className => newConceptDict[className] === null).slice(0, 10);
+        // get 2 new concepts from the concept dict without description
+        const conceptListToExtractDefinitions = Object.keys(newConceptDict).filter(className => newConceptDict[className] === null).slice(0, 2);
         setConceptInput(conceptListToExtractDefinitions.join(", "));
         if (conceptListToExtractDefinitions.length > 0) {
             message.success("Concept list updated.");

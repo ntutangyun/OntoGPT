@@ -1,5 +1,3 @@
-export const DomainContextTemplate = `I have a road driving scenario ontology as below (in DOT format).`;
-
 export const HierarchyTemplate = `digraph Ontology {
      graph [rankdir = LR];
      EnvironmentalConditions;
@@ -25,15 +23,3 @@ digraph Ontology {
      EnvironmentalConditions -> Lighting;
      RoadTopologyAn
      ...`;
-
-
-export const PromptSeparator = `%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                Prompt
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-`;
-
-export const ResponseSeparator = `
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                Response
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-`;
