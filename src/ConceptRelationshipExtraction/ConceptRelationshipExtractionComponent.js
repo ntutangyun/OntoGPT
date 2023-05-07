@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Button, Col, Form, Layout, message, Modal, Row, Table, Tabs} from "antd";
+import {Button, Col, Form, Layout, message, Modal, Row, Radio, Tabs} from "antd";
 import {serializeGraph} from "@thi.ng/dot";
 
 import * as d3 from "d3";
@@ -14,9 +14,10 @@ import {
     DomainContextTemplate,
     HierarchyTemplate,
     PromptSeparator,
-    ResponseSeparator
+    ResponseSeparator, InstructionTemplateGen
 } from "./PromptTemplates";
 import {colStyle, CommonTextAreaStyle, contentStyle, graphStyle} from "../Common/Styles";
+import {ConceptSelectionTab} from "./ConceptSelectionTab";
 
 
 const {TextArea} = Input;
@@ -93,71 +94,100 @@ const definitionTableColumns = [
 export default function ConceptRelationshipExtractionComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
+    const [subjectConcept, setSubjectConcept] = useState("");
+    const [objectConcept, setObjectConcept] = useState("");
     const [instructionInput, setInstructionInput] =
-        useState(InstructionTemplate);
-    const [conceptInput, setConceptInput] = useState("");
+        useState(InstructionTemplateGen(subjectConcept, objectConcept));
     const [formatInput, setFormatInput] =
         useState(FormatTemplate);
     const [generatedPrompt, setGeneratedPrompt] = useState("");
     const [historyString, setHistoryString] = useState("");
     const [responseModalOpen, setResponseModalOpen] = useState(false);
     const [conceptDict, setConceptDict] = useState({});
-    const [conceptDefinitionTableData, setConceptDefinitionTableData] = useState([]);
-    const [hierarchyWithDefinition, setHierarchyWithDefinition] = useState(HierarchyTemplate);
-
     const [promptEngineeringTabKey, setPromptEngineeringTabKey] = useState("prompt");
+    const [conceptRadioOption, setConceptRadioOption] = useState("subject");
+    const [latestGraphSelection, setLatestGraphSelection] = useState(null);
 
     useEffect(() => {
         console.log("called");
         // hierarchy has been manually edited. update the concept definition table
         const ast = dotparser(hierarchyInput);
         const newConceptDict = extractConceptFromAst(ast);
-        mergeConceptDict(newConceptDict);
-    }, [hierarchyInput]);
-
-    useEffect(() => {
+        setConceptDict(newConceptDict);
         try {
-            d3.select("#graph-definition").graphviz({fit: true})
-                .renderDot(hierarchyWithDefinition)
+            d3.select("#graph")
+                .graphviz({fit: true})
                 .transition(function () {
                     return d3.transition()
                         .ease(d3.easeLinear)
                         .duration(100);
-                });
+                })
+                .renderDot(hierarchyInput, onDotRendered);
         } catch (error) {
             console.log(error);
         }
-    }, [hierarchyWithDefinition]);
-
-    useEffect(() => {
-        if (conceptDict) {
-            setConceptDefinitionTableData(prepareTableData(conceptDict));
-            updateHierarchyWithDefinition();
-        }
-    }, [conceptDict]);
+    }, [hierarchyInput]);
 
     useEffect(() => {
         setGeneratedPrompt(domainContextInput + "\n\n"
             + hierarchyInput + "\n\n"
             + instructionInput + "\n"
-            + conceptInput + "\n\n"
             + formatInput);
     }, [domainContextInput,
         instructionInput,
-        conceptInput,
         formatInput,
         hierarchyInput
     ]);
 
-    const mergeConceptDict = (newConceptDict) => {
-        const mergedConceptDict = {...newConceptDict};
-        Object.keys(conceptDict).forEach((concept) => {
-            if (newConceptDict.hasOwnProperty(concept)) {
-                mergedConceptDict[concept] = conceptDict[concept];
+    useEffect(() => {
+        setInstructionInput(InstructionTemplateGen(subjectConcept, objectConcept));
+    }, [subjectConcept, objectConcept]);
+
+    const onDotRendered = () => {
+        const nodes = d3.selectAll(".node");
+
+        // click and mousedown on nodes
+        nodes.on("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            console.log("node click mousedown");
+            const startNode = d3.select(this);
+            console.log(startNode);
+            console.log(this);
+            if (this && this.__data__ && this.__data__.key) {
+                setLatestGraphSelection(this.__data__.key);
             }
         });
-        setConceptDict(mergedConceptDict);
+
+        nodes.on("mouseover", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            console.log("node mouseover");
+            d3.select(this).style("cursor", "pointer");
+        });
+
+        nodes.on("mouseout", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            console.log("node mouseout");
+            d3.select(this).style("cursor", "default");
+        });
     };
+
+    useEffect(() => {
+        if (latestGraphSelection) {
+            switch (conceptRadioOption) {
+                case "subject":
+                    setSubjectConcept(latestGraphSelection);
+                    break;
+                case "object":
+                    setObjectConcept(latestGraphSelection);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }, [latestGraphSelection]);
 
     const onCopyPromptGenerated = async () => {
         await setPromptEngineeringTabKey("prompt");
@@ -184,17 +214,19 @@ export default function ConceptRelationshipExtractionComponent() {
                                 onChange={e => setHierarchyInput(e.target.value)}/>
         },
         {
+            key: "concepts",
+            label: `Concepts`,
+            children: <ConceptSelectionTab
+                conceptDict={conceptDict}
+                objectConcept={objectConcept} setObjectConcept={setObjectConcept}
+                setSubjectConcept={setSubjectConcept} subjectConcept={subjectConcept}/>
+        },
+        {
             key: "instruction",
             label: `Instruction`,
             children: <TextArea style={CommonTextAreaStyle}
                                 value={instructionInput}
                                 onChange={e => setInstructionInput(e.target.value)}/>,
-        },
-        {
-            key: "concepts",
-            label: `Concepts`,
-            children: <TextArea style={CommonTextAreaStyle} value={conceptInput}
-                                onChange={e => setConceptInput(e.target.value)}/>,
         },
         {
             key: "format",
@@ -284,107 +316,19 @@ export default function ConceptRelationshipExtractionComponent() {
         return lineSplit.slice(1, numCols + 1).map(text => text.trim());
     };
 
-    const onUpdateConcepts = () => {
-        // update the concept dict by parsing the log lines
-        const newConceptDict = {...conceptDict};
-        const logLines = historyString.split("\n");
-        let foundIssue = false;
-        for (let line of logLines) {
-            line = line.trim();
+    const conceptRadioOptions = [
+        {
+            label: "Pick Subject",
+            value: "subject",
+        },
+        {
+            label: "Pick Object",
+            value: "object",
+        },
+    ];
 
-            if (!isTableLine(line, "@")) {
-                continue;
-            }
-
-            if (!isCompleteTableLine(line, 2, "@")) {
-                console.log(`Incomplete table line: ${line}`);
-                console.log(`Stop processing further lines.`);
-                message.warning(`the following table line is incomplete: ${line}`);
-                foundIssue = true;
-                break;
-            }
-
-            const [className, classDescription] = extractTableLineEntries(line, "@", 2);
-            console.log(`class name: ${className}, class description: ${classDescription}`);
-            if (className === "concept name") {
-                continue;
-            }
-
-            if (!newConceptDict.hasOwnProperty(className)) {
-                message.warning(`Seems that ChatGPT returned a new concept: ${className} outside the hierarchy. ignored.`);
-                continue;
-            }
-
-            if (!newConceptDict[className] !== null) {
-                // message.warning(`The concept ${className} has been defined twice. The latter overwrites the former.`);
-            }
-            newConceptDict[className] = classDescription;
-        }
-
-        if (foundIssue) {
-            message.warning("Concept list is not updated due to the existing issue.");
-            return;
-        }
-
-        setConceptDict(newConceptDict);
-
-        // get 2 new concepts from the concept dict without description
-        const conceptListToExtractDefinitions = Object.keys(newConceptDict).filter(className => newConceptDict[className] === null).slice(0, 2);
-        setConceptInput(conceptListToExtractDefinitions.join(", "));
-        if (conceptListToExtractDefinitions.length > 0) {
-            message.success("Concept list updated.");
-        } else {
-            message.info("All concepts have been defined.");
-        }
-    };
-
-    const updateHierarchyWithDefinition = () => {
-        const ast = dotparser(hierarchyInput);
-        // const newConceptDict = extractConceptFromAst(ast);
-
-        // console.log(ast);
-        const nodes = {};
-        Object.entries(conceptDict).forEach(([className, classDescription]) => {
-            nodes[className] = {
-                color: "black",
-            };
-            if (classDescription) {
-                nodes[className].label = `${className} | ${insertNewLineEveryNWords(classDescription, 5)}`;
-                nodes[className].shape = "record";
-            }
-        });
-        // console.log(nodes);
-        const edges = ast[0].children.filter(child => {
-            if (child.type !== "edge_stmt") {
-                return false;
-            }
-            if (child.edge_list.length !== 2) {
-                return false;
-            }
-            return child.edge_list.every(edge_item => edge_item.type === "node_id");
-        }).map(edge_stmt => {
-            const src = edge_stmt.edge_list[0].id;
-            const dest = edge_stmt.edge_list[1].id;
-            return {
-                src,
-                dest,
-            };
-        });
-        // console.log(edges);
-        const hierarchyWithDefinition = serializeGraph({
-            directed: true,
-            // graph attributes
-            attribs: {
-                rankdir: "LR",
-            },
-            // graph nodes (the keys are used as node IDs)
-            // use spread operator to inject style presets
-            nodes,
-            // graph edges (w/ optional ports & extra attribs)
-            edges
-        });
-        // console.log(hierarchyWithDefinition);
-        setHierarchyWithDefinition(hierarchyWithDefinition);
+    const onRadioChange = ({target: {value}}) => {
+        setConceptRadioOption(value);
     };
 
     const executionTabs = [
@@ -394,20 +338,19 @@ export default function ConceptRelationshipExtractionComponent() {
             children: <div style={{textAlign: "left"}}>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={12}>
-                        <Button onClick={onUpdateConcepts} style={{width: "90%"}}>
-                            Update Concepts
+                        <Button onClick={() => setPromptEngineeringTabKey("concepts")} style={{width: "90%"}}>
+                            Select Concepts
                         </Button>
                     </Col>
                     <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to update the concept list for definition
-                            extraction.
+                        <div style={{paddingLeft: "0.5rem"}}>Click the concept nodes in the hierarchy graph to select.
                         </div>
                     </Col>
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={12}>
                         <Button onClick={onCopyPromptGenerated} style={{width: "90%"}}
-                                disabled={conceptInput.trim().length === 0}>Copy & Execute</Button>
+                                disabled={!subjectConcept || !objectConcept}>Copy & Execute</Button>
                     </Col>
                     <Col span={12}>
                         <div style={{paddingLeft: "0.5rem"}}>Click to copy the prompt. Paste it in a new ChatGPT
@@ -432,6 +375,38 @@ export default function ConceptRelationshipExtractionComponent() {
                         <div style={{paddingLeft: "0.5rem"}}>Click to add the ChatGPT response into the log.</div>
                     </Col>
                 </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
+                    <Col span={24}>
+                        <p>Click any concept in the hierarchy graph as {conceptRadioOption}.</p>
+                        <Radio.Group
+                            options={conceptRadioOptions}
+                            onChange={onRadioChange}
+                            value={conceptRadioOption}
+                            optionType="button"
+                            buttonStyle="solid"
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col span={12}>
+                        Current subject
+                    </Col>
+                    <Col span={12}>
+                        <div style={{paddingLeft: "0.5rem"}}>
+                            {subjectConcept ? subjectConcept : "not selected"}
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col span={12}>
+                        Current object
+                    </Col>
+                    <Col span={12}>
+                        <div style={{paddingLeft: "0.5rem"}}>
+                            {objectConcept ? objectConcept : "not selected"}
+                        </div>
+                    </Col>
+                </Row>
             </div>
         },
         {
@@ -444,19 +419,19 @@ export default function ConceptRelationshipExtractionComponent() {
 
     const visualizationTabItems = [
         {
-            key: "dot_with_definition",
-            label: "Hierarchy with Definition",
-            children: <div id="graph-definition" style={graphStyle}/>
+            key: "dot",
+            label: "Hierarchy",
+            children: <div id="graph" style={graphStyle}/>
         },
-        {
-            key: "Table",
-            label: "Definition Table",
-            children: <Table size={"small"}
-                             pagination={false}
-                             scroll={{
-                                 y: 580,
-                             }} columns={definitionTableColumns} dataSource={conceptDefinitionTableData}/>
-        }
+        // {
+        //     key: "Table",
+        //     label: "Definition Table",
+        //     children: <Table size={"small"}
+        //                      pagination={false}
+        //                      scroll={{
+        //                          y: 580,
+        //                      }} columns={definitionTableColumns} dataSource={conceptDefinitionTableData}/>
+        // }
     ];
 
     return (
