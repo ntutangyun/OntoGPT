@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Button, Col, Form, Layout, message, Modal, Row, Radio, Tabs} from "antd";
 import {serializeGraph} from "@thi.ng/dot";
 
@@ -106,7 +106,9 @@ export default function ConceptRelationshipExtractionComponent() {
     const [conceptDict, setConceptDict] = useState({});
     const [promptEngineeringTabKey, setPromptEngineeringTabKey] = useState("prompt");
     const [conceptRadioOption, setConceptRadioOption] = useState("subject");
-    const [latestGraphSelection, setLatestGraphSelection] = useState(null);
+
+    const optionStateRef = useRef();
+    optionStateRef.current = conceptRadioOption;
 
     useEffect(() => {
         console.log("called");
@@ -155,7 +157,18 @@ export default function ConceptRelationshipExtractionComponent() {
             console.log(startNode);
             console.log(this);
             if (this && this.__data__ && this.__data__.key) {
-                setLatestGraphSelection(this.__data__.key);
+                console.log(`setting latest graph selection: ${this.__data__.key}`);
+                console.log(`option state: ${optionStateRef.current}`);
+                switch (optionStateRef.current) {
+                    case "subject":
+                        setSubjectConcept(this.__data__.key);
+                        break;
+                    case "object":
+                        setObjectConcept(this.__data__.key);
+                        break;
+                    default:
+                        break;
+                }
             }
         });
 
@@ -173,21 +186,6 @@ export default function ConceptRelationshipExtractionComponent() {
             d3.select(this).style("cursor", "default");
         });
     };
-
-    useEffect(() => {
-        if (latestGraphSelection) {
-            switch (conceptRadioOption) {
-                case "subject":
-                    setSubjectConcept(latestGraphSelection);
-                    break;
-                case "object":
-                    setObjectConcept(latestGraphSelection);
-                    break;
-                default:
-                    break;
-            }
-        }
-    }, [latestGraphSelection]);
 
     const onCopyPromptGenerated = async () => {
         await setPromptEngineeringTabKey("prompt");

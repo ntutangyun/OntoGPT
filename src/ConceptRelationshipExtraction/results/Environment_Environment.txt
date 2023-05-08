@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+Scenario -> Environment;
+Scenario -> Infrastructure;
+Scenario -> Participants;
+Environment -> Weather;
+Environment -> Lighting;
+Environment -> AirQuality;
+Infrastructure -> RoadType;
+Infrastructure -> RoadObjects;
+Infrastructure -> RoadFurniture;
+Infrastructure -> RoadCondition;
+Infrastructure -> RoadMarkings;
+RoadType -> Highway;
+RoadType -> CityStreet;
+RoadType -> RuralRoad;
+RoadObjects -> Barrier;
+RoadObjects -> Guardrail;
+RoadObjects -> Pothole;
+RoadObjects -> Debris;
+RoadFurniture -> Sign;
+RoadFurniture -> TrafficLight;
+RoadFurniture -> Roundabout;
+RoadCondition -> Slippery;
+RoadCondition -> Uneven;
+Participants -> Driver;
+Participants -> Vehicle;
+Participants -> Pedestrian;
+Driver -> Aggressive;
+Driver -> Defensive;
+Driver -> Impaired;
+Driver -> Inexperienced;
+Impaired -> DrunkDriving;
+Impaired -> DistractedDriving;
+Inexperienced -> Learner;
+Inexperienced -> ElderlyDriver;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Truck;
+Vehicle -> Bus;
+Vehicle -> Emergency;
+Emergency -> Ambulance;
+Emergency -> FireTruck;
+Emergency -> PoliceCar;
+Pedestrian -> Human;
+Pedestrian -> Animal;
+Pedestrian -> Bicyclist;
+RoadMarkings -> LaneLines;
+RoadMarkings -> Crosswalks;
+RoadMarkings -> Arrows;
+RoadMarkings -> StopLines;
+Sign -> RegulatorySign;
+Sign -> WarningSign;
+Sign -> InformationalSign;
+RegulatorySign -> SpeedLimitSign;
+WarningSign -> DeerCrossingSign;
+InformationalSign -> ExitSign;
+}
+
+In the ontology context, list all possible relationships (predicates) between Environment (subject) and Environment (object):
+Do not involve new concepts other than Environment as the subject and Environment as the object.
+
+Format your responses in lines of the following format:
+@ subject -> predicate -> object.
+Start each line with @.
+For example, @ Vehicle -> Drives on -> Road
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Environment -> Affects -> Environment
+@ Environment -> Influences -> Environment
+@ Environment -> Determines -> Environment
+@ Environment -> Modifies -> Environment
+@ Environment -> Impacts -> Environment
+@ Environment -> Changes -> Environment
+@ Environment -> Interacts with -> Environment
+@ Environment -> Alters -> Environment
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Environment -> Affects -> Environment.
+@ Environment -> Influences -> Environment.
+@ Environment -> Determines -> Environment.
+@ Environment -> Modifies -> Environment.
+@ Environment -> Interacts with -> Environment.
+@ Environment -> Changes -> Environment.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Environment -> Affects -> Environment.
+@ Environment -> Interacts with -> Environment.
+@ Environment -> Influences -> Environment.
+@ Environment -> Determines -> Environment.
+@ Environment -> Depends on -> Environment.
+@ Environment -> Changes -> Environment.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Environment -> Affects -> Environment.
+@ Environment -> Influences -> Environment.
+@ Environment -> Interacts with -> Environment.
+@ Environment -> Determines -> Environment.
+@ Environment -> Modifies -> Environment.
+@ Environment -> Changes -> Environment.
+@ Environment -> Alters -> Environment.
+@ Environment -> Impacts -> Environment.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Environment -> Influences -> Environment.
+@ Environment -> Affects -> Environment.
+@ Environment -> Impacts -> Environment.
+@ Environment -> Interacts with -> Environment.
+@ Environment -> Changes -> Environment.
+@ Environment -> Determines -> Environment.
+
