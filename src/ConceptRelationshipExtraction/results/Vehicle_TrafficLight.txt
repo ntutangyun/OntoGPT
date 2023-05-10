@@ -82,4 +82,40 @@ For example, @ Vehicle -> Drives on -> Road
 @ Vehicle -> Obeys -> TrafficLight.
 @ Vehicle -> Runs -> RedTrafficLight. (assuming a violation of traffic laws)
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Vehicle -> Approaches -> TrafficLight.
+@ Vehicle -> Stops at -> TrafficLight.
+@ Vehicle -> Waits for -> TrafficLight.
+@ Vehicle -> Follows the signal of -> TrafficLight.
+@ Vehicle -> Ignores the signal of -> TrafficLight (in case of violations).
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Vehicle -> Approaches -> TrafficLight.
+@ Vehicle -> Stops at -> TrafficLight.
+@ Vehicle -> Proceeds through -> TrafficLight (when it is green).
+@ Vehicle -> Waits at -> TrafficLight (when it is red).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Vehicle -> Approaches -> TrafficLight.
+@ Vehicle -> Stops at -> TrafficLight.
+@ Vehicle -> Proceeds on green -> TrafficLight.
+@ Vehicle -> Waits at red -> TrafficLight.
+@ Vehicle -> Follows signal -> TrafficLight.
+@ Vehicle -> Obeys -> TrafficLight.
+@ Vehicle -> Ignores -> TrafficLight (although not recommended or legal).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Vehicle -> Stops at -> TrafficLight
+@ Vehicle -> Waits for -> TrafficLight
+@ Vehicle -> Follows the signal of -> TrafficLight
+@ Vehicle -> Approaches -> TrafficLight
+@ Vehicle -> Passes -> TrafficLight (when the traffic light is green)
+@ Vehicle -> Halts before -> TrafficLight (when the traffic light is red)

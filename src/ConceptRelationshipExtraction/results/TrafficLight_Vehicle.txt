@@ -63,67 +63,68 @@ WarningSign -> DeerCrossingSign;
 InformationalSign -> ExitSign;
 }
 
-In the ontology context, list all possible relationships (predicates) between Environment (subject) and Infrastructure (object):
-Do not involve new concepts other than Environment as the subject and Infrastructure as the object.
+In the ontology context, list all possible relationships (predicates) between TrafficLight (subject) and Vehicle (object):
+Do not involve new concepts other than TrafficLight as the subject and Vehicle as the object.
 
 Format your responses in lines of the following format:
 @ subject -> predicate -> object.
 Start each line with @.
 For example, @ Vehicle -> Drives on -> Road
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                Response
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@ Environment -> Affects -> Infrastructure
-@ Environment -> Determines -> Infrastructure
-@ Environment -> Influences -> Infrastructure
-@ Environment -> Impacts -> Infrastructure
-@ Environment -> Conditions -> Infrastructure
-@ Environment -> Modifies -> Infrastructure
-@ Environment -> Shapes -> Infrastructure
-@ Environment -> Alters -> Infrastructure
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                Response
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@ Environment -> Influences -> Infrastructure
-@ Environment -> Affects -> Infrastructure
-@ Environment -> Determines -> Infrastructure
-@ Environment -> Impacts -> Infrastructure
-@ Environment -> Shapes -> Infrastructure
-@ Environment -> Conditions -> Infrastructure
-@ Environment -> Modifies -> Infrastructure
-@ Environment -> Interacts with -> Infrastructure
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                Response
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@ Environment -> Influences -> Infrastructure.
-@ Environment -> Affects -> Infrastructure.
-@ Environment -> Determines -> Infrastructure.
-@ Environment -> Impacts -> Infrastructure.
-@ Environment -> Conditions -> Infrastructure.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 Response
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-@ Environment -> Affects -> Infrastructure.
-@ Environment -> Determines -> Infrastructure.
-@ Environment -> Impacts -> Infrastructure.
-@ Environment -> Influences -> Infrastructure.
-@ Environment -> Conditions -> Infrastructure.
-@ Environment -> Modifies -> Infrastructure.
-@ Environment -> Alters -> Infrastructure.
-@ Environment -> Changes -> Infrastructure.
+@ TrafficLight -> Controls -> Vehicle
+@ TrafficLight -> Signals -> Vehicle
+@ TrafficLight -> Influences -> Vehicle
+@ TrafficLight -> Interacts with -> Vehicle
+@ TrafficLight -> Affects -> Vehicle
+@ TrafficLight -> Regulates -> Vehicle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 Response
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@ Environment -> Affects -> Infrastructure.
-@ Environment -> Determines -> Infrastructure.
-@ Environment -> Influences -> Infrastructure.
-@ Environment -> Impacts -> Infrastructure.
-@ Environment -> Conditions -> Infrastructure.
-@ Environment -> Modifies -> Infrastructure.
-@ Environment -> Changes -> Infrastructure.
+@ TrafficLight -> Controls -> Vehicle
+@ TrafficLight -> Affects -> Vehicle
+@ TrafficLight -> Signals -> Vehicle
+@ TrafficLight -> Regulates -> Vehicle
+@ TrafficLight -> Governs -> Vehicle
+@ TrafficLight -> Dictates -> Vehicle
+@ TrafficLight -> Modifies -> Vehicle
+@ TrafficLight -> Influences -> Vehicle
+@ TrafficLight -> Directs -> Vehicle
+@ TrafficLight -> Determines -> Vehicle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@ TrafficLight -> Affects -> Vehicle
+@ TrafficLight -> Controls -> Vehicle
+@ TrafficLight -> Signals -> Vehicle
+@ TrafficLight -> Regulates -> Vehicle
+@ TrafficLight -> Guides -> Vehicle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ TrafficLight -> Controls -> Vehicle.
+@ TrafficLight -> Indicates -> Vehicle.
+@ TrafficLight -> Affects -> Vehicle.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@ TrafficLight -> Controls -> Vehicle
+@ TrafficLight -> Affects -> Vehicle
+@ TrafficLight -> Signals -> Vehicle
+@ TrafficLight -> Interacts with -> Vehicle
+@ TrafficLight -> Modifies behavior of -> Vehicle
+@ TrafficLight -> Regulates -> Vehicle
+@ TrafficLight -> Dictates actions of -> Vehicle
+@ TrafficLight -> Directs -> Vehicle
+@ TrafficLight -> Governs -> Vehicle
+@ TrafficLight -> Influences -> Vehicle

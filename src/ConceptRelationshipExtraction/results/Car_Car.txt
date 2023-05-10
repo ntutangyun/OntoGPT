@@ -156,9 +156,18 @@ For example, @ Vehicle -> Drives on -> Road
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 Response
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-There are several possible relationships (predicates) between Car (subject) and Car (object) in the given ontology. However, since we are not allowed to involve any new concepts other than Car, the only possible relationship is:
-
-@ Car -> Follows -> Car. (when one car is following another car)
+@ Car -> Follows -> Car
+@ Car -> Overtakes -> Car
+@ Car -> Passes -> Car
+@ Car -> Collides with -> Car
+@ Car -> Drives next to -> Car
+@ Car -> Races against -> Car
+@ Car -> Blocks -> Car
+@ Car -> Signals to -> Car
+@ Car -> Competes with -> Car
+@ Car -> Drafts behind -> Car
+@ Car -> Parks next to -> Car
+@ Car -> Crashes into -> Car
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 Response
