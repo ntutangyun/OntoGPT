@@ -385,6 +385,28 @@ export default function ConceptDefinitionExtractionComponent() {
         setHierarchyWithDefinition(hierarchyWithDefinition);
     };
 
+    const onSaveDOT = () => {
+        const link = document.createElement("a");
+        const file = new Blob([hierarchyWithDefinition], {type: "text/plain"});
+        link.href = URL.createObjectURL(file);
+        link.download = "ontology_with_definition.dot";
+        link.click();
+        URL.revokeObjectURL(link.href);
+
+        link.remove();
+    };
+
+    const onSaveHistory = () => {
+        const link = document.createElement("a");
+        const file = new Blob([historyString], {type: "text/plain"});
+        link.href = URL.createObjectURL(file);
+        link.download = "concept-definition-extraction.log";
+        link.click();
+        URL.revokeObjectURL(link.href);
+
+        link.remove();
+    };
+
     const executionTabs = [
         {
             key: "controls",
@@ -428,6 +450,26 @@ export default function ConceptDefinitionExtractionComponent() {
                     </Col>
                     <Col span={12}>
                         <div style={{paddingLeft: "0.5rem"}}>Click to add the ChatGPT response into the log.</div>
+                    </Col>
+                </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
+                    <Col span={12}>
+                        <Button onClick={onSaveDOT} style={{width: "90%"}}>
+                            Download DOT
+                        </Button>
+                    </Col>
+                    <Col span={12}>
+                        <div style={{paddingLeft: "0.5rem"}}>Click to download the hierarchy to a local .dot file.</div>
+                    </Col>
+                </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
+                    <Col span={12}>
+                        <Button onClick={onSaveHistory} style={{width: "90%"}}>
+                            Download Log
+                        </Button>
+                    </Col>
+                    <Col span={12}>
+                        <div style={{paddingLeft: "0.5rem"}}>Click to download the log to a local .log file.</div>
                     </Col>
                 </Row>
             </div>

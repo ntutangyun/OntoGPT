@@ -267,7 +267,7 @@ export default function ConceptHierarchyExtractionComponent() {
                 </Col>
                 <Col span={9} style={colStyle}>
                     <h1>Visualisation</h1>
-                    <div id="graph" style={graphStyle}/>
+                    <div id="graph" style={{...graphStyle, maxHeight: "calc(100vh - 220px)"}}/>
                 </Col>
             </Row>
         </Content>
