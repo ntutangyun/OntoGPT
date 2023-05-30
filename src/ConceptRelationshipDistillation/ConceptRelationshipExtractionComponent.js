@@ -91,7 +91,7 @@ const definitionTableColumns = [
     }
 ];
 
-export default function ConceptRelationshipExtractionComponent() {
+export default function ConceptRelationshipDistillationComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
     const [subjectConcept, setSubjectConcept] = useState("");

@@ -18,10 +18,10 @@ import {colStyle, CommonTextAreaStyle, contentStyle, graphStyle} from "../Common
 const {TextArea} = Input;
 const {Content} = Layout;
 
-export default function ConceptHierarchyExtractionComponent() {
+export default function ConceptHierarchyDistillationComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
-    const [instructionInput, setExtractionInstructionInput] =
+    const [instructionInput, setDistillationInstructionInput] =
         useState(InstructionTemplate);
     const [formatInput, setFormatInput] =
         useState(FormatTemplate);
@@ -83,7 +83,7 @@ export default function ConceptHierarchyExtractionComponent() {
             label: `Instruction`,
             children: <TextArea style={CommonTextAreaStyle}
                                 value={instructionInput}
-                                onChange={e => setExtractionInstructionInput(e.target.value)}/>,
+                                onChange={e => setDistillationInstructionInput(e.target.value)}/>,
         },
         {
             key: "format",
@@ -176,7 +176,7 @@ export default function ConceptHierarchyExtractionComponent() {
         const link = document.createElement("a");
         const file = new Blob([historyString], {type: "text/plain"});
         link.href = URL.createObjectURL(file);
-        link.download = "concept-hierarchy-extraction.log";
+        link.download = "concept-hierarchy-distillation.log";
         link.click();
         URL.revokeObjectURL(link.href);
 

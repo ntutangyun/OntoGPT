@@ -88,7 +88,7 @@ const definitionTableColumns = [
     }
 ];
 
-export default function ConceptDefinitionExtractionComponent() {
+export default function ConceptDefinitionDistillationComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
     const [instructionInput, setInstructionInput] =
@@ -400,7 +400,7 @@ export default function ConceptDefinitionExtractionComponent() {
         const link = document.createElement("a");
         const file = new Blob([historyString], {type: "text/plain"});
         link.href = URL.createObjectURL(file);
-        link.download = "concept-definition-extraction.log";
+        link.download = "concept-definition-distillation.log";
         link.click();
         URL.revokeObjectURL(link.href);
 
@@ -420,7 +420,7 @@ export default function ConceptDefinitionExtractionComponent() {
                     </Col>
                     <Col span={12}>
                         <div style={{paddingLeft: "0.5rem"}}>Click to update the concept list for definition
-                            extraction.
+                            distillation.
                         </div>
                     </Col>
                 </Row>

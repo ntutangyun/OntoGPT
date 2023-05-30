@@ -53,10 +53,10 @@ export default function HeaderComponent() {
         console.log("Location changed!", location.pathname);
     }, [location]);
 
-    const isLink1Active = location.pathname === "/concept-hierarchy-extraction";
-    const isLink2Active = location.pathname === "/concept-definition-extraction";
-    const isLink3Active = location.pathname === "/concept-relation-extraction";
-    const isLink4Active = location.pathname === "/concept-property-extraction";
+    const isLink1Active = location.pathname === "/concept-hierarchy-distillation";
+    const isLink2Active = location.pathname === "/concept-definition-distillation";
+    const isLink3Active = location.pathname === "/concept-relation-distillation";
+    const isLink4Active = location.pathname === "/concept-property-distillation";
 
     return <Header style={headerStyle}>
         <div>Domain Ontology Distillation Assistant</div>
@@ -66,26 +66,26 @@ export default function HeaderComponent() {
                 onMouseEnter={() => setLink1Hover(true)}
                 onMouseLeave={() => setLink1Hover(false)}
                 onClick={() =>
-                    navigate("/concept-hierarchy-extraction")}>
-                Concept Hierarchy Extraction
+                    navigate("/concept-hierarchy-distillation")}>
+                Concept Hierarchy Distillation
             </div>
             <div style={link2Hover ? linkHoverStyle : isLink2Active ? linkActiveStyle : linkStyle}
                  onMouseEnter={() => setLink2Hover(true)}
                  onMouseLeave={() => setLink2Hover(false)}
-                 onClick={() => navigate("/concept-definition-extraction")}>
-                Concept Definition Extraction
+                 onClick={() => navigate("/concept-definition-distillation")}>
+                Concept Definition Distillation
             </div>
             <div style={link3Hover ? linkHoverStyle : isLink3Active ? linkActiveStyle : linkStyle}
                  onMouseEnter={() => setLink3Hover(true)}
                  onMouseLeave={() => setLink3Hover(false)}
-                 onClick={() => navigate("/concept-relation-extraction")}>
-                Concept Relation Extraction
+                 onClick={() => navigate("/concept-relation-distillation")}>
+                Concept Relation Distillation
             </div>
             <div style={link4Hover ? linkHoverStyle : isLink4Active ? linkActiveStyle : linkStyle}
                  onMouseEnter={() => setLink4Hover(true)}
                  onMouseLeave={() => setLink4Hover(false)}
-                 onClick={() => navigate("/concept-property-extraction")}>
-                Concept Property Extraction
+                 onClick={() => navigate("/concept-property-distillation")}>
+                Concept Property Distillation
             </div>
         </div>
     </Header>;

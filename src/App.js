@@ -2,11 +2,11 @@ import "./App.css";
 import {Layout,} from "antd";
 import HeaderComponent from "./HeaderComponent";
 import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
-import ConceptHierarchyExtractionComponent from "./ConceptHierarchyExtraction/ConceptHierarchyExtractionComponent";
+import ConceptHierarchyDistillationComponent from "./ConceptHierarchyDistillation/ConceptHierarchyDistillationComponent";
 import React from "react";
-import ConceptDefinitionExtractionComponent from "./ConceptDefinitionExtraction/ConceptDefinitionExtractionComponent";
-import ConceptRelationshipExtractionComponent
-    from "./ConceptRelationshipExtraction/ConceptRelationshipExtractionComponent";
+import ConceptDefinitionDistillationComponent from "./ConceptDefinitionDistillation/ConceptDefinitionDistillationComponent";
+import ConceptRelationshipDistillationComponent
+    from "./ConceptRelationshipDistillation/ConceptRelationshipDistillationComponent";
 
 const {Footer} = Layout;
 
@@ -22,11 +22,11 @@ function App() {
             <Layout>
                 <HeaderComponent/>
                 <Routes>
-                    <Route path={"/concept-hierarchy-extraction"} element={<ConceptHierarchyExtractionComponent/>}/>
-                    <Route path={"/concept-definition-extraction"} element={<ConceptDefinitionExtractionComponent/>}/>
-                    <Route path={"/concept-relation-extraction"} element={<ConceptRelationshipExtractionComponent/>}/>
-                    <Route path={"/concept-property-extraction"} element={<p>UI Under Development</p>}/>
-                    <Route path={"*"} element={<Navigate to={"/concept-hierarchy-extraction"} replace={true}/>}/>
+                    <Route path={"/concept-hierarchy-distillation"} element={<ConceptHierarchyDistillationComponent/>}/>
+                    <Route path={"/concept-definition-distillation"} element={<ConceptDefinitionDistillationComponent/>}/>
+                    <Route path={"/concept-relation-distillation"} element={<ConceptRelationshipDistillationComponent/>}/>
+                    <Route path={"/concept-property-distillation"} element={<p>UI Under Development</p>}/>
+                    <Route path={"*"} element={<Navigate to={"/concept-hierarchy-distillation"} replace={true}/>}/>
                 </Routes>
                 <Footer style={footerStyle}>Yun Tang (yun.tang at warwick.ac.uk) @ WMG, University of Warwick, United
                     Kingdom</Footer>
