@@ -43,6 +43,7 @@ export default function HeaderComponent() {
     const location = useLocation();
 
     const navigate = useNavigate();
+    const [link0Hover, setLink0Hover] = React.useState(false);
     const [link1Hover, setLink1Hover] = React.useState(false);
     const [link2Hover, setLink2Hover] = React.useState(false);
     const [link3Hover, setLink3Hover] = React.useState(false);
@@ -53,6 +54,7 @@ export default function HeaderComponent() {
         console.log("Location changed!", location.pathname);
     }, [location]);
 
+    const isLink0Active = location.pathname === "/demonstrations";
     const isLink1Active = location.pathname === "/concept-hierarchy-distillation";
     const isLink2Active = location.pathname === "/concept-definition-distillation";
     const isLink3Active = location.pathname === "/concept-relation-distillation";
@@ -61,6 +63,14 @@ export default function HeaderComponent() {
     return <Header style={headerStyle}>
         <div>Domain Ontology Distillation Assistant</div>
         <div>
+            <div
+                style={link0Hover ? linkHoverStyle : isLink0Active ? linkActiveStyle : linkStyle}
+                onMouseEnter={() => setLink0Hover(true)}
+                onMouseLeave={() => setLink0Hover(false)}
+                onClick={() =>
+                    navigate("/demonstrations")}>
+                Paper Experiment Results
+            </div>
             <div
                 style={link1Hover ? linkHoverStyle : isLink1Active ? linkActiveStyle : linkStyle}
                 onMouseEnter={() => setLink1Hover(true)}

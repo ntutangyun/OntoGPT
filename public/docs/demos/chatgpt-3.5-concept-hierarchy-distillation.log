@@ -1,0 +1,5617 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+     graph [rankdir = LR];
+     EnvironmentalConditions;
+     RoadTopologyAndTrafficInfrastructure -> Junction;
+     TrafficParticipantAndBehavior;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir = LR];
+    
+    // Environmental Conditions
+    EnvironmentalConditions;
+
+    // Road Topology
+    RoadTopology;
+    RoadTopology -> RoadSegment;
+    RoadTopology -> Junction;
+    RoadSegment;
+
+    // Traffic Infrastructure
+    TrafficInfrastructure;
+    TrafficInfrastructure -> TrafficSign;
+    TrafficInfrastructure -> TrafficLight;
+    TrafficInfrastructure -> Lane;
+
+    // Traffic Participants
+    TrafficParticipant;
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+    TrafficParticipant -> Cyclist;
+
+    // Vehicle Types
+    Vehicle;
+    Vehicle -> Car;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+    Vehicle -> Truck;
+
+    // Traffic Behavior
+    TrafficBehavior;
+    TrafficBehavior -> Speeding;
+    TrafficBehavior -> LaneChanging;
+    TrafficBehavior -> Yielding;
+
+    // Environmental Factors
+    EnvironmentalFactors;
+    EnvironmentalFactors -> Weather;
+    EnvironmentalFactors -> RoadCondition;
+    EnvironmentalFactors -> Visibility;
+
+    // Road Condition
+    RoadCondition;
+    RoadCondition -> Dry;
+    RoadCondition -> Wet;
+    RoadCondition -> Icy;
+
+    // Weather Conditions
+    Weather;
+    Weather -> Clear;
+    Weather -> Rainy;
+    Weather -> Snowy;
+    Weather -> Foggy;
+
+    // Traffic Control Devices
+    TrafficControlDevices;
+    TrafficControlDevices -> StopSign;
+    TrafficControlDevices -> YieldSign;
+    TrafficControlDevices -> SpeedLimitSign;
+
+    // Junction Types
+    Junction;
+    Junction -> Crossroads;
+    Junction -> Roundabout;
+    Junction -> TIntersection;
+
+    // Roadside Elements
+    RoadsideElements;
+    RoadsideElements -> Sidewalk;
+    RoadsideElements -> Guardrail;
+    RoadsideElements -> StreetLight;
+
+    // Traffic Violations
+    TrafficViolations;
+    TrafficViolations -> Overspeeding;
+    TrafficViolations -> RedLightViolation;
+    TrafficViolations -> WrongWayDriving;
+
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+
+// Environmental Conditions
+EnvironmentalConditions;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+RoadSegment;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> TrafficSign;
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> Lane;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Environmental Factors
+EnvironmentalFactors;
+EnvironmentalFactors -> Weather;
+EnvironmentalFactors -> RoadCondition;
+EnvironmentalFactors -> Visibility;
+
+// Road Condition
+RoadCondition;
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Roadside Elements
+RoadsideElements;
+RoadsideElements -> Sidewalk;
+RoadsideElements -> Guardrail;
+RoadsideElements -> StreetLight;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir = LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> RoadsideElements;
+  RoadInfrastructure -> TrafficControlDevices;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> TrafficSign;
+  TrafficInfrastructure -> TrafficLight;
+  TrafficInfrastructure -> Lane;
+
+  // Roadside Elements
+  RoadsideElements;
+  RoadsideElements -> Sidewalk;
+  RoadsideElements -> Guardrail;
+  RoadsideElements -> StreetLight;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> EnvironmentalFactors;
+  EnvironmentalConditions -> Weather;
+
+  // Environmental Factors
+  EnvironmentalFactors;
+  EnvironmentalFactors -> RoadCondition;
+  EnvironmentalFactors -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+
+  // Road Condition
+  RoadCondition;
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  
+  // New Concepts
+  RoadConditions; // Merged concept for all road conditions
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  TrafficRules; // Merged concept for traffic control devices and traffic signs
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> TrafficSign;
+
+  // New Traffic Control Devices
+  TrafficControlDevices -> NoEntrySign;
+  TrafficControlDevices -> OneWaySign;
+  TrafficControlDevices -> GiveWaySign;
+  TrafficControlDevices -> NoParkingSign;
+
+  // New Weather Conditions
+  Weather -> Windy; // Added a new weather condition "Windy"
+
+  // New Traffic Violations
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> RoadsideElements;
+RoadInfrastructure -> TrafficControlDevices;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> TrafficSign;
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> Lane;
+
+// Roadside Elements
+RoadsideElements;
+RoadsideElements -> Sidewalk;
+RoadsideElements -> Guardrail;
+RoadsideElements -> StreetLight;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> EnvironmentalFactors;
+EnvironmentalConditions -> Weather;
+
+// Environmental Factors
+EnvironmentalFactors;
+EnvironmentalFactors -> RoadCondition;
+EnvironmentalFactors -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+
+// Road Condition
+RoadCondition;
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+
+// New Concepts
+RoadConditions; // Merged concept for all road conditions
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+TrafficRules; // Merged concept for traffic control devices and traffic signs
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> TrafficSign;
+
+// New Traffic Control Devices
+TrafficControlDevices -> NoEntrySign;
+TrafficControlDevices -> OneWaySign;
+TrafficControlDevices -> GiveWaySign;
+TrafficControlDevices -> NoParkingSign;
+
+// New Weather Conditions
+Weather -> Windy; // Added a new weather condition "Windy"
+
+// New Traffic Violations
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir = LR];
+
+    // Road Infrastructure
+    RoadInfrastructure;
+    RoadInfrastructure -> RoadTopology;
+    RoadInfrastructure -> TrafficInfrastructure;
+    RoadInfrastructure -> RoadsideElements;
+    RoadInfrastructure -> EnvironmentalConditions;
+    RoadInfrastructure -> TrafficRules;
+
+    // Road Topology
+    RoadTopology;
+    RoadTopology -> RoadSegment;
+    RoadTopology -> Junction;
+
+    // Road Segment
+    RoadSegment;
+
+    // Junction Types
+    Junction;
+    Junction -> Crossroads;
+    Junction -> Roundabout;
+    Junction -> TIntersection;
+
+    // Traffic Infrastructure
+    TrafficInfrastructure;
+    TrafficInfrastructure -> TrafficSign;
+    TrafficInfrastructure -> TrafficLight;
+    TrafficInfrastructure -> Lane;
+
+    // Roadside Elements
+    RoadsideElements;
+    RoadsideElements -> Sidewalk;
+    RoadsideElements -> Guardrail;
+    RoadsideElements -> StreetLight;
+
+    // Environmental Conditions
+    EnvironmentalConditions;
+    EnvironmentalConditions -> Weather;
+    EnvironmentalConditions -> RoadConditions;
+    EnvironmentalConditions -> Visibility;
+
+    // Weather Conditions
+    Weather;
+    Weather -> Clear;
+    Weather -> Rainy;
+    Weather -> Snowy;
+    Weather -> Foggy;
+    Weather -> Windy;
+
+    // Road Conditions
+    RoadConditions;
+    RoadConditions -> Dry;
+    RoadConditions -> Wet;
+    RoadConditions -> Icy;
+
+    // Traffic Participants
+    TrafficParticipant;
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+    TrafficParticipant -> Cyclist;
+
+    // Vehicle Types
+    Vehicle;
+    Vehicle -> Car;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+    Vehicle -> Truck;
+
+    // Traffic Behavior
+    TrafficBehavior;
+    TrafficBehavior -> Speeding;
+    TrafficBehavior -> LaneChanging;
+    TrafficBehavior -> Yielding;
+
+    // Traffic Rules
+    TrafficRules;
+    TrafficRules -> TrafficControlDevices;
+    TrafficRules -> TrafficSign;
+    TrafficRules -> NoEntrySign;
+    TrafficRules -> OneWaySign;
+    TrafficRules -> GiveWaySign;
+    TrafficRules -> NoParkingSign;
+
+    // Traffic Control Devices
+    TrafficControlDevices;
+    TrafficControlDevices -> StopSign;
+    TrafficControlDevices -> YieldSign;
+    TrafficControlDevices -> SpeedLimitSign;
+    TrafficControlDevices -> NoEntrySign;
+    TrafficControlDevices -> OneWaySign;
+    TrafficControlDevices -> GiveWaySign;
+    TrafficControlDevices -> NoParkingSign;
+
+    // Traffic Violations
+    TrafficViolations;
+    TrafficViolations -> Overspeeding;
+    TrafficViolations -> RedLightViolation;
+    TrafficViolations -> WrongWayDriving;
+    TrafficViolations -> SeatbeltViolation;
+    TrafficViolations -> DrunkDriving;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> RoadsideElements;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> TrafficSign;
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> Lane;
+
+// Roadside Elements
+RoadsideElements;
+RoadsideElements -> Sidewalk;
+RoadsideElements -> Guardrail;
+RoadsideElements -> StreetLight;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> TrafficSign;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> NoEntrySign;
+TrafficControlDevices -> OneWaySign;
+TrafficControlDevices -> GiveWaySign;
+TrafficControlDevices -> NoParkingSign;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir = LR];
+
+    // Road Infrastructure
+    RoadInfrastructure;
+    RoadInfrastructure -> RoadTopology;
+    RoadInfrastructure -> TrafficInfrastructure;
+    RoadInfrastructure -> EnvironmentalConditions;
+    RoadInfrastructure -> TrafficRules;
+
+    // Road Topology
+    RoadTopology;
+    RoadTopology -> RoadSegment;
+    RoadTopology -> Junction;
+
+    // Road Segment
+    RoadSegment;
+
+    // Junction Types
+    Junction;
+    Junction -> Crossroads;
+    Junction -> Roundabout;
+    Junction -> TIntersection;
+
+    // Traffic Infrastructure
+    TrafficInfrastructure;
+    TrafficInfrastructure -> TrafficSign;
+    TrafficInfrastructure -> TrafficLight;
+    TrafficInfrastructure -> Lane;
+
+    // Roadside Elements
+    RoadsideElements;
+    RoadsideElements -> Sidewalk;
+    RoadsideElements -> Guardrail;
+    RoadsideElements -> StreetLight;
+
+    // Environmental Conditions
+    EnvironmentalConditions;
+    EnvironmentalConditions -> Weather;
+    EnvironmentalConditions -> RoadConditions;
+    EnvironmentalConditions -> Visibility;
+
+    // Weather Conditions
+    Weather;
+    Weather -> Clear;
+    Weather -> Rainy;
+    Weather -> Snowy;
+    Weather -> Foggy;
+    Weather -> Windy;
+
+    // Road Conditions
+    RoadConditions;
+    RoadConditions -> Dry;
+    RoadConditions -> Wet;
+    RoadConditions -> Icy;
+
+    // Traffic Participants
+    TrafficParticipant;
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+    TrafficParticipant -> Cyclist;
+
+    // Vehicle Types
+    Vehicle;
+    Vehicle -> Car;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+    Vehicle -> Truck;
+
+    // Traffic Behavior
+    TrafficBehavior;
+    TrafficBehavior -> Speeding;
+    TrafficBehavior -> LaneChanging;
+    TrafficBehavior -> Yielding;
+
+    // Traffic Rules
+    TrafficRules;
+    TrafficRules -> TrafficControlDevices;
+    TrafficRules -> TrafficSign;
+    TrafficRules -> NoEntrySign;
+    TrafficRules -> OneWaySign;
+    TrafficRules -> GiveWaySign;
+    TrafficRules -> NoParkingSign;
+
+    // Traffic Control Devices
+    TrafficControlDevices;
+    TrafficControlDevices -> StopSign;
+    TrafficControlDevices -> YieldSign;
+    TrafficControlDevices -> SpeedLimitSign;
+    TrafficControlDevices -> NoEntrySign;
+    TrafficControlDevices -> OneWaySign;
+    TrafficControlDevices -> GiveWaySign;
+    TrafficControlDevices -> NoParkingSign;
+
+    // Traffic Violations
+    TrafficViolations;
+    TrafficViolations -> Overspeeding;
+    TrafficViolations -> RedLightViolation;
+    TrafficViolations -> WrongWayDriving;
+    TrafficViolations -> SeatbeltViolation;
+    TrafficViolations -> DrunkDriving;
+
+    // New Concepts
+    RoadCharacteristics;
+    RoadCharacteristics -> Curvature;
+    RoadCharacteristics -> Gradient;
+    RoadCharacteristics -> SurfaceType;
+
+    VehicleBehavior;
+    VehicleBehavior -> Accelerating;
+    VehicleBehavior -> Braking;
+    VehicleBehavior -> Overtaking;
+
+    TrafficSignalColor;
+    TrafficSignalColor -> Red;
+    TrafficSignalColor -> Yellow;
+    TrafficSignalColor -> Green;
+
+    TrafficLightState;
+    TrafficLightState -> Active;
+    TrafficLightState -> Inactive;
+
+    PedestrianCrossing;
+    PedestrianCrossing -> ZebraCrossing;
+    PedestrianCrossing -> PedestrianBridge;
+
+    LaneTypes;
+    LaneTypes -> NormalLane;
+    LaneTypes -> BusLane;
+    LaneTypes -> BicycleLane;
+
+    RoadsideFacilities;
+    RoadsideFacilities -> GasStation;
+    RoadsideFacilities -> RestArea;
+
+    VehicleSafetyFeatures;
+    VehicleSafetyFeatures -> ABS;
+    VehicleSafetyFeatures -> Airbags;
+
+    // Reorganized Relationships
+    RoadInfrastructure -> RoadCharacteristics;
+    RoadInfrastructure -> RoadsideFacilities;
+    RoadInfrastructure -> LaneTypes;
+    RoadInfrastructure -> TrafficSignalColor;
+    RoadInfrastructure -> TrafficLightState;
+    RoadInfrastructure -> PedestrianCrossing;
+
+    TrafficInfrastructure -> VehicleBehavior;
+
+    TrafficParticipant -> VehicleSafetyFeatures;
+
+    TrafficControlDevices -> TrafficSignalColor;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> TrafficSign;
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> Lane;
+
+// Roadside Elements
+RoadsideElements;
+RoadsideElements -> Sidewalk;
+RoadsideElements -> Guardrail;
+RoadsideElements -> StreetLight;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> TrafficSign;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> NoEntrySign;
+TrafficControlDevices -> OneWaySign;
+TrafficControlDevices -> GiveWaySign;
+TrafficControlDevices -> NoParkingSign;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+RoadCharacteristics;
+RoadCharacteristics -> Curvature;
+RoadCharacteristics -> Gradient;
+RoadCharacteristics -> SurfaceType;
+
+VehicleBehavior;
+VehicleBehavior -> Accelerating;
+VehicleBehavior -> Braking;
+VehicleBehavior -> Overtaking;
+
+TrafficSignalColor;
+TrafficSignalColor -> Red;
+TrafficSignalColor -> Yellow;
+TrafficSignalColor -> Green;
+
+TrafficLightState;
+TrafficLightState -> Active;
+TrafficLightState -> Inactive;
+
+PedestrianCrossing;
+PedestrianCrossing -> ZebraCrossing;
+PedestrianCrossing -> PedestrianBridge;
+
+LaneTypes;
+LaneTypes -> NormalLane;
+LaneTypes -> BusLane;
+LaneTypes -> BicycleLane;
+
+RoadsideFacilities;
+RoadsideFacilities -> GasStation;
+RoadsideFacilities -> RestArea;
+
+VehicleSafetyFeatures;
+VehicleSafetyFeatures -> ABS;
+VehicleSafetyFeatures -> Airbags;
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> LaneTypes;
+RoadInfrastructure -> TrafficSignalColor;
+RoadInfrastructure -> TrafficLightState;
+RoadInfrastructure -> PedestrianCrossing;
+
+TrafficInfrastructure -> VehicleBehavior;
+
+TrafficParticipant -> VehicleSafetyFeatures;
+
+TrafficControlDevices -> TrafficSignalColor;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir = LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics; // New concept
+  RoadInfrastructure -> RoadsideFacilities; // New concept
+  RoadInfrastructure -> TrafficSignalColor; // New concept
+  RoadInfrastructure -> TrafficLightState; // New concept
+  RoadInfrastructure -> PedestrianCrossing; // New concept
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> TrafficSign;
+  TrafficInfrastructure -> TrafficLight;
+  TrafficInfrastructure -> Lane;
+  TrafficInfrastructure -> VehicleBehavior; // New concept
+
+  // Roadside Elements
+  RoadsideElements; // Removed - Irrelevant
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> TrafficSign;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> NoEntrySign;
+  TrafficControlDevices -> OneWaySign;
+  TrafficControlDevices -> GiveWaySign;
+  TrafficControlDevices -> NoParkingSign;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  RoadCharacteristics; // Already added to the hierarchy
+  RoadsideFacilities; // Already added to the hierarchy
+  LaneTypes; // Already added to the hierarchy
+  TrafficSignalColor; // Already added to the hierarchy
+  TrafficLightState; // Already added to the hierarchy
+  PedestrianCrossing; // Already added to the hierarchy
+  VehicleBehavior; // Already added to the hierarchy
+  Lane; // Merged "Lane" with "LaneTypes" and moved it under TrafficInfrastructure
+  VehicleSafetyFeatures; // New concept
+  SafetyViolation; // New concept
+
+  // Reorganized Relationships
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> TrafficSignalColor;
+  RoadInfrastructure -> TrafficLightState;
+  RoadInfrastructure -> PedestrianCrossing;
+
+  TrafficInfrastructure -> Lane;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  TrafficParticipant -> SafetyViolation;
+
+  TrafficControlDevices -> TrafficSignalColor;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics; // New concept
+RoadInfrastructure -> RoadsideFacilities; // New concept
+RoadInfrastructure -> TrafficSignalColor; // New concept
+RoadInfrastructure -> TrafficLightState; // New concept
+RoadInfrastructure -> PedestrianCrossing; // New concept
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> TrafficSign;
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> Lane;
+TrafficInfrastructure -> VehicleBehavior; // New concept
+
+// Roadside Elements
+RoadsideElements; // Removed - Irrelevant
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> TrafficSign;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> NoEntrySign;
+TrafficControlDevices -> OneWaySign;
+TrafficControlDevices -> GiveWaySign;
+TrafficControlDevices -> NoParkingSign;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+RoadCharacteristics; // Already added to the hierarchy
+RoadsideFacilities; // Already added to the hierarchy
+LaneTypes; // Already added to the hierarchy
+TrafficSignalColor; // Already added to the hierarchy
+TrafficLightState; // Already added to the hierarchy
+PedestrianCrossing; // Already added to the hierarchy
+VehicleBehavior; // Already added to the hierarchy
+Lane; // Merged "Lane" with "LaneTypes" and moved it under TrafficInfrastructure
+VehicleSafetyFeatures; // New concept
+SafetyViolation; // New concept
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> TrafficSignalColor;
+RoadInfrastructure -> TrafficLightState;
+RoadInfrastructure -> PedestrianCrossing;
+
+TrafficInfrastructure -> Lane;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+TrafficParticipant -> SafetyViolation;
+
+TrafficControlDevices -> TrafficSignalColor;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> TrafficSignalColor;
+  RoadInfrastructure -> TrafficLightState;
+  RoadInfrastructure -> PedestrianCrossing;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> NoEntrySign;
+  TrafficControlDevices -> OneWaySign;
+  TrafficControlDevices -> GiveWaySign;
+  TrafficControlDevices -> NoParkingSign;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  RoadCharacteristics; // Already added to the hierarchy
+  RoadsideFacilities; // Already added to the hierarchy
+  LaneTypes; // Already added to the hierarchy
+  TrafficSignalColor; // Already added to the hierarchy
+  TrafficLightState; // Already added to the hierarchy
+  PedestrianCrossing; // Already added to the hierarchy
+  VehicleBehavior; // Already added to the hierarchy
+  VehicleSafetyFeatures; // New concept
+  SafetyViolation; // New concept
+  RoadIncident; // New concept
+  TrafficAccident; // New concept
+  RoadMaintenance; // New concept
+  RoadClosure; // New concept
+  TrafficJam; // New concept
+  RoadConstruction; // New concept
+  TrafficControlCenter; // New concept
+  RoadsideAssistance; // New concept
+
+  // Reorganized Relationships
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> TrafficSignalColor;
+  RoadInfrastructure -> TrafficLightState;
+  RoadInfrastructure -> PedestrianCrossing;
+
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  TrafficParticipant -> SafetyViolation;
+
+  TrafficControlDevices -> TrafficSignalColor;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> TrafficSignalColor;
+RoadInfrastructure -> TrafficLightState;
+RoadInfrastructure -> PedestrianCrossing;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> NoEntrySign;
+TrafficControlDevices -> OneWaySign;
+TrafficControlDevices -> GiveWaySign;
+TrafficControlDevices -> NoParkingSign;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+RoadCharacteristics; // Already added to the hierarchy
+RoadsideFacilities; // Already added to the hierarchy
+LaneTypes; // Already added to the hierarchy
+TrafficSignalColor; // Already added to the hierarchy
+TrafficLightState; // Already added to the hierarchy
+PedestrianCrossing; // Already added to the hierarchy
+VehicleBehavior; // Already added to the hierarchy
+VehicleSafetyFeatures; // New concept
+SafetyViolation; // New concept
+RoadIncident; // New concept
+TrafficAccident; // New concept
+RoadMaintenance; // New concept
+RoadClosure; // New concept
+TrafficJam; // New concept
+RoadConstruction; // New concept
+TrafficControlCenter; // New concept
+RoadsideAssistance; // New concept
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> TrafficSignalColor;
+RoadInfrastructure -> TrafficLightState;
+RoadInfrastructure -> PedestrianCrossing;
+
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+TrafficParticipant -> SafetyViolation;
+
+TrafficControlDevices -> TrafficSignalColor;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> TrafficSignalColor;
+  RoadInfrastructure -> TrafficLightState;
+  RoadInfrastructure -> PedestrianCrossing;
+  RoadInfrastructure -> RoadMaintenance; // New concept
+  RoadInfrastructure -> RoadClosure; // New concept
+  RoadInfrastructure -> TrafficControlCenter; // New concept
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> NoEntrySign;
+  TrafficControlDevices -> OneWaySign;
+  TrafficControlDevices -> GiveWaySign;
+  TrafficControlDevices -> NoParkingSign;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  RoadsideFacilities; // Already added to the hierarchy
+  TrafficSignalColor; // Already added to the hierarchy
+  TrafficLightState; // Already added to the hierarchy
+  PedestrianCrossing; // Already added to the hierarchy
+  LaneTypes; // Already added to the hierarchy
+  VehicleBehavior; // Already added to the hierarchy
+  VehicleSafetyFeatures; // Already added to the hierarchy
+  SafetyViolation; // New concept
+  RoadIncident; // New concept
+  TrafficAccident; // New concept
+  TrafficJam; // New concept
+  RoadConstruction; // New concept
+  RoadsideAssistance; // New concept
+
+  // Reorganized Relationships
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> TrafficSignalColor;
+  RoadInfrastructure -> TrafficLightState;
+  RoadInfrastructure -> PedestrianCrossing;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  TrafficParticipant -> SafetyViolation;
+
+  TrafficControlDevices -> TrafficSignalColor;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> TrafficSignalColor;
+RoadInfrastructure -> TrafficLightState;
+RoadInfrastructure -> PedestrianCrossing;
+RoadInfrastructure -> RoadMaintenance; // New concept
+RoadInfrastructure -> RoadClosure; // New concept
+RoadInfrastructure -> TrafficControlCenter; // New concept
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> NoEntrySign;
+TrafficControlDevices -> OneWaySign;
+TrafficControlDevices -> GiveWaySign;
+TrafficControlDevices -> NoParkingSign;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+RoadsideFacilities; // Already added to the hierarchy
+TrafficSignalColor; // Already added to the hierarchy
+TrafficLightState; // Already added to the hierarchy
+PedestrianCrossing; // Already added to the hierarchy
+LaneTypes; // Already added to the hierarchy
+VehicleBehavior; // Already added to the hierarchy
+VehicleSafetyFeatures; // Already added to the hierarchy
+SafetyViolation; // New concept
+RoadIncident; // New concept
+TrafficAccident; // New concept
+TrafficJam; // New concept
+RoadConstruction; // New concept
+RoadsideAssistance; // New concept
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> TrafficSignalColor;
+RoadInfrastructure -> TrafficLightState;
+RoadInfrastructure -> PedestrianCrossing;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+TrafficParticipant -> SafetyViolation;
+
+TrafficControlDevices -> TrafficSignalColor;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+  RoadInfrastructure -> RoadIncident; // New concept: Road Incident
+  RoadInfrastructure -> TrafficAccident; // New concept: Traffic Accident
+  RoadInfrastructure -> TrafficJam; // New concept: Traffic Jam
+  RoadInfrastructure -> RoadConstruction; // New concept: Road Construction
+  RoadInfrastructure -> RoadsideAssistance; // New concept: Roadside Assistance
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> NoEntrySign;
+  TrafficControlDevices -> OneWaySign;
+  TrafficControlDevices -> GiveWaySign;
+  TrafficControlDevices -> NoParkingSign;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  SafetyViolation; // New concept: Safety Violation
+  RoadIncident; // Already added to the hierarchy
+  TrafficAccident; // Already added to the hierarchy
+  TrafficJam; // Already added to the hierarchy
+  RoadConstruction; // Already added to the hierarchy
+  RoadsideAssistance; // Already added to the hierarchy
+
+  // Reorganized Relationships
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  TrafficParticipant -> SafetyViolation;
+
+  TrafficControlDevices -> TrafficSignalColor;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+RoadInfrastructure -> RoadIncident; // New concept: Road Incident
+RoadInfrastructure -> TrafficAccident; // New concept: Traffic Accident
+RoadInfrastructure -> TrafficJam; // New concept: Traffic Jam
+RoadInfrastructure -> RoadConstruction; // New concept: Road Construction
+RoadInfrastructure -> RoadsideAssistance; // New concept: Roadside Assistance
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> NoEntrySign;
+TrafficControlDevices -> OneWaySign;
+TrafficControlDevices -> GiveWaySign;
+TrafficControlDevices -> NoParkingSign;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+SafetyViolation; // New concept: Safety Violation
+RoadIncident; // Already added to the hierarchy
+TrafficAccident; // Already added to the hierarchy
+TrafficJam; // Already added to the hierarchy
+RoadConstruction; // Already added to the hierarchy
+RoadsideAssistance; // Already added to the hierarchy
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+TrafficParticipant -> SafetyViolation;
+
+TrafficControlDevices -> TrafficSignalColor;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> TrafficSignalColor;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  SafetyViolation; // New concept: Safety Violation
+  RoadsideEmergency; // New concept: Roadside Emergency
+  RoadObstruction; // New concept: Road Obstruction
+  TrafficCongestion; // New concept: Traffic Congestion
+  RoadMaintenanceWork; // New concept: Road Maintenance Work
+  RoadDeterioration; // New concept: Road Deterioration
+  RoadsideFacilityMaintenance; // New concept: Roadside Facility Maintenance
+  TrafficAccidentInvestigation; // New concept: Traffic Accident Investigation
+  RoadDiversion; // New concept: Road Diversion
+  RoadsideSafetyInspection; // New concept: Roadside Safety Inspection
+
+  // Reorganized Relationships
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  TrafficParticipant -> SafetyViolation;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+SafetyViolation; // New concept: Safety Violation
+RoadsideEmergency; // New concept: Roadside Emergency
+RoadObstruction; // New concept: Road Obstruction
+TrafficCongestion; // New concept: Traffic Congestion
+RoadMaintenanceWork; // New concept: Road Maintenance Work
+RoadDeterioration; // New concept: Road Deterioration
+RoadsideFacilityMaintenance; // New concept: Roadside Facility Maintenance
+TrafficAccidentInvestigation; // New concept: Traffic Accident Investigation
+RoadDiversion; // New concept: Road Diversion
+RoadsideSafetyInspection; // New concept: Roadside Safety Inspection
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+TrafficParticipant -> SafetyViolation;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> TrafficSignalColor;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  RoadsideEmergency; // New concept: Roadside Emergency
+  RoadObstruction; // New concept: Road Obstruction
+  TrafficCongestion; // New concept: Traffic Congestion
+  RoadMaintenanceWork; // New concept: Road Maintenance Work
+  RoadDeterioration; // New concept: Road Deterioration
+  RoadsideFacilityMaintenance; // New concept: Roadside Facility Maintenance
+  TrafficAccidentInvestigation; // New concept: Traffic Accident Investigation
+  RoadDiversion; // New concept: Road Diversion
+  RoadsideSafetyInspection; // New concept: Roadside Safety Inspection
+  SafetyViolation; // New concept: Safety Violation
+
+  // Reorganized Relationships
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  TrafficParticipant -> SafetyViolation;
+  RoadsideFacilities -> RoadsideEmergency;
+  RoadsideFacilities -> RoadObstruction;
+  RoadMaintenance -> RoadMaintenanceWork;
+  RoadCharacteristics -> RoadDeterioration;
+  RoadsideFacilityMaintenance -> RoadsideSafetyInspection;
+  RoadClosure -> RoadDiversion;
+  TrafficAccidentInvestigation -> TrafficViolations;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+RoadsideEmergency; // New concept: Roadside Emergency
+RoadObstruction; // New concept: Road Obstruction
+TrafficCongestion; // New concept: Traffic Congestion
+RoadMaintenanceWork; // New concept: Road Maintenance Work
+RoadDeterioration; // New concept: Road Deterioration
+RoadsideFacilityMaintenance; // New concept: Roadside Facility Maintenance
+TrafficAccidentInvestigation; // New concept: Traffic Accident Investigation
+RoadDiversion; // New concept: Road Diversion
+RoadsideSafetyInspection; // New concept: Roadside Safety Inspection
+SafetyViolation; // New concept: Safety Violation
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+TrafficParticipant -> SafetyViolation;
+RoadsideFacilities -> RoadsideEmergency;
+RoadsideFacilities -> RoadObstruction;
+RoadMaintenance -> RoadMaintenanceWork;
+RoadCharacteristics -> RoadDeterioration;
+RoadsideFacilityMaintenance -> RoadsideSafetyInspection;
+RoadClosure -> RoadDiversion;
+TrafficAccidentInvestigation -> TrafficViolations;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> TrafficSignalColor;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  RoadsideEmergency; // New concept: Roadside Emergency
+  RoadObstruction; // New concept: Road Obstruction
+  TrafficCongestion; // New concept: Traffic Congestion
+  RoadMaintenanceWork; // New concept: Road Maintenance Work
+  RoadDeterioration; // New concept: Road Deterioration
+  RoadsideFacilityMaintenance; // New concept: Roadside Facility Maintenance
+  TrafficAccidentInvestigation; // New concept: Traffic Accident Investigation
+  RoadDiversion; // New concept: Road Diversion
+  RoadsideSafetyInspection; // New concept: Roadside Safety Inspection
+  SafetyViolation; // New concept: Safety Violation
+
+  // Reorganized Relationships
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> RoadClosure;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  TrafficParticipant -> SafetyViolation;
+  RoadsideFacilities -> RoadsideEmergency;
+  RoadsideFacilities -> RoadObstruction;
+  RoadMaintenance -> RoadMaintenanceWork;
+  RoadCharacteristics -> RoadDeterioration;
+  RoadsideFacilityMaintenance -> RoadsideSafetyInspection;
+  RoadClosure -> RoadDiversion;
+  TrafficAccidentInvestigation -> TrafficViolations;
+
+  // New Relationships
+  RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+  RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+  RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+  RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+  RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+  RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+  RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+  TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+  TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+RoadsideEmergency; // New concept: Roadside Emergency
+RoadObstruction; // New concept: Road Obstruction
+TrafficCongestion; // New concept: Traffic Congestion
+RoadMaintenanceWork; // New concept: Road Maintenance Work
+RoadDeterioration; // New concept: Road Deterioration
+RoadsideFacilityMaintenance; // New concept: Roadside Facility Maintenance
+TrafficAccidentInvestigation; // New concept: Traffic Accident Investigation
+RoadDiversion; // New concept: Road Diversion
+RoadsideSafetyInspection; // New concept: Roadside Safety Inspection
+SafetyViolation; // New concept: Safety Violation
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> RoadClosure;
+RoadInfrastructure -> TrafficControlCenter;
+
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+TrafficParticipant -> SafetyViolation;
+RoadsideFacilities -> RoadsideEmergency;
+RoadsideFacilities -> RoadObstruction;
+RoadMaintenance -> RoadMaintenanceWork;
+RoadCharacteristics -> RoadDeterioration;
+RoadsideFacilityMaintenance -> RoadsideSafetyInspection;
+RoadClosure -> RoadDiversion;
+TrafficAccidentInvestigation -> TrafficViolations;
+
+// New Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> TrafficSignalColor;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  RoadsideEmergency; // Roadside Emergency
+  RoadObstruction; // Road Obstruction
+  RoadMaintenanceWork; // Road Maintenance Work
+  RoadDeterioration; // Road Deterioration
+  RoadsideFacilityMaintenance; // Roadside Facility Maintenance
+  TrafficAccidentInvestigation; // Traffic Accident Investigation
+  RoadDiversion; // Road Diversion
+  RoadsideSafetyInspection; // Roadside Safety Inspection
+  TrafficCongestion; // Traffic Congestion
+  SafetyViolation; // Safety Violation
+
+  // Reorganized Relationships
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  TrafficParticipant -> SafetyViolation;
+  RoadsideFacilities -> RoadsideEmergency;
+  RoadsideFacilities -> RoadObstruction;
+  RoadMaintenance -> RoadMaintenanceWork;
+  RoadCharacteristics -> RoadDeterioration;
+  RoadsideFacilityMaintenance -> RoadsideSafetyInspection;
+  RoadClosure -> RoadDiversion;
+  TrafficAccidentInvestigation -> TrafficViolations;
+
+  // New Relationships
+  RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+  RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+  RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+  RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+  RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+  RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+  RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+  TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+  TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+RoadsideEmergency; // Roadside Emergency
+RoadObstruction; // Road Obstruction
+RoadMaintenanceWork; // Road Maintenance Work
+RoadDeterioration; // Road Deterioration
+RoadsideFacilityMaintenance; // Roadside Facility Maintenance
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+RoadDiversion; // Road Diversion
+RoadsideSafetyInspection; // Roadside Safety Inspection
+TrafficCongestion; // Traffic Congestion
+SafetyViolation; // Safety Violation
+
+// Reorganized Relationships
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+TrafficParticipant -> SafetyViolation;
+RoadsideFacilities -> RoadsideEmergency;
+RoadsideFacilities -> RoadObstruction;
+RoadMaintenance -> RoadMaintenanceWork;
+RoadCharacteristics -> RoadDeterioration;
+RoadsideFacilityMaintenance -> RoadsideSafetyInspection;
+RoadClosure -> RoadDiversion;
+TrafficAccidentInvestigation -> TrafficViolations;
+
+// New Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> TrafficSignalColor;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // New Concepts
+  RoadsideEmergency; // Roadside Emergency
+  RoadObstruction; // Road Obstruction
+  RoadMaintenanceWork; // Road Maintenance Work
+  RoadsideFacilityMaintenance; // Roadside Facility Maintenance
+  RoadDeterioration; // Road Deterioration
+  RoadClosure; // Road Closure
+  RoadDiversion; // Road Diversion
+  TrafficAccidentInvestigation; // Traffic Accident Investigation
+  TrafficCongestion; // Traffic Congestion
+  SafetyViolation; // Safety Violation
+
+  // Reorganized Relationships
+  RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+  RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+  RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+  RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+  RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+  RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+  RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+  TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+  TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+  // New Relationships
+  RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+  RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+  RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+  RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+  RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+  RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+  RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+  RoadInfrastructure -> TrafficControlCenter; // Road Infrastructure can involve Traffic Control Centers
+  TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// New Concepts
+RoadsideEmergency; // Roadside Emergency
+RoadObstruction; // Road Obstruction
+RoadMaintenanceWork; // Road Maintenance Work
+RoadsideFacilityMaintenance; // Roadside Facility Maintenance
+RoadDeterioration; // Road Deterioration
+RoadClosure; // Road Closure
+RoadDiversion; // Road Diversion
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+TrafficCongestion; // Traffic Congestion
+SafetyViolation; // Safety Violation
+
+// Reorganized Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// New Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+RoadInfrastructure -> TrafficControlCenter; // Road Infrastructure can involve Traffic Control Centers
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleBehavior;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> TrafficSignalColor;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // Roadside Facilities
+  RoadsideFacilities;
+  RoadsideFacilities -> RoadsideEmergency;
+  RoadsideFacilities -> RoadObstruction;
+  RoadsideFacilities -> RoadsideFacilityMaintenance;
+
+  // Road Closure
+  RoadClosure;
+  RoadClosure -> RoadDiversion;
+  RoadClosure -> TrafficCongestion;
+
+  // Road Maintenance
+  RoadMaintenance;
+  RoadMaintenance -> RoadDeterioration;
+  RoadMaintenance -> RoadMaintenanceWork;
+  RoadMaintenance -> RoadsideFacilityMaintenance;
+
+  // Traffic Control Center
+  TrafficControlCenter;
+  TrafficControlCenter -> TrafficAccidentInvestigation;
+
+  // New Concepts
+  RoadDeterioration; // Road Deterioration
+  RoadMaintenanceWork; // Road Maintenance Work
+  RoadsideEmergency; // Roadside Emergency
+  RoadObstruction; // Road Obstruction
+  RoadDiversion; // Road Diversion
+  TrafficAccidentInvestigation; // Traffic Accident Investigation
+  TrafficCongestion; // Traffic Congestion
+  SafetyViolation; // Safety Violation
+  VehicleSafetyFeatures; // Vehicle Safety Features
+  LaneTypes; // Lane Types
+
+  // Reorganized Relationships
+  RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+  RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+  RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+  RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+  RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+  RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+  RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+  TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+  TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+  // New Relationships
+  RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+  RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+  RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+  TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+  TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// Roadside Facilities
+RoadsideFacilities;
+RoadsideFacilities -> RoadsideEmergency;
+RoadsideFacilities -> RoadObstruction;
+RoadsideFacilities -> RoadsideFacilityMaintenance;
+
+// Road Closure
+RoadClosure;
+RoadClosure -> RoadDiversion;
+RoadClosure -> TrafficCongestion;
+
+// Road Maintenance
+RoadMaintenance;
+RoadMaintenance -> RoadDeterioration;
+RoadMaintenance -> RoadMaintenanceWork;
+RoadMaintenance -> RoadsideFacilityMaintenance;
+
+// Traffic Control Center
+TrafficControlCenter;
+TrafficControlCenter -> TrafficAccidentInvestigation;
+
+// New Concepts
+RoadDeterioration; // Road Deterioration
+RoadMaintenanceWork; // Road Maintenance Work
+RoadsideEmergency; // Roadside Emergency
+RoadObstruction; // Road Obstruction
+RoadDiversion; // Road Diversion
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+TrafficCongestion; // Traffic Congestion
+SafetyViolation; // Safety Violation
+VehicleSafetyFeatures; // Vehicle Safety Features
+LaneTypes; // Lane Types
+
+// Reorganized Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// New Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// Roadside Facilities
+RoadsideFacilities;
+RoadsideFacilities -> RoadsideEmergency;
+RoadsideFacilities -> RoadObstruction;
+RoadsideFacilities -> RoadsideFacilityMaintenance;
+
+// Road Closure
+RoadClosure;
+RoadClosure -> RoadDiversion;
+RoadClosure -> TrafficCongestion;
+
+// Road Maintenance
+RoadMaintenance;
+RoadMaintenance -> RoadMaintenanceWork;
+RoadMaintenance -> RoadsideFacilityMaintenance;
+
+// Traffic Control Center
+TrafficControlCenter;
+TrafficControlCenter -> TrafficAccidentInvestigation;
+
+// New Concepts
+SafetyViolation; // Safety Violation
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+TrafficCongestion; // Traffic Congestion
+RoadClosure; // Road Closure
+RoadMaintenanceWork; // Road Maintenance Work
+RoadsideEmergency; // Roadside Emergency
+RoadObstruction; // Road Obstruction
+LaneTypes; // Lane Types
+RoadDeterioration; // Road Deterioration
+VehicleSafetyFeatures; // Vehicle Safety Features
+
+// Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// Road Infrastructure Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleBehavior;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// Roadside Facilities
+RoadsideFacilities;
+RoadsideFacilities -> RoadsideEmergency;
+RoadsideFacilities -> RoadObstruction;
+RoadsideFacilities -> RoadsideFacilityMaintenance;
+
+// Road Closure
+RoadClosure;
+RoadClosure -> RoadDiversion;
+RoadClosure -> TrafficCongestion;
+
+// Road Maintenance
+RoadMaintenance;
+RoadMaintenance -> RoadMaintenanceWork;
+RoadMaintenance -> RoadsideFacilityMaintenance;
+
+// Traffic Control Center
+TrafficControlCenter;
+TrafficControlCenter -> TrafficAccidentInvestigation;
+
+// New Concepts
+SafetyViolation; // Safety Violation
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+TrafficCongestion; // Traffic Congestion
+RoadClosure; // Road Closure
+RoadMaintenanceWork; // Road Maintenance Work
+RoadsideEmergency; // Roadside Emergency
+RoadObstruction; // Road Obstruction
+LaneTypes; // Lane Types
+RoadDeterioration; // Road Deterioration
+VehicleSafetyFeatures; // Vehicle Safety Features
+
+// Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadMaintenance -> RoadsideFacilityMaintenance; // Road Maintenance can involve Roadside Facility Maintenance
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// Road Infrastructure Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir=LR];
+
+    // Road Infrastructure
+    RoadInfrastructure;
+    RoadInfrastructure -> RoadTopology;
+    RoadInfrastructure -> TrafficInfrastructure;
+    RoadInfrastructure -> EnvironmentalConditions;
+    RoadInfrastructure -> TrafficRules;
+    RoadInfrastructure -> RoadCharacteristics;
+    RoadInfrastructure -> RoadsideFacilities;
+    RoadInfrastructure -> RoadMaintenance;
+    RoadInfrastructure -> TrafficControlCenter;
+
+    // Road Topology
+    RoadTopology;
+    RoadTopology -> RoadSegment;
+    RoadTopology -> Junction;
+
+    // Road Segment
+    RoadSegment;
+
+    // Junction Types
+    Junction;
+    Junction -> Crossroads;
+    Junction -> Roundabout;
+    Junction -> TIntersection;
+
+    // Traffic Infrastructure
+    TrafficInfrastructure;
+    TrafficInfrastructure -> LaneTypes;
+    TrafficInfrastructure -> VehicleSafetyFeatures;
+    TrafficInfrastructure -> RoadDeterioration; // New concept
+
+    // Environmental Conditions
+    EnvironmentalConditions;
+    EnvironmentalConditions -> Weather;
+    EnvironmentalConditions -> RoadConditions;
+    EnvironmentalConditions -> Visibility;
+
+    // Weather Conditions
+    Weather;
+    Weather -> Clear;
+    Weather -> Rainy;
+    Weather -> Snowy;
+    Weather -> Foggy;
+    Weather -> Windy;
+
+    // Road Conditions
+    RoadConditions;
+    RoadConditions -> Dry;
+    RoadConditions -> Wet;
+    RoadConditions -> Icy;
+
+    // Traffic Participants
+    TrafficParticipant;
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+    TrafficParticipant -> Cyclist;
+
+    // Vehicle Types
+    Vehicle;
+    Vehicle -> Car;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+    Vehicle -> Truck;
+
+    // Traffic Behavior
+    TrafficBehavior;
+    TrafficBehavior -> Speeding;
+    TrafficBehavior -> LaneChanging;
+    TrafficBehavior -> Yielding;
+
+    // Traffic Rules
+    TrafficRules;
+    TrafficRules -> TrafficControlDevices;
+    TrafficRules -> NoEntrySign;
+    TrafficRules -> OneWaySign;
+    TrafficRules -> GiveWaySign;
+    TrafficRules -> NoParkingSign;
+
+    // Traffic Control Devices
+    TrafficControlDevices;
+    TrafficControlDevices -> StopSign;
+    TrafficControlDevices -> YieldSign;
+    TrafficControlDevices -> SpeedLimitSign;
+    TrafficControlDevices -> TrafficSignalColor;
+
+    // Traffic Violations
+    TrafficViolations;
+    TrafficViolations -> Overspeeding;
+    TrafficViolations -> RedLightViolation;
+    TrafficViolations -> WrongWayDriving;
+    TrafficViolations -> SeatbeltViolation;
+    TrafficViolations -> DrunkDriving;
+    TrafficViolations -> SafetyViolation; // Merged duplicate concept
+
+    // Roadside Facilities
+    RoadsideFacilities;
+    RoadsideFacilities -> RoadsideEmergency;
+    RoadsideFacilities -> RoadObstruction;
+    RoadsideFacilities -> RoadsideFacilityMaintenance;
+
+    // Road Closure
+    RoadClosure;
+    RoadClosure -> RoadDiversion;
+    RoadClosure -> TrafficCongestion;
+
+    // Road Maintenance
+    RoadMaintenance;
+    RoadMaintenance -> RoadMaintenanceWork;
+    RoadMaintenance -> RoadsideFacilityMaintenance; // Merged duplicate concept
+
+    // Traffic Control Center
+    TrafficControlCenter;
+    TrafficControlCenter -> TrafficAccidentInvestigation;
+
+    // New Concepts
+    TrafficAccidentInvestigation; // Traffic Accident Investigation
+    TrafficCongestion; // Traffic Congestion
+    RoadDeterioration; // Road Deterioration
+    RoadMaintenanceWork; // Road Maintenance Work
+    RoadsideEmergency; // Roadside Emergency
+    RoadObstruction; // Road Obstruction
+    LaneTypes; // Lane Types
+    VehicleSafetyFeatures; // Vehicle Safety Features
+    SafetyViolation; // Safety Violation
+
+    // Relationships
+    RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+    RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+    RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+    RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+    RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+    RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+    TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+    TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+    // Road Infrastructure Relationships
+    RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+    RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+    RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+    TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+    TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+TrafficInfrastructure -> RoadDeterioration; // New concept
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+TrafficViolations -> SafetyViolation; // Merged duplicate concept
+
+// Roadside Facilities
+RoadsideFacilities;
+RoadsideFacilities -> RoadsideEmergency;
+RoadsideFacilities -> RoadObstruction;
+RoadsideFacilities -> RoadsideFacilityMaintenance;
+
+// Road Closure
+RoadClosure;
+RoadClosure -> RoadDiversion;
+RoadClosure -> TrafficCongestion;
+
+// Road Maintenance
+RoadMaintenance;
+RoadMaintenance -> RoadMaintenanceWork;
+RoadMaintenance -> RoadsideFacilityMaintenance; // Merged duplicate concept
+
+// Traffic Control Center
+TrafficControlCenter;
+TrafficControlCenter -> TrafficAccidentInvestigation;
+
+// New Concepts
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+TrafficCongestion; // Traffic Congestion
+RoadDeterioration; // Road Deterioration
+RoadMaintenanceWork; // Road Maintenance Work
+RoadsideEmergency; // Roadside Emergency
+RoadObstruction; // Road Obstruction
+LaneTypes; // Lane Types
+VehicleSafetyFeatures; // Vehicle Safety Features
+SafetyViolation; // Safety Violation
+
+// Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// Road Infrastructure Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+  TrafficInfrastructure -> RoadDeterioration;
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> TrafficSignalColor;
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // Roadside Facilities
+  RoadsideFacilities;
+  RoadsideFacilities -> RoadsideEmergency;
+  RoadsideFacilities -> RoadObstruction;
+  RoadsideFacilities -> RoadMaintenanceWork; // Merged duplicate concept
+
+  // Road Closure
+  RoadClosure;
+  RoadClosure -> RoadDiversion;
+  RoadClosure -> TrafficCongestion;
+
+  // Road Maintenance
+  RoadMaintenance;
+  RoadMaintenance -> RoadMaintenanceWork;
+
+  // Traffic Control Center
+  TrafficControlCenter;
+  TrafficControlCenter -> TrafficAccidentInvestigation;
+
+  // New Concepts
+  TrafficAccidentInvestigation; // Traffic Accident Investigation
+  TrafficCongestion; // Traffic Congestion
+  RoadDeterioration; // Road Deterioration
+  RoadMaintenanceWork; // Road Maintenance Work
+  RoadsideEmergency; // Roadside Emergency
+  RoadObstruction; // Road Obstruction
+  LaneTypes; // Lane Types
+  VehicleSafetyFeatures; // Vehicle Safety Features
+  SafetyViolation; // Safety Violation
+  Roadwork; // Roadwork (New concept)
+  TrafficSignal; // Traffic Signal (New concept)
+  PedestrianCrossing; // Pedestrian Crossing (New concept)
+  TrafficAccident; // Traffic Accident (New concept)
+  TollBooth; // Toll Booth (New concept)
+  StreetLight; // Street Light (New concept)
+  SpeedBump; // Speed Bump (New concept)
+  PedestrianBridge; // Pedestrian Bridge (New concept)
+  TrafficCamera; // Traffic Camera (New concept)
+  ZebraCrossing; // Zebra Crossing (New concept)
+
+  // Relationships
+  RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+  RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+  RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+  RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+  RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+  RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+  TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+  TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+  // Road Infrastructure Relationships
+  RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+  RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+  RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+  TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+  TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+TrafficInfrastructure -> RoadDeterioration;
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignalColor;
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// Roadside Facilities
+RoadsideFacilities;
+RoadsideFacilities -> RoadsideEmergency;
+RoadsideFacilities -> RoadObstruction;
+RoadsideFacilities -> RoadMaintenanceWork; // Merged duplicate concept
+
+// Road Closure
+RoadClosure;
+RoadClosure -> RoadDiversion;
+RoadClosure -> TrafficCongestion;
+
+// Road Maintenance
+RoadMaintenance;
+RoadMaintenance -> RoadMaintenanceWork;
+
+// Traffic Control Center
+TrafficControlCenter;
+TrafficControlCenter -> TrafficAccidentInvestigation;
+
+// New Concepts
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+TrafficCongestion; // Traffic Congestion
+RoadDeterioration; // Road Deterioration
+RoadMaintenanceWork; // Road Maintenance Work
+RoadsideEmergency; // Roadside Emergency
+RoadObstruction; // Road Obstruction
+LaneTypes; // Lane Types
+VehicleSafetyFeatures; // Vehicle Safety Features
+SafetyViolation; // Safety Violation
+Roadwork; // Roadwork (New concept)
+TrafficSignal; // Traffic Signal (New concept)
+PedestrianCrossing; // Pedestrian Crossing (New concept)
+TrafficAccident; // Traffic Accident (New concept)
+TollBooth; // Toll Booth (New concept)
+StreetLight; // Street Light (New concept)
+SpeedBump; // Speed Bump (New concept)
+PedestrianBridge; // Pedestrian Bridge (New concept)
+TrafficCamera; // Traffic Camera (New concept)
+ZebraCrossing; // Zebra Crossing (New concept)
+
+// Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// Road Infrastructure Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Road Infrastructure
+  RoadInfrastructure;
+  RoadInfrastructure -> RoadTopology;
+  RoadInfrastructure -> TrafficInfrastructure;
+  RoadInfrastructure -> EnvironmentalConditions;
+  RoadInfrastructure -> TrafficRules;
+  RoadInfrastructure -> RoadCharacteristics;
+  RoadInfrastructure -> RoadsideFacilities;
+  RoadInfrastructure -> RoadMaintenance;
+  RoadInfrastructure -> TrafficControlCenter;
+
+  // Road Topology
+  RoadTopology;
+  RoadTopology -> RoadSegment;
+  RoadTopology -> Junction;
+
+  // Road Segment
+  RoadSegment;
+
+  // Junction Types
+  Junction;
+  Junction -> Crossroads;
+  Junction -> Roundabout;
+  Junction -> TIntersection;
+
+  // Traffic Infrastructure
+  TrafficInfrastructure;
+  TrafficInfrastructure -> LaneTypes;
+  TrafficInfrastructure -> VehicleSafetyFeatures;
+  TrafficInfrastructure -> RoadDeterioration;
+  TrafficInfrastructure -> TollBooth; // New concept: Toll Booth
+
+  // Environmental Conditions
+  EnvironmentalConditions;
+  EnvironmentalConditions -> Weather;
+  EnvironmentalConditions -> RoadConditions;
+  EnvironmentalConditions -> Visibility;
+
+  // Weather Conditions
+  Weather;
+  Weather -> Clear;
+  Weather -> Rainy;
+  Weather -> Snowy;
+  Weather -> Foggy;
+  Weather -> Windy;
+
+  // Road Conditions
+  RoadConditions;
+  RoadConditions -> Dry;
+  RoadConditions -> Wet;
+  RoadConditions -> Icy;
+
+  // Traffic Participants
+  TrafficParticipant;
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+
+  // Vehicle Types
+  Vehicle;
+  Vehicle -> Car;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Truck;
+
+  // Traffic Behavior
+  TrafficBehavior;
+  TrafficBehavior -> Speeding;
+  TrafficBehavior -> LaneChanging;
+  TrafficBehavior -> Yielding;
+
+  // Traffic Rules
+  TrafficRules;
+  TrafficRules -> TrafficControlDevices;
+  TrafficRules -> NoEntrySign;
+  TrafficRules -> OneWaySign;
+  TrafficRules -> GiveWaySign;
+  TrafficRules -> NoParkingSign;
+
+  // Traffic Control Devices
+  TrafficControlDevices;
+  TrafficControlDevices -> StopSign;
+  TrafficControlDevices -> YieldSign;
+  TrafficControlDevices -> SpeedLimitSign;
+  TrafficControlDevices -> TrafficSignal; // New concept: Traffic Signal
+
+  // Traffic Violations
+  TrafficViolations;
+  TrafficViolations -> Overspeeding;
+  TrafficViolations -> RedLightViolation;
+  TrafficViolations -> WrongWayDriving;
+  TrafficViolations -> SeatbeltViolation;
+  TrafficViolations -> DrunkDriving;
+
+  // Roadside Facilities
+  RoadsideFacilities;
+  RoadsideFacilities -> RoadsideEmergency; // Merged duplicate concept
+  RoadsideFacilities -> RoadObstruction; // Merged duplicate concept
+  RoadsideFacilities -> RoadMaintenanceWork; // Merged duplicate concept
+  RoadsideFacilities -> StreetLight; // New concept: Street Light
+  RoadsideFacilities -> SpeedBump; // New concept: Speed Bump
+  RoadsideFacilities -> PedestrianBridge; // New concept: Pedestrian Bridge
+  RoadsideFacilities -> TrafficCamera; // New concept: Traffic Camera
+
+  // Road Closure
+  RoadClosure;
+  RoadClosure -> RoadDiversion;
+  RoadClosure -> TrafficCongestion;
+
+  // Road Maintenance
+  RoadMaintenance;
+  RoadMaintenance -> RoadMaintenanceWork;
+
+  // Traffic Control Center
+  TrafficControlCenter;
+  TrafficControlCenter -> TrafficAccidentInvestigation;
+
+  // New Concepts
+  TrafficAccidentInvestigation; // Traffic Accident Investigation
+  TrafficCongestion; // Traffic Congestion
+  RoadDeterioration; // Road Deterioration
+  RoadMaintenanceWork; // Road Maintenance Work
+  LaneTypes; // Lane Types
+  VehicleSafetyFeatures; // Vehicle Safety Features
+  SafetyViolation; // Safety Violation
+  Roadwork; // Roadwork (New concept)
+  PedestrianCrossing; // Pedestrian Crossing (New concept)
+  TrafficAccident; // Traffic Accident (New concept)
+  ZebraCrossing; // Zebra Crossing (New concept)
+
+  // Relationships
+  RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+  RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+  RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+  RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+  RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+  RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+  TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+  TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+  // Road Infrastructure Relationships
+  RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+  RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+  RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+  TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+  TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+TrafficInfrastructure -> RoadDeterioration;
+TrafficInfrastructure -> TollBooth; // New concept: Toll Booth
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignal; // New concept: Traffic Signal
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// Roadside Facilities
+RoadsideFacilities;
+RoadsideFacilities -> RoadsideEmergency; // Merged duplicate concept
+RoadsideFacilities -> RoadObstruction; // Merged duplicate concept
+RoadsideFacilities -> RoadMaintenanceWork; // Merged duplicate concept
+RoadsideFacilities -> StreetLight; // New concept: Street Light
+RoadsideFacilities -> SpeedBump; // New concept: Speed Bump
+RoadsideFacilities -> PedestrianBridge; // New concept: Pedestrian Bridge
+RoadsideFacilities -> TrafficCamera; // New concept: Traffic Camera
+
+// Road Closure
+RoadClosure;
+RoadClosure -> RoadDiversion;
+RoadClosure -> TrafficCongestion;
+
+// Road Maintenance
+RoadMaintenance;
+RoadMaintenance -> RoadMaintenanceWork;
+
+// Traffic Control Center
+TrafficControlCenter;
+TrafficControlCenter -> TrafficAccidentInvestigation;
+
+// New Concepts
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+TrafficCongestion; // Traffic Congestion
+RoadDeterioration; // Road Deterioration
+RoadMaintenanceWork; // Road Maintenance Work
+LaneTypes; // Lane Types
+VehicleSafetyFeatures; // Vehicle Safety Features
+SafetyViolation; // Safety Violation
+Roadwork; // Roadwork (New concept)
+PedestrianCrossing; // Pedestrian Crossing (New concept)
+TrafficAccident; // Traffic Accident (New concept)
+ZebraCrossing; // Zebra Crossing (New concept)
+
+// Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadsideFacilities -> RoadsideEmergency; // Roadside Facilities can include handling Roadside Emergencies
+RoadsideFacilities -> RoadObstruction; // Roadside Facilities can involve handling Road Obstructions
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// Road Infrastructure Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+TrafficInfrastructure -> TollBooth; // New concept: Toll Booth
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignal; // New concept: Traffic Signal
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// Roadside Facilities
+RoadsideFacilities;
+RoadsideFacilities -> RoadMaintenanceWork; // Merged duplicate concept
+RoadsideFacilities -> StreetLight; // New concept: Street Light
+RoadsideFacilities -> SpeedBump; // New concept: Speed Bump
+RoadsideFacilities -> PedestrianBridge; // New concept: Pedestrian Bridge
+RoadsideFacilities -> TrafficCamera; // New concept: Traffic Camera
+
+// Road Closure
+RoadClosure;
+RoadClosure -> RoadDiversion;
+RoadClosure -> TrafficCongestion;
+
+// Road Maintenance
+RoadMaintenance;
+RoadMaintenance -> RoadMaintenanceWork;
+
+// Traffic Control Center
+TrafficControlCenter;
+TrafficControlCenter -> TrafficAccidentInvestigation;
+
+// New Concepts
+TollBooth; // Toll Booth (New concept)
+RoadDeterioration; // Road Deterioration
+LaneTypes; // Lane Types
+VehicleSafetyFeatures; // Vehicle Safety Features
+SafetyViolation; // Safety Violation (New concept)
+Roadwork; // Roadwork (New concept)
+PedestrianCrossing; // Pedestrian Crossing (New concept)
+TrafficAccident; // Traffic Accident (New concept)
+ZebraCrossing; // Zebra Crossing (New concept)
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+
+// Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// Road Infrastructure Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+// Road Infrastructure
+RoadInfrastructure;
+RoadInfrastructure -> RoadTopology;
+RoadInfrastructure -> TrafficInfrastructure;
+RoadInfrastructure -> EnvironmentalConditions;
+RoadInfrastructure -> TrafficRules;
+RoadInfrastructure -> RoadCharacteristics;
+RoadInfrastructure -> RoadsideFacilities;
+RoadInfrastructure -> RoadMaintenance;
+RoadInfrastructure -> TrafficControlCenter;
+
+// Road Topology
+RoadTopology;
+RoadTopology -> RoadSegment;
+RoadTopology -> Junction;
+
+// Road Segment
+RoadSegment;
+
+// Junction Types
+Junction;
+Junction -> Crossroads;
+Junction -> Roundabout;
+Junction -> TIntersection;
+
+// Traffic Infrastructure
+TrafficInfrastructure;
+TrafficInfrastructure -> LaneTypes;
+TrafficInfrastructure -> VehicleSafetyFeatures;
+TrafficInfrastructure -> TollBooth; // New concept: Toll Booth
+
+// Environmental Conditions
+EnvironmentalConditions;
+EnvironmentalConditions -> Weather;
+EnvironmentalConditions -> RoadConditions;
+EnvironmentalConditions -> Visibility;
+
+// Weather Conditions
+Weather;
+Weather -> Clear;
+Weather -> Rainy;
+Weather -> Snowy;
+Weather -> Foggy;
+Weather -> Windy;
+
+// Road Conditions
+RoadConditions;
+RoadConditions -> Dry;
+RoadConditions -> Wet;
+RoadConditions -> Icy;
+
+// Traffic Participants
+TrafficParticipant;
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+
+// Vehicle Types
+Vehicle;
+Vehicle -> Car;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Truck;
+
+// Traffic Behavior
+TrafficBehavior;
+TrafficBehavior -> Speeding;
+TrafficBehavior -> LaneChanging;
+TrafficBehavior -> Yielding;
+
+// Traffic Rules
+TrafficRules;
+TrafficRules -> TrafficControlDevices;
+TrafficRules -> NoEntrySign;
+TrafficRules -> OneWaySign;
+TrafficRules -> GiveWaySign;
+TrafficRules -> NoParkingSign;
+
+// Traffic Control Devices
+TrafficControlDevices;
+TrafficControlDevices -> StopSign;
+TrafficControlDevices -> YieldSign;
+TrafficControlDevices -> SpeedLimitSign;
+TrafficControlDevices -> TrafficSignal; // New concept: Traffic Signal
+
+// Traffic Violations
+TrafficViolations;
+TrafficViolations -> Overspeeding;
+TrafficViolations -> RedLightViolation;
+TrafficViolations -> WrongWayDriving;
+TrafficViolations -> SeatbeltViolation;
+TrafficViolations -> DrunkDriving;
+
+// Roadside Facilities
+RoadsideFacilities;
+RoadsideFacilities -> RoadMaintenanceWork; // Merged duplicate concept
+RoadsideFacilities -> StreetLight; // New concept: Street Light
+RoadsideFacilities -> SpeedBump; // New concept: Speed Bump
+RoadsideFacilities -> PedestrianBridge; // New concept: Pedestrian Bridge
+RoadsideFacilities -> TrafficCamera; // New concept: Traffic Camera
+
+// Road Closure
+RoadClosure;
+RoadClosure -> RoadDiversion;
+RoadClosure -> TrafficCongestion;
+
+// Road Maintenance
+RoadMaintenance;
+RoadMaintenance -> RoadMaintenanceWork;
+
+// Traffic Control Center
+TrafficControlCenter;
+TrafficControlCenter -> TrafficAccidentInvestigation;
+
+// New Concepts
+TollBooth; // Toll Booth (New concept)
+RoadDeterioration; // Road Deterioration
+LaneTypes; // Lane Types
+VehicleSafetyFeatures; // Vehicle Safety Features
+SafetyViolation; // Safety Violation (New concept)
+Roadwork; // Roadwork (New concept)
+PedestrianCrossing; // Pedestrian Crossing (New concept)
+TrafficAccident; // Traffic Accident (New concept)
+ZebraCrossing; // Zebra Crossing (New concept)
+TrafficAccidentInvestigation; // Traffic Accident Investigation
+
+// Relationships
+RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+// Road Infrastructure Relationships
+RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir=LR];
+
+    // Road Infrastructure
+    RoadInfrastructure;
+    RoadInfrastructure -> RoadTopology;
+    RoadInfrastructure -> TrafficInfrastructure;
+    RoadInfrastructure -> EnvironmentalConditions;
+    RoadInfrastructure -> TrafficRules;
+    RoadInfrastructure -> RoadCharacteristics;
+    RoadInfrastructure -> RoadsideFacilities;
+    RoadInfrastructure -> RoadMaintenance;
+    RoadInfrastructure -> TrafficControlCenter;
+
+    // Road Topology
+    RoadTopology;
+    RoadTopology -> RoadSegment;
+    RoadTopology -> Junction;
+
+    // Road Segment
+    RoadSegment;
+
+    // Junction Types
+    Junction;
+    Junction -> Crossroads;
+    Junction -> Roundabout;
+    Junction -> TIntersection;
+
+    // Traffic Infrastructure
+    TrafficInfrastructure;
+    TrafficInfrastructure -> LaneTypes;
+    TrafficInfrastructure -> VehicleSafetyFeatures;
+    TrafficInfrastructure -> TollBooth; // New concept: Toll Booth
+
+    // Environmental Conditions
+    EnvironmentalConditions;
+    EnvironmentalConditions -> Weather;
+    EnvironmentalConditions -> RoadConditions;
+    EnvironmentalConditions -> Visibility;
+
+    // Weather Conditions
+    Weather;
+    Weather -> Clear;
+    Weather -> Rainy;
+    Weather -> Snowy;
+    Weather -> Foggy;
+    Weather -> Windy;
+
+    // Road Conditions
+    RoadConditions;
+    RoadConditions -> Dry;
+    RoadConditions -> Wet;
+    RoadConditions -> Icy;
+
+    // Traffic Participants
+    TrafficParticipant;
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+    TrafficParticipant -> Cyclist;
+
+    // Vehicle Types
+    Vehicle;
+    Vehicle -> Car;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+    Vehicle -> Truck;
+
+    // Traffic Behavior
+    TrafficBehavior;
+    TrafficBehavior -> Speeding;
+    TrafficBehavior -> LaneChanging;
+    TrafficBehavior -> Yielding;
+
+    // Traffic Rules
+    TrafficRules;
+    TrafficRules -> TrafficControlDevices;
+    TrafficRules -> NoEntrySign;
+    TrafficRules -> OneWaySign;
+    TrafficRules -> GiveWaySign;
+    TrafficRules -> NoParkingSign;
+
+    // Traffic Control Devices
+    TrafficControlDevices;
+    TrafficControlDevices -> StopSign;
+    TrafficControlDevices -> YieldSign;
+    TrafficControlDevices -> SpeedLimitSign;
+    TrafficControlDevices -> TrafficSignal; // New concept: Traffic Signal
+
+    // Traffic Violations
+    TrafficViolations;
+    TrafficViolations -> Overspeeding;
+    TrafficViolations -> RedLightViolation;
+    TrafficViolations -> WrongWayDriving;
+    TrafficViolations -> SeatbeltViolation;
+    TrafficViolations -> DrunkDriving;
+
+    // Roadside Facilities
+    RoadsideFacilities;
+    RoadsideFacilities -> RoadMaintenanceWork; // Merged duplicate concept
+    RoadsideFacilities -> StreetLight; // New concept: Street Light
+    RoadsideFacilities -> SpeedBump; // New concept: Speed Bump
+    RoadsideFacilities -> PedestrianBridge; // New concept: Pedestrian Bridge
+    RoadsideFacilities -> TrafficCamera; // New concept: Traffic Camera
+
+    // Road Closure
+    RoadClosure;
+    RoadClosure -> RoadDiversion;
+    RoadClosure -> TrafficCongestion;
+
+    // Road Maintenance
+    RoadMaintenance;
+    RoadMaintenance -> RoadMaintenanceWork;
+
+    // Traffic Control Center
+    TrafficControlCenter;
+    TrafficControlCenter -> TrafficAccidentInvestigation;
+
+    // New Concepts
+    TollBooth; // Toll Booth (New concept)
+    RoadDeterioration; // Road Deterioration
+    LaneTypes; // Lane Types
+    VehicleSafetyFeatures; // Vehicle Safety Features
+    SafetyViolation; // Safety Violation (New concept)
+    Roadwork; // Roadwork (New concept)
+    PedestrianCrossing; // Pedestrian Crossing (New concept)
+    TrafficAccident; // Traffic Accident (New concept)
+    ZebraCrossing; // Zebra Crossing (New concept)
+    TrafficAccidentInvestigation; // Traffic Accident Investigation
+    // New concept: Traffic Jam
+    // New concept: Road Signage
+    // New concept: Road Markings
+    // New concept: Traffic Police
+    // New concept: Roadside Assistance
+    // New concept: Roadside Emergency Phone
+    // New concept: Traffic Congestion Monitoring
+    // New concept: Roadside Repair Workshop
+    // New concept: Autonomous Vehicle
+
+    // Relationships
+    RoadCharacteristics -> RoadDeterioration; // Road Characteristics can cause Road Deterioration
+    RoadMaintenance -> RoadMaintenanceWork; // Road Maintenance can involve Road Maintenance Work
+    RoadClosure -> RoadDiversion; // Road Closures can lead to Road Diversions
+    RoadClosure -> TrafficCongestion; // Road Closures can cause Traffic Congestion
+    TrafficControlCenter -> TrafficAccidentInvestigation; // Traffic Control Centers can handle Traffic Accident Investigations
+    TrafficParticipant -> SafetyViolation; // Traffic Participants can commit Safety Violations
+
+    // Road Infrastructure Relationships
+    RoadInfrastructure -> RoadClosure; // Road Infrastructure can involve Road Closures
+    RoadInfrastructure -> RoadMaintenance; // Road Infrastructure can involve Road Maintenance
+    RoadInfrastructure -> RoadsideFacilities; // Road Infrastructure can include Roadside Facilities
+    TrafficInfrastructure -> LaneTypes; // Traffic Infrastructure can include Lane Types
+    TrafficInfrastructure -> VehicleSafetyFeatures; // Traffic Infrastructure can include Vehicle Safety Features
+    // Road Infrastructure -> TrafficControlCenter; // Road Infrastructure can be monitored by Traffic Control Centers
+}

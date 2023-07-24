@@ -13,7 +13,8 @@ You should improve the ontology structure.
 `;
 
 export const FormatTemplate = `Output the new ontology in DOT format.
-The parent class and child class should be arranged as: parent class -> child class.`;
+The super class and sub class should be arranged as: super class -> sub class.`;
+// The parent class and child class should be arranged as: parent class -> child class.`;
 
 export const ResponseTemplate = `After reviewing the given ontology and considering road driving scenarios, I have added 10 new concepts as follows:
 

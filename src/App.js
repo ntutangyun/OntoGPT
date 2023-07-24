@@ -1,12 +1,14 @@
-import "./App.css";
 import {Layout,} from "antd";
 import HeaderComponent from "./HeaderComponent";
 import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
-import ConceptHierarchyDistillationComponent from "./ConceptHierarchyDistillation/ConceptHierarchyDistillationComponent";
+import ConceptHierarchyDistillationComponent
+    from "./ConceptHierarchyDistillation/ConceptHierarchyDistillationComponent";
 import React from "react";
-import ConceptDefinitionDistillationComponent from "./ConceptDefinitionDistillation/ConceptDefinitionDistillationComponent";
+import ConceptDefinitionDistillationComponent
+    from "./ConceptDefinitionDistillation/ConceptDefinitionDistillationComponent";
 import ConceptRelationshipDistillationComponent
     from "./ConceptRelationshipDistillation/ConceptRelationshipDistillationComponent";
+import Demonstrations from "./Demonstrations/Demonstrations";
 
 const {Footer} = Layout;
 
@@ -22,9 +24,12 @@ function App() {
             <Layout>
                 <HeaderComponent/>
                 <Routes>
+                    <Route path={"/demonstrations"} element={<Demonstrations/>}/>
                     <Route path={"/concept-hierarchy-distillation"} element={<ConceptHierarchyDistillationComponent/>}/>
-                    <Route path={"/concept-definition-distillation"} element={<ConceptDefinitionDistillationComponent/>}/>
-                    <Route path={"/concept-relation-distillation"} element={<ConceptRelationshipDistillationComponent/>}/>
+                    <Route path={"/concept-definition-distillation"}
+                           element={<ConceptDefinitionDistillationComponent/>}/>
+                    <Route path={"/concept-relation-distillation"}
+                           element={<ConceptRelationshipDistillationComponent/>}/>
                     <Route path={"/concept-property-distillation"} element={<p>UI Under Development</p>}/>
                     <Route path={"*"} element={<Navigate to={"/concept-hierarchy-distillation"} replace={true}/>}/>
                 </Routes>
