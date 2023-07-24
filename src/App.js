@@ -8,7 +8,7 @@ import ConceptDefinitionDistillationComponent
     from "./ConceptDefinitionDistillation/ConceptDefinitionDistillationComponent";
 import ConceptRelationshipDistillationComponent
     from "./ConceptRelationshipDistillation/ConceptRelationshipDistillationComponent";
-import Demonstrations from "./Demonstrations/Demonstrations";
+import Documentation from "./Documentation/Documentation";
 
 const {Footer} = Layout;
 
@@ -24,7 +24,7 @@ function App() {
             <Layout>
                 <HeaderComponent/>
                 <Routes>
-                    <Route path={"/demonstrations"} element={<Demonstrations/>}/>
+                    <Route path={"/documentation"} element={<Documentation/>}/>
                     <Route path={"/concept-hierarchy-distillation"} element={<ConceptHierarchyDistillationComponent/>}/>
                     <Route path={"/concept-definition-distillation"}
                            element={<ConceptDefinitionDistillationComponent/>}/>

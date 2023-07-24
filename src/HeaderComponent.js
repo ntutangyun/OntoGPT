@@ -54,7 +54,7 @@ export default function HeaderComponent() {
         console.log("Location changed!", location.pathname);
     }, [location]);
 
-    const isLink0Active = location.pathname === "/demonstrations";
+    const isLink0Active = location.pathname === "/documentation";
     const isLink1Active = location.pathname === "/concept-hierarchy-distillation";
     const isLink2Active = location.pathname === "/concept-definition-distillation";
     const isLink3Active = location.pathname === "/concept-relation-distillation";
@@ -68,8 +68,8 @@ export default function HeaderComponent() {
                 onMouseEnter={() => setLink0Hover(true)}
                 onMouseLeave={() => setLink0Hover(false)}
                 onClick={() =>
-                    navigate("/demonstrations")}>
-                Paper Experiment Results
+                    navigate("/documentation")}>
+                Documentation
             </div>
             <div
                 style={link1Hover ? linkHoverStyle : isLink1Active ? linkActiveStyle : linkStyle}
