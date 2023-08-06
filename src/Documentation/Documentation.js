@@ -14,11 +14,18 @@ const dataIDList = {
         Definition: "chatgpt-3.5-auto-definition",
         Relationship: "chatgpt-3.5-auto-relationship",
         Property: "chatgpt-3.5-auto-property"
+    },
+    ChatGPT35Partial: {
+        Hierarchy: "chatgpt-3.5-partial-hierarchy",
+        Definition: "chatgpt-3.5-partial-definition",
+        Relationship: "chatgpt-3.5-partial-relationship",
+        Property: "chatgpt-3.5-partial-property"
     }
 };
 
 const dataUrlList = {
-    [dataIDList["ChatGPT35Auto"]["Hierarchy"]]: "docs/demos/chatgpt-3.5-auto-concept-hierarchy-distillation.log"
+    [dataIDList["ChatGPT35Auto"]["Hierarchy"]]: "docs/demos/chatgpt-3.5-auto-concept-hierarchy-distillation.log",
+    [dataIDList["ChatGPT35Partial"]["Hierarchy"]]: "docs/demos/chatgpt-3.5-partial-concept-hierarchy-distillation.log"
 };
 
 export default function Documentation() {
@@ -104,7 +111,11 @@ export default function Documentation() {
                     </video>
                 </Col>
             </Row>
-            <br/>
+            <Row style={{justifyContent: "center", margin: "1rem 0rem"}}>
+                <Col span={16}>
+                    <hr/>
+                </Col>
+            </Row>
             {
                 documentationData ? <Row style={{justifyContent: "center"}}>
                     <Col span={16}>
@@ -117,6 +128,29 @@ export default function Documentation() {
                                 dataIDList["ChatGPT35Auto"]["Definition"],
                                 dataIDList["ChatGPT35Auto"]["Relationship"],
                                 dataIDList["ChatGPT35Auto"]["Property"]
+                            )}>
+                        </Tabs>
+                    </Col>
+                </Row> : <p>Loading history data</p>
+            }
+            <Row style={{justifyContent: "center", margin: "1rem 0rem"}}>
+                <Col span={16}>
+                    <hr/>
+                </Col>
+            </Row>
+            {
+                documentationData ? <Row style={{justifyContent: "center"}}>
+                    <Col span={16}>
+                        <h1>Demo Result - ChatGPT 3.5 - Autonomous Driving Domain - With minimal manual
+                            intervention</h1>
+                        <Tabs
+                            items={generateApplicationResultTabs(
+                                documentationData,
+                                "ChatGPT35DrivingPartial",
+                                dataIDList["ChatGPT35Partial"]["Hierarchy"],
+                                dataIDList["ChatGPT35Partial"]["Definition"],
+                                dataIDList["ChatGPT35Partial"]["Relationship"],
+                                dataIDList["ChatGPT35Partial"]["Property"]
                             )}>
                         </Tabs>
                     </Col>

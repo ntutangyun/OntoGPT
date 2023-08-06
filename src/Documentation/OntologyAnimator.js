@@ -35,11 +35,12 @@ export default function OntologyAnimator({canvasID, distillationLog}) {
     return <>
         {dotHistory &&
             <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-                <p style={{margin: "0.5rem"}}>Select Iteration</p>
-                <Pagination total={dotHistory.length / 2} pageSize={1}
-                            onChange={page => setLoopIndex((page - 1) * 2)}/>
+                <p style={{margin: "0.5rem"}}>Select Iteration (odd: prompt, even: response)</p>
+                <Pagination total={dotHistory.length}
+                            pageSize={1}
+                            onChange={page => setLoopIndex(page - 1)}/>
 
             </div>}
-        <div id={canvasID} style={{...graphStyle, maxHeight: "calc(100vh - 220px)"}}/>
+        <div id={canvasID} style={{...graphStyle, height: "calc(100vh - 150px)", maxHeight: "calc(100vh - 150px)"}}/>
     </>;
 }

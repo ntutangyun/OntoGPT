@@ -1,0 +1,4292 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+     graph [rankdir = LR];
+     EnvironmentalConditions;
+     RoadTopologyAndTrafficInfrastructure -> Junction;
+     TrafficParticipantAndBehavior;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir = LR];
+    RoadDrivingScenario;
+    RoadTopologyAndTrafficInfrastructure -> Junction;
+    RoadTopologyAndTrafficInfrastructure -> Road;
+    RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+    Junction -> TrafficSignal;
+    Junction -> StopSign;
+    Road -> Lane;
+    Road -> RoadSegment;
+    TrafficInfrastructure -> TrafficLight;
+    TrafficParticipantAndBehavior;
+    TrafficParticipantAndBehavior -> Vehicle;
+    TrafficParticipantAndBehavior -> Pedestrian;
+    TrafficParticipantAndBehavior -> Cyclist;
+    Vehicle -> Car;
+    Vehicle -> Truck;
+    Vehicle -> Motorcycle;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+EnvironmentalConditions;
+RoadTopologyAndTrafficInfrastructure -> Junction;
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+Road -> RoadSegment;
+RoadSegment -> Lane;
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+TrafficParticipantAndBehavior;
+TrafficParticipantAndBehavior -> Vehicle;
+TrafficParticipantAndBehavior -> Pedestrian;
+TrafficParticipantAndBehavior -> Cyclist;
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir = LR];
+
+  EnvironmentalConditions;
+
+  RoadTopologyAndTrafficInfrastructure -> Junction;
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+  Road -> RoadSegment;
+  RoadSegment -> Lane;
+
+  TrafficInfrastructure -> TrafficLight;
+  TrafficInfrastructure -> StopSign;
+
+  TrafficParticipantAndBehavior;
+
+  RoadSegment -> TrafficParticipantAndBehavior; // RoadSegment may involve Traffic Participants
+
+  TrafficParticipantAndBehavior -> Vehicle;
+  TrafficParticipantAndBehavior -> Pedestrian;
+  TrafficParticipantAndBehavior -> Cyclist;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+
+  Pedestrian -> PedestrianCrossing; // New concept: PedestrianCrossing
+
+  Cyclist -> Bicycle; // Merged duplicate: Cyclist -> Bicycle
+
+  Vehicle -> Bus; // New concept: Bus
+  Vehicle -> ElectricCar; // New concept: ElectricCar
+
+  Car -> Sedan; // New concept: Sedan
+  Car -> SUV; // New concept: SUV
+
+  Truck -> PickupTruck; // New concept: PickupTruck
+  Truck -> DeliveryTruck; // New concept: DeliveryTruck
+
+  Lane -> BusLane; // New concept: BusLane
+  Lane -> BicycleLane; // New concept: BicycleLane
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+
+EnvironmentalConditions;
+
+RoadTopologyAndTrafficInfrastructure -> Junction;
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+Road -> RoadSegment;
+RoadSegment -> Lane;
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+
+TrafficParticipantAndBehavior;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Cyclist;
+TrafficParticipant-> Bicycle;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+
+Vehicle -> Bus; // New concept: Bus
+
+Car -> Sedan; // New concept: Sedan
+Car -> SUV; // New concept: SUV
+
+Truck -> PickupTruck; // New concept: PickupTruck
+Truck -> DeliveryTruck; // New concept: DeliveryTruck
+
+Lane -> BusLane; // New concept: BusLane
+Lane -> BicycleLane; // New concept: BicycleLane
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir = LR];
+
+  RoadDrivingScenario;
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  RoadTopologyAndTrafficInfrastructure -> Junction;
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+  TrafficInfrastructure -> TrafficLight;
+  TrafficInfrastructure -> StopSign;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> PedestrianCrossing;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Cyclist;
+  TrafficParticipant -> Bicycle;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+
+  // New concepts
+  RoadDrivingScenario -> RoadCondition;
+  RoadDrivingScenario -> RoadUser;
+  RoadDrivingScenario -> RoadObstruction;
+
+  RoadUser -> Driver;
+  RoadUser -> Passenger;
+
+  RoadCondition -> DryRoad;
+  RoadCondition -> WetRoad;
+  RoadCondition -> IcyRoad;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+
+  TrafficParticipant -> Motorcyclist;
+  TrafficParticipant -> BusDriver;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+RoadTopologyAndTrafficInfrastructure -> Junction;
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Bicycle;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Passenger;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Road -> RoadCondition;
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+
+Road -> RoadObstruction;
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+
+Road -> Lane;
+Lane -> BusLane;
+Lane -> BicycleLane;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir = LR];
+
+    RoadDrivingScenario;
+
+    RoadDrivingScenario -> EnvironmentalConditions;
+    RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+    RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+    RoadTopologyAndTrafficInfrastructure -> Road;
+    RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+    Road -> RoadCondition;
+    RoadCondition -> Dry;
+    RoadCondition -> Wet;
+    RoadCondition -> Icy;
+
+    Road -> RoadObstruction;
+    RoadObstruction -> ConstructionZone;
+    RoadObstruction -> Accident;
+
+    Road -> Lane;
+    Lane -> BusLane;
+    Lane -> BicycleLane;
+
+    TrafficInfrastructure -> TrafficLight;
+    TrafficInfrastructure -> StopSign;
+
+    TrafficParticipantAndBehavior -> TrafficParticipant;
+    TrafficParticipantAndBehavior -> Behavior;
+
+    Behavior -> PedestrianCrossing;
+
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+    TrafficParticipant -> Bicyclist;
+    TrafficParticipant -> Driver;
+
+    Vehicle -> Car;
+    Vehicle -> Truck;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+
+    Car -> Sedan;
+    Car -> SUV;
+
+    Truck -> PickupTruck;
+    Truck -> DeliveryTruck;
+
+    TrafficParticipant -> Passenger;
+    TrafficParticipant -> Motorcyclist;
+
+    Vehicle -> Bicycle;
+
+    Pedestrian -> PedestrianOnFoot;
+    Pedestrian -> PedestrianWithWheelchair;
+
+    Bicyclist -> BicyclistOnFoot;
+    Bicyclist -> BicyclistWithBicycle;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir = LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+Road -> RoadCondition;
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+
+Road -> RoadObstruction;
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+
+Road -> Lane;
+Lane -> BusLane;
+Lane -> BicycleLane;
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Driver;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+TrafficParticipant -> Passenger;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Bicycle;
+
+Pedestrian -> PedestrianOnFoot;
+Pedestrian -> PedestrianWithWheelchair;
+
+Bicyclist -> BicyclistOnFoot;
+Bicyclist -> BicyclistWithBicycle;
+
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario;
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+  Road -> RoadCondition;
+  Road -> RoadObstruction;
+  Road -> Lane;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+
+  TrafficInfrastructure -> TrafficLight;
+  TrafficInfrastructure -> StopSign;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> PedestrianCrossing;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Driver;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Bicycle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Pedestrian -> PedestrianOnFoot;
+  Pedestrian -> PedestrianWithWheelchair;
+
+  Bicyclist -> BicyclistOnFoot;
+  Bicyclist -> BicyclistWithBicycle;
+
+  // New concepts added to the ontology:
+
+  RoadCondition -> Slippery;
+  RoadObstruction -> RoadClosure;
+  RoadTopologyAndTrafficInfrastructure -> TrafficCircle;
+  Lane -> CarPoolLane;
+  TrafficParticipant -> EmergencyVehicle;
+  Behavior -> RecklessBehavior;
+  TrafficParticipantAndBehavior -> TrafficEnforcementOfficer;
+
+  // Merged concepts:
+
+  TrafficParticipant -> Motorcyclist;
+  TrafficParticipant -> Passenger;
+
+  Pedestrian -> PedestrianOnFoot;
+  Pedestrian -> PedestrianWithWheelchair;
+
+  Bicyclist -> BicyclistOnFoot;
+  Bicyclist -> BicyclistWithBicycle;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+Road -> RoadCondition;
+Road -> RoadObstruction;
+Road -> Lane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Driver;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Bicycle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Pedestrian -> PedestrianOnFoot;
+Pedestrian -> PedestrianWithWheelchair;
+
+Bicyclist -> BicyclistOnFoot;
+Bicyclist -> BicyclistWithBicycle;
+
+RoadCondition -> Slippery;
+RoadObstruction -> RoadClosure;
+RoadTopologyAndTrafficInfrastructure -> TrafficCircle;
+Lane -> CarPoolLane;
+TrafficParticipant -> EmergencyVehicle;
+Behavior -> RecklessBehavior;
+TrafficParticipant -> TrafficEnforcementOfficer;
+
+TrafficParticipant -> Motorcyclist;
+TrafficParticipant -> Passenger;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+Road -> RoadCondition;
+Road -> RoadObstruction;
+Road -> Lane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;  // New concept: Road is slippery due to oil spill or other factors
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;  // Merged concept: Road closure can be due to an accident or maintenance
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;  // New concept: Lane reserved for carpooling
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+TrafficInfrastructure -> TrafficCircle;  // Improved concept: Traffic circle is a type of traffic infrastructure
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Driver;
+TrafficParticipant -> EmergencyVehicle;  // New concept: Emergency vehicles like police cars or ambulances
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Bicycle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Pedestrian -> PedestrianOnFoot;
+Pedestrian -> PedestrianWithWheelchair;
+
+Bicyclist -> BicyclistOnFoot;
+Bicyclist -> BicyclistWithBicycle;
+
+TrafficParticipant -> Motorcyclist;  // New concept: Motorcyclist as a specific type of traffic participant
+TrafficParticipant -> Passenger;  // New concept: Passenger in a vehicle
+
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+Road -> RoadCondition;
+Road -> RoadObstruction;
+Road -> Lane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+TrafficInfrastructure -> TrafficCircle;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Driver;
+TrafficParticipant -> EmergencyVehicle;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Bicycle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Pedestrian -> PedestrianOnFoot;
+Pedestrian -> PedestrianWithWheelchair;
+
+Bicyclist -> BicyclistOnFoot;
+Bicyclist -> BicyclistWithBicycle;
+
+TrafficParticipant -> Motorcyclist;
+TrafficParticipant -> Passenger;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir=LR];
+
+    RoadDrivingScenario;
+
+    RoadDrivingScenario -> EnvironmentalConditions;
+    RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+    RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+    EnvironmentalConditions -> WeatherCondition;
+    EnvironmentalConditions -> LightingCondition;
+
+    RoadTopologyAndTrafficInfrastructure -> Road;
+    RoadTopologyAndTrafficInfrastructure -> Lane;
+    RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+    Road -> RoadCondition;
+    Road -> RoadObstruction;
+
+    RoadCondition -> Dry;
+    RoadCondition -> Wet;
+    RoadCondition -> Icy;
+    RoadCondition -> Slippery;
+
+    RoadObstruction -> ConstructionZone;
+    RoadObstruction -> Accident;
+    RoadObstruction -> RoadClosure;
+
+    Lane -> BusLane;
+    Lane -> BicycleLane;
+    Lane -> CarPoolLane;
+
+    TrafficInfrastructure -> TrafficLight;
+    TrafficInfrastructure -> StopSign;
+    TrafficInfrastructure -> TrafficCircle;
+
+    TrafficParticipantAndBehavior -> TrafficParticipant;
+    TrafficParticipantAndBehavior -> Behavior;
+
+    Behavior -> PedestrianCrossing;
+    Behavior -> Overtaking;
+
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+
+    Vehicle -> Car;
+    Vehicle -> Truck;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+    Vehicle -> Bicycle;
+
+    Car -> Sedan;
+    Car -> SUV;
+
+    Truck -> PickupTruck;
+    Truck -> DeliveryTruck;
+
+    Pedestrian -> PedestrianOnFoot;
+    Pedestrian -> PedestrianWithWheelchair;
+
+    Bicycle -> BicyclistOnFoot;
+    Bicycle -> BicyclistWithBicycle;
+
+    TrafficParticipant -> Motorcyclist;
+    TrafficParticipant -> Passenger;
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+Road -> RoadCondition;
+Road -> RoadObstruction;
+Road -> Lane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+TrafficInfrastructure -> TrafficCircle;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+Behavior -> Overtaking;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Bicycle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Pedestrian -> PedestrianOnFoot;
+Pedestrian -> PedestrianWithWheelchair;
+
+TrafficParticipant -> BicyclistOnFoot;
+TrafficParticipant -> BicyclistWithBicycle;
+
+TrafficParticipant -> Motorcyclist;
+TrafficParticipant -> Passenger;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario;
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+  Road -> RoadCondition;
+  Road -> RoadObstruction;
+  Road -> Lane;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+  RoadObstruction -> RoadClosure;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  TrafficInfrastructure -> TrafficLight;
+  TrafficInfrastructure -> StopSign;
+  TrafficInfrastructure -> TrafficCircle;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> PedestrianCrossing;
+  Behavior -> Overtaking;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> Bicycle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Pedestrian -> PedestrianOnFoot;
+  Pedestrian -> PedestrianWithWheelchair;
+
+  TrafficParticipant -> Bicyclist;
+  Bicyclist -> BicyclistOnFoot;
+  Bicyclist -> BicyclistWithBicycle;
+
+  TrafficParticipant -> Motorcyclist;
+  TrafficParticipant -> Passenger;
+
+  TrafficParticipant -> Animal;
+  Animal -> WildAnimal;
+  Animal -> DomesticatedAnimal;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+Road -> RoadCondition;
+Road -> RoadObstruction;
+Road -> Lane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+TrafficInfrastructure -> TrafficCircle;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+Behavior -> Overtaking;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> Bicycle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Pedestrian -> PedestrianOnFoot;
+Pedestrian -> PedestrianWithWheelchair;
+
+TrafficParticipant -> Bicyclist;
+Bicyclist -> BicyclistOnFoot;
+Bicyclist -> BicyclistWithBicycle;
+
+TrafficParticipant -> Motorcyclist;
+TrafficParticipant -> Passenger;
+
+TrafficParticipant -> Animal;
+Animal -> WildAnimal;
+Animal -> DomesticatedAnimal;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario;
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+
+  Road -> RoadCondition;
+  Road -> Lane;
+  Road -> RoadObstruction;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+  RoadObstruction -> RoadClosure;
+
+  TrafficInfrastructure -> TrafficLight;
+  TrafficInfrastructure -> StopSign;
+  TrafficInfrastructure -> TrafficCircle;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> PedestrianCrossing;
+  Behavior -> Overtaking;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Motorcyclist;
+  TrafficParticipant -> Passenger;
+  TrafficParticipant -> Animal;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Pedestrian -> PedestrianOnFoot;
+  Pedestrian -> PedestrianWithWheelchair;
+
+  Bicyclist -> BicyclistOnFoot;
+  Bicyclist -> BicyclistWithBicycle;
+
+  Animal -> WildAnimal;
+  Animal -> DomesticatedAnimal;
+
+  // New Concepts
+  Road -> Intersection;
+  Road -> Highway;
+  Road -> TollRoad;
+
+  TrafficInfrastructure -> PedestrianCrosswalk;
+  TrafficInfrastructure -> SpeedBump;
+  TrafficInfrastructure -> RoadSign;
+
+  Behavior -> LaneChange;
+  Behavior -> FollowingDistance;
+
+  TrafficParticipant -> EmergencyVehicle;
+  TrafficParticipant -> SchoolBus;
+
+  Vehicle -> ElectricVehicle;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> TrafficInfrastructure;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+
+Road -> RoadCondition;
+Road -> Lane;
+Road -> RoadObstruction;
+Road -> Highway;
+Road -> TollRoad;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+TrafficInfrastructure -> TrafficLight;
+TrafficInfrastructure -> StopSign;
+TrafficInfrastructure -> TrafficCircle;
+TrafficInfrastructure -> PedestrianCrosswalk;
+TrafficInfrastructure -> SpeedBump;
+TrafficInfrastructure -> RoadSign;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> PedestrianCrossing;
+Behavior -> Overtaking;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Motorcyclist;
+TrafficParticipant -> Passenger;
+TrafficParticipant -> Animal;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Bus -> SchoolBus;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Pedestrian -> PedestrianOnFoot;
+Pedestrian -> PedestrianWithWheelchair;
+
+Bicyclist -> BicyclistOnFoot;
+Bicyclist -> BicyclistWithBicycle;
+
+Animal -> WildAnimal;
+Animal -> DomesticatedAnimal;
+
+Behavior -> LaneChange;
+Behavior -> FollowingDistance;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario;
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+
+  Road -> RoadCondition;
+  Road -> Lane;
+  Road -> RoadObstruction;
+
+  Lane -> LaneType;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+  RoadObstruction -> RoadClosure;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> TrafficViolation;
+  Behavior -> PedestrianCrossing;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> CarType;
+  Truck -> TruckType;
+  Motorcycle -> MotorcycleType;
+  Bus -> BusType;
+
+  Pedestrian -> PedestrianType;
+
+  Bicyclist -> BicyclistType;
+
+  Animal -> AnimalType;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+
+  LaneType -> BusLane;
+  LaneType -> BicycleLane;
+  LaneType -> CarPoolLane;
+
+  ConstructionZone -> RoadConstruction;
+  Accident -> TrafficAccident;
+
+  TrafficViolation -> LaneChangeViolation;
+  TrafficViolation -> SpeedingViolation;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+
+  CarType -> Sedan;
+  CarType -> SUV;
+
+  TruckType -> PickupTruck;
+  TruckType -> DeliveryTruck;
+
+  MotorcycleType -> SportMotorcycle;
+  MotorcycleType -> CruiserMotorcycle;
+
+  BusType -> CityBus;
+  BusType -> CoachBus;
+
+  PedestrianType -> AdultPedestrian;
+  PedestrianType -> ChildPedestrian;
+  PedestrianType -> ElderlyPedestrian;
+
+  BicyclistType -> RegularBicyclist;
+  BicyclistType -> MountainBicyclist;
+
+  AnimalType -> WildAnimal;
+  AnimalType -> DomesticatedAnimal;
+
+  SpeedingViolation -> SpeedLimitExceeded;
+  SpeedingViolation -> RecklessDriving;
+
+  LaneChangeViolation -> UnsafeLaneChange;
+  LaneChangeViolation -> FailureToSignal;
+
+  RoadConstruction -> RoadRepair;
+  RoadConstruction -> BridgeConstruction;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+
+Road -> RoadCondition;
+Road -> Lane;
+Road -> RoadObstruction;
+
+Lane -> LaneType;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+ConstructionZone-> RoadRepair;
+ConstructionZone-> BridgeConstruction;
+ConstructionZone -> RoadConstruction;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> TrafficViolation;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> CarType;
+Truck -> TruckType;
+Motorcycle -> MotorcycleType;
+Bus -> BusType;
+
+Pedestrian -> PedestrianType;
+
+Bicyclist -> BicyclistType;
+
+Animal -> AnimalType;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+LaneType -> BusLane;
+LaneType -> BicycleLane;
+LaneType -> CarPoolLane;
+
+TrafficViolation -> LaneChangeViolation;
+TrafficViolation -> SpeedingViolation;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+
+CarType -> Sedan;
+CarType -> SUV;
+
+TruckType -> PickupTruck;
+TruckType -> DeliveryTruck;
+
+MotorcycleType -> SportMotorcycle;
+MotorcycleType -> CruiserMotorcycle;
+
+BusType -> CityBus;
+BusType -> CoachBus;
+
+PedestrianType -> AdultPedestrian;
+PedestrianType -> ChildPedestrian;
+PedestrianType -> ElderlyPedestrian;
+
+BicyclistType -> RegularBicyclist;
+BicyclistType -> MountainBicyclist;
+
+AnimalType -> WildAnimal;
+AnimalType -> DomesticatedAnimal;
+
+SpeedingViolation -> SpeedLimitExceeded;
+SpeedingViolation -> RecklessDriving;
+
+LaneChangeViolation -> UnsafeLaneChange;
+LaneChangeViolation -> FailureToSignal;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario;
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+  RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+  RoadTopologyAndTrafficInfrastructure -> TrafficSignal; // New concept: TrafficSignal
+
+  Road -> RoadCondition;
+  Road -> Lane;
+  Road -> RoadObstruction;
+
+  Lane -> LaneType;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+  RoadObstruction -> RoadClosure;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> TrafficViolation;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> CarType;
+  Truck -> TruckType;
+  Motorcycle -> MotorcycleType;
+  Bus -> BusType;
+
+  Pedestrian -> PedestrianType;
+
+  Bicyclist -> BicyclistType;
+
+  Animal -> AnimalType;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+
+  LaneType -> BusLane;
+  LaneType -> BicycleLane;
+  LaneType -> CarPoolLane;
+
+  TrafficViolation -> LaneChangeViolation;
+  TrafficViolation -> SpeedingViolation;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+
+  CarType -> Sedan;
+  CarType -> SUV;
+
+  TruckType -> PickupTruck;
+  TruckType -> DeliveryTruck;
+
+  MotorcycleType -> SportMotorcycle;
+  MotorcycleType -> CruiserMotorcycle;
+
+  BusType -> CityBus;
+  BusType -> CoachBus;
+
+  PedestrianType -> AdultPedestrian;
+  PedestrianType -> ChildPedestrian;
+  PedestrianType -> ElderlyPedestrian;
+
+  BicyclistType -> RegularBicyclist;
+  BicyclistType -> MountainBicyclist;
+
+  AnimalType -> WildAnimal;
+  AnimalType -> DomesticatedAnimal;
+
+  SpeedingViolation -> SpeedLimitExceeded;
+  SpeedingViolation -> RecklessDriving;
+
+  LaneChangeViolation -> UnsafeLaneChange;
+  LaneChangeViolation -> FailureToSignal;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+
+  // New concepts: RoadSigns
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+  RoadSigns -> SpeedLimitSign;
+  RoadSigns -> StopSign;
+  RoadSigns -> YieldSign;
+
+  // New concepts: Driver
+  TrafficParticipant -> Driver;
+  Driver -> LicensedDriver;
+  Driver -> UnlicensedDriver;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal; // New concept: TrafficSignal
+
+Road -> RoadCondition;
+Road -> Lane;
+Road -> RoadObstruction;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> TrafficViolation;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+Bicyclist -> RegularBicyclist;
+Bicyclist -> MountainBicyclist;
+
+Animal -> WildAnimal;
+Animal -> DomesticatedAnimal;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+
+TrafficViolation -> SpeedLimitExceeded;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+
+TrafficParticipant -> Driver;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario;
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+  RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+  RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+
+  Road -> RoadCondition;
+  Road -> Lane;
+  Road -> RoadObstruction;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+  RoadObstruction -> RoadClosure;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> TrafficViolation;
+  Behavior -> SafeDriving;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Motorcycle -> SportMotorcycle;
+  Motorcycle -> CruiserMotorcycle;
+
+  Bus -> CityBus;
+  Bus -> CoachBus;
+
+  Pedestrian -> AdultPedestrian;
+  Pedestrian -> ChildPedestrian;
+  Pedestrian -> ElderlyPedestrian;
+
+  Bicyclist -> RegularBicyclist;
+  Bicyclist -> MountainBicyclist;
+
+  Animal -> WildAnimal;
+  Animal -> DomesticatedAnimal;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+
+  TrafficViolation -> SpeedLimitExceeded;
+  TrafficViolation -> RecklessDriving;
+  TrafficViolation -> UnsafeLaneChange;
+  TrafficViolation -> FailureToSignal;
+
+  SafeDriving -> DefensiveDriving;
+  SafeDriving -> CourteousDriving;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+  RoadSigns -> SpeedLimitSign;
+  RoadSigns -> StopSign;
+  RoadSigns -> YieldSign;
+
+  TrafficParticipant -> Driver;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario;
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+
+Road -> RoadCondition;
+Road -> Lane;
+Road -> RoadObstruction;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> TrafficViolation;
+Behavior -> SafeDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+Bicyclist -> RegularBicyclist;
+Bicyclist -> MountainBicyclist;
+
+Animal -> WildAnimal;
+Animal -> DomesticatedAnimal;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+TrafficViolation -> SpeedLimitExceeded;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+
+TrafficParticipant -> Driver;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  // Main Classes
+  RoadDrivingScenario;
+
+  // Environmental Conditions
+  WeatherCondition;
+  LightingCondition;
+
+  // Road Topology and Traffic Infrastructure
+  Road;
+  Intersection;
+  PedestrianCrossing;
+  TrafficSignal;
+  RoadSigns;
+
+  // Traffic Participants and Behavior
+  TrafficParticipant;
+  Driver;
+  Behavior;
+  TrafficViolation;
+  SafeDriving;
+
+  // Road Obstructions
+  RoadObstruction;
+  ConstructionZone;
+  Accident;
+  RoadClosure;
+
+  // Road Conditions
+  RoadCondition;
+  Dry;
+  Wet;
+  Icy;
+  Slippery;
+
+  // Traffic Participants
+  Vehicle;
+  Pedestrian;
+  Bicyclist;
+  Animal;
+
+  // Vehicle Types
+  Car;
+  Truck;
+  Motorcycle;
+  Bus;
+  EmergencyVehicle;
+
+  // Car Types
+  Sedan;
+  SUV;
+
+  // Truck Types
+  PickupTruck;
+  DeliveryTruck;
+
+  // Motorcycle Types
+  SportMotorcycle;
+  CruiserMotorcycle;
+
+  // Bus Types
+  CityBus;
+  CoachBus;
+
+  // Pedestrian Types
+  AdultPedestrian;
+  ChildPedestrian;
+  ElderlyPedestrian;
+
+  // Bicyclist Types
+  RegularBicyclist;
+  MountainBicyclist;
+
+  // Animal Types
+  WildAnimal;
+  DomesticatedAnimal;
+
+  // Weather Conditions
+  Rainy;
+  Snowy;
+  Foggy;
+  Sunny;
+
+  // Sub-Weather Conditions
+  DenseFog;
+  MistyFog;
+  ClearSky;
+  PartiallyCloudy;
+  Drizzle;
+  HeavyRain;
+  LightSnow;
+  Blizzards;
+
+  // Traffic Violations
+  SpeedLimitExceeded;
+  RecklessDriving;
+  UnsafeLaneChange;
+  FailureToSignal;
+
+  // Safe Driving Practices
+  DefensiveDriving;
+  CourteousDriving;
+
+  // Lane Types
+  Lane;
+  BusLane;
+  BicycleLane;
+  CarPoolLane;
+
+  // Connecting the concepts
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+  RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+  RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+  Road -> RoadCondition;
+  Road -> Lane;
+  Road -> RoadObstruction;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+  RoadObstruction -> RoadClosure;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> TrafficViolation;
+  Behavior -> SafeDriving;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Motorcycle -> SportMotorcycle;
+  Motorcycle -> CruiserMotorcycle;
+
+  Bus -> CityBus;
+  Bus -> CoachBus;
+
+  Pedestrian -> AdultPedestrian;
+  Pedestrian -> ChildPedestrian;
+  Pedestrian -> ElderlyPedestrian;
+
+  Bicyclist -> RegularBicyclist;
+  Bicyclist -> MountainBicyclist;
+
+  Animal -> WildAnimal;
+  Animal -> DomesticatedAnimal;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+
+  TrafficViolation -> SpeedLimitExceeded;
+  TrafficViolation -> RecklessDriving;
+  TrafficViolation -> UnsafeLaneChange;
+  TrafficViolation -> FailureToSignal;
+
+  SafeDriving -> DefensiveDriving;
+  SafeDriving -> CourteousDriving;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+  RoadSigns -> SpeedLimitSign;
+  RoadSigns -> StopSign;
+  RoadSigns -> YieldSign;
+
+  TrafficParticipant -> Driver;
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+Road -> RoadCondition;
+Road -> Lane;
+Road -> RoadObstruction;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> TrafficViolation;
+Behavior -> SafeDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+Bicyclist -> RegularBicyclist;
+Bicyclist -> MountainBicyclist;
+
+Animal -> WildAnimal;
+Animal -> DomesticatedAnimal;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+TrafficViolation -> SpeedLimitExceeded;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+
+TrafficParticipant -> Driver;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+    graph [rankdir=LR];
+
+    RoadDrivingScenario -> EnvironmentalConditions;
+    RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+    RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+    EnvironmentalConditions -> WeatherCondition;
+    EnvironmentalConditions -> LightingCondition;
+
+    RoadTopologyAndTrafficInfrastructure -> Road;
+    RoadTopologyAndTrafficInfrastructure -> Intersection;
+    RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+    RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+    Road -> Lane;
+
+    Lane -> BusLane;
+    Lane -> BicycleLane;
+    Lane -> CarPoolLane;
+
+    Road -> RoadObstruction;
+
+    RoadObstruction -> ConstructionZone;
+    RoadObstruction -> Accident;
+    RoadObstruction -> RoadClosure;
+
+    TrafficParticipantAndBehavior -> TrafficParticipant;
+    TrafficParticipantAndBehavior -> Behavior;
+
+    Behavior -> TrafficViolation;
+    Behavior -> SafeDriving;
+
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+    TrafficParticipant -> Bicyclist;
+    TrafficParticipant -> Animal;
+
+    Vehicle -> Car;
+    Vehicle -> Truck;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+    Vehicle -> EmergencyVehicle;
+
+    Car -> Sedan;
+    Car -> SUV;
+
+    Truck -> PickupTruck;
+    Truck -> DeliveryTruck;
+
+    Motorcycle -> SportMotorcycle;
+    Motorcycle -> CruiserMotorcycle;
+
+    Bus -> CityBus;
+    Bus -> CoachBus;
+
+    Pedestrian -> AdultPedestrian;
+    Pedestrian -> ChildPedestrian;
+    Pedestrian -> ElderlyPedestrian;
+
+    Bicyclist -> RegularBicyclist;
+    Bicyclist -> MountainBicyclist;
+
+    Animal -> WildAnimal;
+    Animal -> DomesticatedAnimal;
+
+    Road -> RoadCondition;
+
+    RoadCondition -> Dry;
+    RoadCondition -> Wet;
+    RoadCondition -> Icy;
+    RoadCondition -> Slippery;
+
+    TrafficViolation -> SpeedLimitExceeded;
+    TrafficViolation -> RecklessDriving;
+    TrafficViolation -> UnsafeLaneChange;
+    TrafficViolation -> FailureToSignal;
+
+    SafeDriving -> DefensiveDriving;
+    SafeDriving -> CourteousDriving;
+
+    WeatherCondition -> Rainy;
+    WeatherCondition -> Snowy;
+    WeatherCondition -> Foggy;
+    WeatherCondition -> Sunny;
+
+    Foggy -> DenseFog;
+    Foggy -> MistyFog;
+
+    Sunny -> ClearSky;
+    Sunny -> PartiallyCloudy;
+
+    Rainy -> Drizzle;
+    Rainy -> HeavyRain;
+
+    Snowy -> LightSnow;
+    Snowy -> Blizzards;
+
+    RoadSigns -> SpeedLimitSign;
+    RoadSigns -> StopSign;
+    RoadSigns -> YieldSign;
+
+    TrafficParticipant -> Driver;
+
+    // New Concepts
+    RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+    RoadTopologyAndTrafficInfrastructure -> Roundabout;
+    RoadTopologyAndTrafficInfrastructure -> Tunnel;
+    RoadTopologyAndTrafficInfrastructure -> Bridge;
+
+    TrafficParticipant -> Motorcyclist;
+    TrafficParticipant -> TruckDriver;
+    TrafficParticipant -> BusDriver;
+
+    WeatherCondition -> Hail;
+    WeatherCondition -> Storm;
+
+    RoadCondition -> Potholes;
+    RoadCondition -> UnevenSurface;
+
+    Behavior -> DistractedDriving;
+    Behavior -> DrunkDriving;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+RoadTopologyAndTrafficInfrastructure -> Roundabout;
+RoadTopologyAndTrafficInfrastructure -> Tunnel;
+RoadTopologyAndTrafficInfrastructure -> Bridge;
+
+Road -> Lane;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+Road -> RoadObstruction;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> TrafficViolation;
+Behavior -> SafeDriving;
+Behavior -> DistractedDriving;
+Behavior -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+Bicyclist -> RegularBicyclist;
+Bicyclist -> MountainBicyclist;
+
+Animal -> WildAnimal;
+Animal -> DomesticatedAnimal;
+
+Road -> RoadCondition;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+TrafficViolation -> SpeedLimitExceeded;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+
+RoadCondition -> Potholes;
+RoadCondition -> UnevenSurface;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph Ontology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+  RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+  Road -> Lane;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  Road -> RoadObstruction;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+  RoadObstruction -> RoadClosure;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> TrafficViolation;
+  Behavior -> SafeDriving;
+  Behavior -> DistractedDriving;
+  Behavior -> DrunkDriving;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Motorcycle -> SportMotorcycle;
+  Motorcycle -> CruiserMotorcycle;
+
+  Bus -> CityBus;
+  Bus -> CoachBus;
+
+  Pedestrian -> AdultPedestrian;
+  Pedestrian -> ChildPedestrian;
+  Pedestrian -> ElderlyPedestrian;
+
+  Road -> RoadCondition;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+
+  TrafficViolation -> SpeedLimitExceeded;
+  TrafficViolation -> RecklessDriving;
+  TrafficViolation -> UnsafeLaneChange;
+  TrafficViolation -> FailureToSignal;
+
+  SafeDriving -> DefensiveDriving;
+  SafeDriving -> CourteousDriving;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+  WeatherCondition -> Hail;
+  WeatherCondition -> Storm;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+
+  RoadSigns -> SpeedLimitSign;
+  RoadSigns -> StopSign;
+  RoadSigns -> YieldSign;
+
+  // New Concepts
+  RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+  RoadTopologyAndTrafficInfrastructure -> Roundabout;
+  RoadTopologyAndTrafficInfrastructure -> Tunnel;
+  RoadTopologyAndTrafficInfrastructure -> Bridge;
+  Road -> RoadCondition;
+  RoadCondition -> Potholes;
+  RoadCondition -> UnevenSurface;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+  TrafficParticipant -> Driver;
+  TrafficParticipant -> Motorcyclist;
+
+  TrafficParticipant -> Motorcyclist;
+  TrafficParticipant -> HorseRider;
+  TrafficParticipant -> EmergencyServices;
+  TrafficParticipant -> PoliceOfficer;
+  TrafficParticipant -> RoadWorker;
+
+  Behavior -> Tailgating;
+  Behavior -> Speeding;
+  Behavior -> FailureToYield;
+  Behavior -> RunningRedLight;
+
+  SafeDriving -> UsingSeatbelt;
+  SafeDriving -> MaintainingSafeDistance;
+  SafeDriving -> ObeyingTrafficRules;
+  SafeDriving -> UsingIndicators;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> PedestrianCrossing;
+RoadTopologyAndTrafficInfrastructure -> Roundabout;
+RoadTopologyAndTrafficInfrastructure -> Tunnel;
+RoadTopologyAndTrafficInfrastructure -> Bridge;
+
+Road -> Lane;
+Road -> RoadObstruction;
+Road -> RoadCondition;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> Potholes;
+RoadCondition -> UnevenSurface;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> TrafficViolation;
+Behavior -> SafeDriving;
+
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+TrafficParticipant -> HorseRider;
+TrafficParticipant -> EmergencyServices;
+TrafficParticipant -> PoliceOfficer;
+TrafficParticipant -> RoadWorker;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph ImprovedOntology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+  RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+  Road -> Lane;
+  Road -> RoadObstruction;
+  Road -> RoadCondition;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  RoadObstruction -> ConstructionZone;
+  RoadObstruction -> Accident;
+  RoadObstruction -> RoadClosure;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+  RoadCondition -> Potholes;
+  RoadCondition -> UnevenSurface;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> TrafficViolation;
+  Behavior -> SafeDriving;
+
+  TrafficViolation -> DistractedDriving;
+  TrafficViolation -> Tailgating;
+  TrafficViolation -> RunningRedLight;
+  TrafficViolation -> Speeding;
+  TrafficViolation -> RecklessDriving;
+  TrafficViolation -> UnsafeLaneChange;
+  TrafficViolation -> FailureToSignal;
+  TrafficViolation -> FailureToYield;
+  TrafficViolation -> DrunkDriving;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+  TrafficParticipant -> EmergencyServices;
+  TrafficParticipant -> PoliceOfficer;
+  TrafficParticipant -> RoadWorker;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Motorcycle -> SportMotorcycle;
+  Motorcycle -> CruiserMotorcycle;
+
+  Bus -> CityBus;
+  Bus -> CoachBus;
+
+  Pedestrian -> AdultPedestrian;
+  Pedestrian -> ChildPedestrian;
+  Pedestrian -> ElderlyPedestrian;
+
+  SafeDriving -> DefensiveDriving;
+  SafeDriving -> CourteousDriving;
+  SafeDriving -> UsingSeatbelt;
+  SafeDriving -> MaintainingSafeDistance;
+  SafeDriving -> ObeyingTrafficRules;
+  SafeDriving -> UsingIndicators;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+  WeatherCondition -> Hail;
+  WeatherCondition -> Storm;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+
+  RoadSigns -> SpeedLimitSign;
+  RoadSigns -> StopSign;
+  RoadSigns -> YieldSign;
+
+  // New concepts, terms, or entities
+  RoadDrivingScenario -> RoadFeatures;
+  RoadFeatures -> PedestrianCrossing;
+  RoadFeatures -> Roundabout;
+  RoadFeatures -> Tunnel;
+  RoadFeatures -> Bridge;
+
+  RoadTopologyAndTrafficInfrastructure -> RoadFeatures;
+
+  Road -> RoadFeatures;
+
+  TrafficParticipant -> Driver;
+  TrafficParticipant -> Motorcyclist;
+  TrafficParticipant -> Bicyclist;
+
+  Driver -> Car;
+  Driver -> Truck;
+  Driver -> Motorcycle;
+  Driver -> Bus;
+
+  TrafficViolation -> SeatbeltViolation;
+  TrafficViolation -> RunningStopSign;
+  TrafficViolation -> DrivingUnderInfluence;
+  TrafficViolation -> Jaywalking;
+
+  SafeDriving -> AdheringToSpeedLimits;
+  SafeDriving -> KeepingSafeFollowingDistance;
+  SafeDriving -> ObservingTrafficSignals;
+  SafeDriving -> AvoidingDistractions;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph ImprovedOntology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadObstruction;
+Road -> RoadCondition;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadObstruction -> ConstructionZone;
+RoadObstruction -> Accident;
+RoadObstruction -> RoadClosure;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> Potholes;
+RoadCondition -> UnevenSurface;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> TrafficViolation;
+Behavior -> SafeDriving;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> EmergencyServices;
+TrafficParticipant -> PoliceOfficer;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph ImprovedOntology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+  RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+  RoadSigns -> SpeedLimitSign;
+  RoadSigns -> StopSign;
+  RoadSigns -> YieldSign;
+
+  Road -> RoadFeatures;
+  Road -> Lane;
+  Road -> RoadCondition;
+
+  RoadFeatures -> PedestrianCrossing;
+  RoadFeatures -> Roundabout;
+  RoadFeatures -> Tunnel;
+  RoadFeatures -> Bridge;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+  RoadCondition -> Potholes;
+  RoadCondition -> UnevenSurface;
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> SafeDriving;
+  Behavior -> TrafficViolation;
+
+  SafeDriving -> DefensiveDriving;
+  SafeDriving -> CourteousDriving;
+  SafeDriving -> UsingSeatbelt;
+  SafeDriving -> MaintainingSafeDistance;
+  SafeDriving -> ObeyingTrafficRules;
+  SafeDriving -> UsingIndicators;
+  SafeDriving -> AdheringToSpeedLimits;
+  SafeDriving -> KeepingSafeFollowingDistance;
+  SafeDriving -> ObservingTrafficSignals;
+  SafeDriving -> AvoidingDistractions;
+
+  TrafficViolation -> SeatbeltViolation;
+  TrafficViolation -> RunningStopSign;
+  TrafficViolation -> DrivingUnderInfluence;
+  TrafficViolation -> Jaywalking;
+  TrafficViolation -> DistractedDriving;
+  TrafficViolation -> Tailgating;
+  TrafficViolation -> RunningRedLight;
+  TrafficViolation -> Speeding;
+  TrafficViolation -> RecklessDriving;
+  TrafficViolation -> UnsafeLaneChange;
+  TrafficViolation -> FailureToSignal;
+  TrafficViolation -> FailureToYield;
+  TrafficViolation -> DrunkDriving;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+  TrafficParticipant -> EmergencyServices;
+  TrafficParticipant -> PoliceOfficer;
+  TrafficParticipant -> RoadWorker;
+  TrafficParticipant -> Driver;
+  TrafficParticipant -> Motorcyclist;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Motorcycle -> SportMotorcycle;
+  Motorcycle -> CruiserMotorcycle;
+
+  Bus -> CityBus;
+  Bus -> CoachBus;
+
+  Pedestrian -> AdultPedestrian;
+  Pedestrian -> ChildPedestrian;
+  Pedestrian -> ElderlyPedestrian;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+  WeatherCondition -> Hail;
+  WeatherCondition -> Storm;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+
+  // 10 new relevant concepts
+  RoadFeatures -> PedestrianCrossing;
+  RoadFeatures -> Roundabout;
+  RoadFeatures -> Tunnel;
+  RoadFeatures -> Bridge;
+
+  RoadTopologyAndTrafficInfrastructure -> RoadFeatures;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> PoliceOfficer;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Motorcycle -> SportMotorcycle;
+  Motorcycle -> CruiserMotorcycle;
+
+  Bus -> CityBus;
+  Bus -> CoachBus;
+
+  SafeDriving -> DefensiveDriving;
+  SafeDriving -> CourteousDriving;
+  SafeDriving -> UsingSeatbelt;
+  SafeDriving -> MaintainingSafeDistance;
+  SafeDriving -> ObeyingTrafficRules;
+  SafeDriving -> UsingIndicators;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph ImprovedOntology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> Potholes;
+RoadCondition -> UnevenSurface;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> EmergencyServices;
+TrafficParticipant -> PoliceOfficer;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph ImprovedOntology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+  RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+  RoadTopologyAndTrafficInfrastructure -> RoadHazards; // Merged concepts
+
+  RoadSigns -> SpeedLimitSign;
+  RoadSigns -> StopSign;
+  RoadSigns -> YieldSign;
+
+  Road -> RoadFeatures;
+  Road -> Lane;
+  Road -> RoadCondition;
+
+  RoadFeatures -> PedestrianCrossing;
+  RoadFeatures -> Roundabout;
+  RoadFeatures -> Tunnel;
+  RoadFeatures -> Bridge;
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+
+  RoadHazards -> Potholes; // Merged concepts
+  RoadHazards -> UnevenSurface; // Merged concepts
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> SafeDriving;
+  Behavior -> TrafficViolation;
+
+  SafeDriving -> DefensiveDriving;
+  SafeDriving -> CourteousDriving;
+  SafeDriving -> UsingSeatbelt;
+  SafeDriving -> MaintainingSafeDistance;
+  SafeDriving -> ObeyingTrafficRules;
+  SafeDriving -> UsingIndicators;
+  SafeDriving -> AdheringToSpeedLimits;
+  SafeDriving -> KeepingSafeFollowingDistance;
+  SafeDriving -> ObservingTrafficSignals;
+  SafeDriving -> AvoidingDistractions;
+
+  TrafficViolation -> SeatbeltViolation;
+  TrafficViolation -> RunningStopSign;
+  TrafficViolation -> DrivingUnderInfluence;
+  TrafficViolation -> Jaywalking;
+  TrafficViolation -> DistractedDriving;
+  TrafficViolation -> Tailgating;
+  TrafficViolation -> RunningRedLight;
+  TrafficViolation -> Speeding;
+  TrafficViolation -> RecklessDriving;
+  TrafficViolation -> UnsafeLaneChange;
+  TrafficViolation -> FailureToSignal;
+  TrafficViolation -> FailureToYield;
+  TrafficViolation -> DrunkDriving;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+  TrafficParticipant -> EmergencyServices;
+  TrafficParticipant -> PoliceOfficer;
+  TrafficParticipant -> RoadWorker;
+  TrafficParticipant -> Driver;
+  TrafficParticipant -> Motorcyclist;
+
+  Vehicle -> VehicleType; // New concept
+  VehicleType -> Car;
+  VehicleType -> Truck;
+  VehicleType -> Motorcycle;
+  VehicleType -> Bus;
+  VehicleType -> EmergencyVehicle;
+
+  Car -> CarType; // New concept
+  CarType -> Sedan;
+  CarType -> SUV;
+
+  Truck -> TruckType; // New concept
+  TruckType -> PickupTruck;
+  TruckType -> DeliveryTruck;
+
+  Motorcycle -> MotorcycleType; // New concept
+  MotorcycleType -> SportMotorcycle;
+  MotorcycleType -> CruiserMotorcycle;
+
+  Bus -> BusType; // New concept
+  BusType -> CityBus;
+  BusType -> CoachBus;
+
+  Pedestrian -> PedestrianType; // New concept
+  PedestrianType -> AdultPedestrian;
+  PedestrianType -> ChildPedestrian;
+  PedestrianType -> ElderlyPedestrian;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+  WeatherCondition -> Hail;
+  WeatherCondition -> Storm;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+
+  TrafficRule -> SpeedLimitSign; // New concept
+  TrafficRule -> StopSign; // New concept
+  TrafficRule -> YieldSign; // New concept
+
+  TrafficSignal -> TrafficSignalType; // New concept
+  TrafficSignalType -> RedLight; // New concept
+  TrafficSignalType -> GreenLight; // New concept
+  TrafficSignalType -> YellowLight; // New concept
+
+  WeatherIntensity -> Light; // New concept
+  WeatherIntensity -> Moderate; // New concept
+  WeatherIntensity -> Heavy; // New concept
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph ImprovedOntology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road-> RoadHazards;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> PoliceOfficer;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph ImprovedOntology {
+    graph [rankdir=LR];
+
+    RoadDrivingScenario -> EnvironmentalConditions;
+    RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+    RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+    EnvironmentalConditions -> WeatherCondition;
+    EnvironmentalConditions -> LightingCondition;
+    EnvironmentalConditions -> WeatherIntensity;
+
+    RoadTopologyAndTrafficInfrastructure -> Road;
+    RoadTopologyAndTrafficInfrastructure -> Intersection;
+    RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+    RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+    RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices; // New Concept
+
+    RoadSigns -> SpeedLimitSign;
+    RoadSigns -> StopSign;
+    RoadSigns -> YieldSign;
+
+    Road -> RoadFeatures;
+    Road -> Lane;
+    Road -> RoadCondition;
+    Road -> RoadHazards;
+
+    RoadFeatures -> PedestrianCrossing;
+    RoadFeatures -> Roundabout;
+    RoadFeatures -> Tunnel;
+    RoadFeatures -> Bridge;
+
+    Lane -> BusLane;
+    Lane -> BicycleLane;
+    Lane -> CarPoolLane;
+
+    RoadCondition -> Dry;
+    RoadCondition -> Wet;
+    RoadCondition -> Icy;
+    RoadCondition -> Slippery;
+    RoadCondition -> SnowCovered; // New Concept
+
+    RoadHazards -> Potholes;
+    RoadHazards -> UnevenSurface;
+
+    TrafficParticipantAndBehavior -> TrafficParticipant;
+    TrafficParticipantAndBehavior -> Behavior;
+
+    Behavior -> SafeDriving;
+    Behavior -> TrafficViolation;
+
+    SafeDriving -> DefensiveDriving;
+    SafeDriving -> CourteousDriving;
+    SafeDriving -> UsingSeatbelt;
+    SafeDriving -> MaintainingSafeDistance;
+    SafeDriving -> ObeyingTrafficRules;
+    SafeDriving -> UsingIndicators;
+    SafeDriving -> AdheringToSpeedLimits;
+    SafeDriving -> KeepingSafeFollowingDistance;
+    SafeDriving -> ObservingTrafficSignals;
+    SafeDriving -> AvoidingDistractions;
+
+    TrafficViolation -> SeatbeltViolation;
+    TrafficViolation -> RunningStopSign;
+    TrafficViolation -> DrivingUnderInfluence;
+    TrafficViolation -> Jaywalking;
+    TrafficViolation -> DistractedDriving;
+    TrafficViolation -> Tailgating;
+    TrafficViolation -> RunningRedLight;
+    TrafficViolation -> Speeding;
+    TrafficViolation -> RecklessDriving;
+    TrafficViolation -> UnsafeLaneChange;
+    TrafficViolation -> FailureToSignal;
+    TrafficViolation -> FailureToYield;
+    TrafficViolation -> DrunkDriving;
+
+    TrafficParticipant -> Vehicle;
+    TrafficParticipant -> Pedestrian;
+    TrafficParticipant -> Bicyclist;
+    TrafficParticipant -> Animal;
+    TrafficParticipant -> RoadWorker;
+    TrafficParticipant -> Driver;
+    TrafficParticipant -> Motorcyclist;
+
+    Vehicle -> Car;
+    Vehicle -> Truck;
+    Vehicle -> Motorcycle;
+    Vehicle -> Bus;
+    Vehicle -> EmergencyVehicle;
+
+    Car -> Sedan;
+    Car -> SUV;
+
+    Truck -> PickupTruck;
+    Truck -> DeliveryTruck;
+
+    Motorcycle -> SportMotorcycle;
+    Motorcycle -> CruiserMotorcycle;
+
+    Bus -> CityBus;
+    Bus -> CoachBus;
+
+    Pedestrian -> AdultPedestrian;
+    Pedestrian -> ChildPedestrian;
+    Pedestrian -> ElderlyPedestrian;
+
+    WeatherCondition -> Rainy;
+    WeatherCondition -> Snowy;
+    WeatherCondition -> Foggy;
+    WeatherCondition -> Sunny;
+    WeatherCondition -> Hail;
+    WeatherCondition -> Storm;
+
+    Foggy -> DenseFog;
+    Foggy -> MistyFog;
+
+    Sunny -> ClearSky;
+    Sunny -> PartiallyCloudy;
+
+    Rainy -> Drizzle;
+    Rainy -> HeavyRain;
+
+    Snowy -> LightSnow;
+    Snowy -> Blizzards;
+
+    TrafficSignal -> RedLight;
+    TrafficSignal -> GreenLight;
+    TrafficSignal -> YellowLight;
+
+    WeatherIntensity -> Light;
+    WeatherIntensity -> Moderate;
+    WeatherIntensity -> Heavy;
+
+    // New Concepts
+    Road -> RoadType; // E.g., Highway, Street, Country Road
+    Road -> RoadInfrastructure; // E.g., Guardrails, Reflective Markers
+    RoadTopologyAndTrafficInfrastructure -> RoadWorkZone; // E.g., Construction area
+
+    Vehicle -> ElectricVehicle; // E.g., Electric Car, Electric Motorcycle
+    Vehicle -> AutonomousVehicle; // E.g., Self-driving Car
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph ImprovedOntology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+RoadSigns -> SpeedLimitSign;
+RoadSigns -> StopSign;
+RoadSigns -> YieldSign;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+Road-> RoadWorkZone; 
+RoadWorkZone -> ConstructionArea;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle; 
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+digraph ImprovedOntology {
+  graph [rankdir=LR];
+
+  RoadDrivingScenario -> EnvironmentalConditions;
+  RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+  RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+  EnvironmentalConditions -> WeatherCondition;
+  EnvironmentalConditions -> LightingCondition;
+  EnvironmentalConditions -> WeatherIntensity;
+
+  RoadTopologyAndTrafficInfrastructure -> Road;
+  RoadTopologyAndTrafficInfrastructure -> Intersection;
+  RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+  RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+  RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+  Road -> RoadFeatures;
+  Road -> Lane;
+  Road -> RoadCondition;
+  Road -> RoadHazards;
+  Road -> RoadWorkZone; // New concept: Added Road Work Zone
+
+  RoadFeatures -> PedestrianCrossing;
+  RoadFeatures -> Roundabout;
+  RoadFeatures -> Tunnel;
+  RoadFeatures -> Bridge;
+  RoadFeatures -> SpeedBump; // New concept: Added Speed Bump
+
+  Lane -> BusLane;
+  Lane -> BicycleLane;
+  Lane -> CarPoolLane;
+
+  RoadCondition -> Dry;
+  RoadCondition -> Wet;
+  RoadCondition -> Icy;
+  RoadCondition -> Slippery;
+  RoadCondition -> SnowCovered;
+
+  RoadHazards -> Potholes;
+  RoadHazards -> UnevenSurface;
+  RoadHazards -> FallenTrees; // New concept: Added Fallen Trees
+
+  TrafficParticipantAndBehavior -> TrafficParticipant;
+  TrafficParticipantAndBehavior -> Behavior;
+
+  Behavior -> SafeDriving;
+  Behavior -> TrafficViolation;
+
+  SafeDriving -> DefensiveDriving;
+  SafeDriving -> CourteousDriving;
+  SafeDriving -> UsingSeatbelt;
+  SafeDriving -> MaintainingSafeDistance;
+  SafeDriving -> ObeyingTrafficRules;
+  SafeDriving -> UsingIndicators;
+  SafeDriving -> AdheringToSpeedLimits;
+  SafeDriving -> KeepingSafeFollowingDistance;
+  SafeDriving -> ObservingTrafficSignals;
+  SafeDriving -> AvoidingDistractions;
+
+  TrafficViolation -> SeatbeltViolation;
+  TrafficViolation -> RunningStopSign;
+  TrafficViolation -> DrivingUnderInfluence;
+  TrafficViolation -> Jaywalking;
+  TrafficViolation -> DistractedDriving;
+  TrafficViolation -> Tailgating;
+  TrafficViolation -> RunningRedLight;
+  TrafficViolation -> Speeding;
+  TrafficViolation -> RecklessDriving;
+  TrafficViolation -> UnsafeLaneChange;
+  TrafficViolation -> FailureToSignal;
+  TrafficViolation -> FailureToYield;
+  TrafficViolation -> DrunkDriving;
+
+  TrafficParticipant -> Vehicle;
+  TrafficParticipant -> Pedestrian;
+  TrafficParticipant -> Bicyclist;
+  TrafficParticipant -> Animal;
+  TrafficParticipant -> RoadWorker;
+  TrafficParticipant -> Driver;
+  TrafficParticipant -> Motorcyclist;
+
+  Vehicle -> Car;
+  Vehicle -> Truck;
+  Vehicle -> Motorcycle;
+  Vehicle -> Bus;
+  Vehicle -> EmergencyVehicle;
+
+  Car -> Sedan;
+  Car -> SUV;
+
+  Truck -> PickupTruck;
+  Truck -> DeliveryTruck;
+
+  Motorcycle -> SportMotorcycle;
+  Motorcycle -> CruiserMotorcycle;
+
+  Bus -> CityBus;
+  Bus -> CoachBus;
+
+  Pedestrian -> AdultPedestrian;
+  Pedestrian -> ChildPedestrian;
+  Pedestrian -> ElderlyPedestrian;
+
+  WeatherCondition -> Rainy;
+  WeatherCondition -> Snowy;
+  WeatherCondition -> Foggy;
+  WeatherCondition -> Sunny;
+  WeatherCondition -> Hail;
+  WeatherCondition -> Storm;
+
+  Foggy -> DenseFog;
+  Foggy -> MistyFog;
+
+  Sunny -> ClearSky;
+  Sunny -> PartiallyCloudy;
+
+  Rainy -> Drizzle;
+  Rainy -> HeavyRain;
+
+  Snowy -> LightSnow;
+  Snowy -> Blizzards;
+
+  TrafficSignal -> RedLight;
+  TrafficSignal -> GreenLight;
+  TrafficSignal -> YellowLight;
+
+  WeatherIntensity -> Light;
+  WeatherIntensity -> Moderate;
+  WeatherIntensity -> Heavy;
+
+  RoadType -> Highway;
+  RoadType -> Street;
+  RoadType -> CountryRoad;
+
+  RoadInfrastructure -> Guardrails;
+  RoadInfrastructure -> ReflectiveMarkers;
+
+  Vehicle -> ElectricVehicle;
+  Vehicle -> AutonomousVehicle; 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph ImprovedOntology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+Add 10 new relevant concepts, terms, or entities to the ontology.
+Each class has only one parent class.
+You should merge duplicated concepts.
+You should delete concepts irrelevant to road driving scenarios.
+You should improve the ontology structure.
+
+Output the new ontology in DOT format.
+The super class and sub class should be arranged as: super class -> sub class.
