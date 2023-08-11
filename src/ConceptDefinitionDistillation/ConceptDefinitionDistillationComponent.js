@@ -3,7 +3,6 @@ import {Button, Col, Form, Layout, message, Modal, Row, Table, Tabs} from "antd"
 import {serializeGraph} from "@thi.ng/dot";
 
 import * as d3 from "d3";
-import * as d3Graphviz from "d3-graphviz";
 import * as dotparser from "dotparser";
 
 import {Input} from "antd";
@@ -454,7 +453,10 @@ export default function ConceptDefinitionDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={12}>
-                        <Button onClick={onSaveDOT} style={{width: "90%"}}>
+                        <Button onClick={e => {
+                            onSaveDOT();
+                            e.preventDefault();
+                        }} style={{width: "90%"}}>
                             Download DOT
                         </Button>
                     </Col>
@@ -464,7 +466,10 @@ export default function ConceptDefinitionDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={12}>
-                        <Button onClick={onSaveHistory} style={{width: "90%"}}>
+                        <Button onClick={e => {
+                            onSaveHistory();
+                            e.preventDefault();
+                        }} style={{width: "90%"}}>
                             Download Log
                         </Button>
                     </Col>

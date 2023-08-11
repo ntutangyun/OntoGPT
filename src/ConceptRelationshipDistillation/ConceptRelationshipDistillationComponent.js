@@ -1,15 +1,12 @@
 import React, {useEffect, useRef, useState} from "react";
 import {Button, Col, Form, Layout, message, Modal, Row, Radio, Tabs} from "antd";
-import {serializeGraph} from "@thi.ng/dot";
 
 import * as d3 from "d3";
-import * as d3Graphviz from "d3-graphviz";
 import * as dotparser from "dotparser";
 
 import {Input} from "antd";
 import {
     FormatTemplate,
-    InstructionTemplate,
     ResponseTemplate,
     DomainContextTemplate,
     HierarchyTemplate,
@@ -48,48 +45,7 @@ function extractConceptFromAst(ast) {
         }
     });
     return conceptDescriptionDict;
-};
-
-function prepareTableData(conceptDict) {
-    const tableData = [];
-    Object.keys(conceptDict).forEach((concept) => {
-        tableData.push({
-            key: concept,
-            concept: concept,
-            definition: conceptDict[concept]
-        });
-    });
-    return tableData;
 }
-
-function insertNewLineEveryNWords(input_string, n) {
-    const all_words = input_string.split(" ");
-    let res = "";
-    let i = 1;
-    for (const word of all_words) {
-        if (i === n) {
-            res += word + "\n";
-            i = 0;
-        } else {
-            res += word + " ";
-        }
-        i += 1;
-    }
-    return res;
-}
-
-const definitionTableColumns = [
-    {
-        title: "Concept",
-        dataIndex: "concept",
-        key: "col-concept",
-    },
-    {
-        title: "Definition",
-        dataIndex: "definition",
-        key: "col-definition",
-    }
-];
 
 export default function ConceptRelationshipDistillationComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
@@ -295,25 +251,6 @@ export default function ConceptRelationshipDistillationComponent() {
         );
     };
 
-    const isTableLine = (line, delimiter = "|") => {
-        return line.startsWith(delimiter);
-    };
-
-    const isCompleteTableLine = (line, numEntries, delimiter = "|") => {
-        const lineSplit = line.split(delimiter);
-        if (line.endsWith(delimiter) && lineSplit.length === (numEntries + 2)) {
-            return true;
-        }
-        return !line.endsWith(delimiter) && lineSplit.length === (numEntries + 1);
-    };
-
-    const extractTableLineEntries = (line, separator = "|", numCols = 4) => {
-        //    def extract_table_line_entries(line, separator="|", num_cols=4):
-        //     return list(map(lambda text: text.strip(), line.split(separator)[1:num_cols + 1]))
-        const lineSplit = line.split(separator);
-        return lineSplit.slice(1, numCols + 1).map(text => text.trim());
-    };
-
     const conceptRadioOptions = [
         {
             label: "Pick Subject",
@@ -327,6 +264,16 @@ export default function ConceptRelationshipDistillationComponent() {
 
     const onRadioChange = ({target: {value}}) => {
         setConceptRadioOption(value);
+    };
+
+    const onSaveHistory = () => {
+        const link = document.createElement("a");
+        const file = new Blob([historyString], {type: "text/plain"});
+        link.href = URL.createObjectURL(file);
+        link.download = "concept-relationship-distillation.log";
+        link.click();
+        URL.revokeObjectURL(link.href);
+        link.remove();
     };
 
     const executionTabs = [
@@ -374,6 +321,19 @@ export default function ConceptRelationshipDistillationComponent() {
                     </Col>
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
+                    <Col span={12}>
+                        <Button onClick={e => {
+                            onSaveHistory();
+                            e.preventDefault();
+                        }} style={{width: "90%"}}>
+                            Download Log
+                        </Button>
+                    </Col>
+                    <Col span={12}>
+                        <div style={{paddingLeft: "0.5rem"}}>Click to download the log to a local .log file.</div>
+                    </Col>
+                </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={24}>
                         <p>Click any concept in the hierarchy graph as {conceptRadioOption}.</p>
                         <Radio.Group
@@ -387,7 +347,7 @@ export default function ConceptRelationshipDistillationComponent() {
                 </Row>
                 <Row>
                     <Col span={12}>
-                        Current subject
+                        Selected subject
                     </Col>
                     <Col span={12}>
                         <div style={{paddingLeft: "0.5rem"}}>
@@ -397,7 +357,7 @@ export default function ConceptRelationshipDistillationComponent() {
                 </Row>
                 <Row>
                     <Col span={12}>
-                        Current object
+                        Selected object
                     </Col>
                     <Col span={12}>
                         <div style={{paddingLeft: "0.5rem"}}>
@@ -421,15 +381,6 @@ export default function ConceptRelationshipDistillationComponent() {
             label: "Hierarchy",
             children: <div id="graph" style={graphStyle}/>
         },
-        // {
-        //     key: "Table",
-        //     label: "Definition Table",
-        //     children: <Table size={"small"}
-        //                      pagination={false}
-        //                      scroll={{
-        //                          y: 580,
-        //                      }} columns={definitionTableColumns} dataSource={conceptDefinitionTableData}/>
-        // }
     ];
 
     return (

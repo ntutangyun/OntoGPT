@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import {Button, Col, Form, Layout, message, Modal, Row, Tabs,} from "antd";
 
 import * as d3 from "d3";
-import * as d3Graphviz from "d3-graphviz";
 
 import {Input} from "antd";
 import {
@@ -225,7 +224,10 @@ export default function ConceptHierarchyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={12}>
-                        <Button onClick={onSaveDOT} style={{width: "90%"}}>
+                        <Button onClick={(e) => {
+                            onSaveDOT();
+                            e.preventDefault();
+                        }} style={{width: "90%"}}>
                             Download DOT
                         </Button>
                     </Col>
@@ -235,7 +237,10 @@ export default function ConceptHierarchyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={12}>
-                        <Button onClick={onSaveHistory} style={{width: "90%"}}>
+                        <Button onClick={e => {
+                            onSaveHistory();
+                            e.preventDefault();
+                        }} style={{width: "90%"}}>
                             Download Log
                         </Button>
                     </Col>
