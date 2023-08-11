@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import {Button, Col, Form, Layout, message, Modal, Row, Radio, Tabs} from "antd";
+import {Button, Col, Form, Layout, message, Modal, Row, Radio, Tabs, Table} from "antd";
 
 import * as d3 from "d3";
 import * as d3Graphviz from "d3-graphviz";
@@ -16,6 +16,7 @@ import {
 } from "./PromptTemplates";
 import {colStyle, CommonTextAreaStyle, contentStyle, graphStyle} from "../Common/Styles";
 import {ConceptSelectionTab} from "./ConceptSelectionTab";
+import {extractRelationship} from "../ResponseUtils";
 
 
 const {TextArea} = Input;
@@ -59,6 +60,7 @@ export default function ConceptRelationshipDistillationComponent() {
         useState(FormatTemplate);
     const [generatedPrompt, setGeneratedPrompt] = useState("");
     const [historyString, setHistoryString] = useState("");
+    const [relationshipDict, setRelationshipDict] = useState({});
     const [responseModalOpen, setResponseModalOpen] = useState(false);
     const [conceptDict, setConceptDict] = useState({});
     const [promptEngineeringTabKey, setPromptEngineeringTabKey] = useState("prompt");
@@ -267,6 +269,15 @@ export default function ConceptRelationshipDistillationComponent() {
         setConceptRadioOption(value);
     };
 
+    const processLog = () => {
+        console.log("processing log");
+        console.log(historyString);
+        const relationshipDict = extractRelationship(historyString.split("\n"));
+        console.log(relationshipDict);
+        setRelationshipDict(relationshipDict);
+        message.success("Log Processed");
+    };
+
     const onSaveHistory = () => {
         const link = document.createElement("a");
         const file = new Blob([historyString], {type: "text/plain"});
@@ -284,24 +295,12 @@ export default function ConceptRelationshipDistillationComponent() {
             children: <div style={{textAlign: "left"}}>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={12}>
-                        <Button onClick={() => setPromptEngineeringTabKey("concepts")} style={{width: "90%"}}>
-                            Select Concepts
-                        </Button>
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click the concept nodes in the hierarchy graph to select.
-                        </div>
-                    </Col>
-                </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
                         <Button onClick={onCopyPromptGenerated} style={{width: "90%"}}
                                 disabled={!subjectConcept || !objectConcept}>Copy & Execute</Button>
                     </Col>
                     <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to copy the prompt. Paste it in a new ChatGPT
-                            session
-                            to execute it.
+                        <div style={{paddingLeft: "0.5rem"}}>Click to copy the prompt. Execute in a new ChatGPT
+                            session.
                         </div>
                     </Col>
                 </Row>
@@ -319,6 +318,16 @@ export default function ConceptRelationshipDistillationComponent() {
                     </Col>
                     <Col span={12}>
                         <div style={{paddingLeft: "0.5rem"}}>Click to add the ChatGPT response into the log.</div>
+                    </Col>
+                </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
+                    <Col span={12}>
+                        <Button onClick={processLog} style={{width: "90%"}}>
+                            Process Log
+                        </Button>
+                    </Col>
+                    <Col span={12}>
+                        <div style={{paddingLeft: "0.5rem"}}>Extract relationships from the log.</div>
                     </Col>
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
@@ -376,11 +385,62 @@ export default function ConceptRelationshipDistillationComponent() {
         },
     ];
 
+    const relationshipTableColumns = [
+        {
+            title: "Subject -> Object",
+            dataIndex: "concept_pair",
+            key: "concept_pair",
+            render: (conceptPair) => <div style={{textAlign: "center"}}>
+                {conceptPair.split("->")[0]} <br/>-><br/> {conceptPair.split("->")[1]}
+            </div>
+        },
+        {
+            title: "Relationship",
+            dataIndex: "relationship",
+            key: "relationship",
+            render: (relationshipSet) => <div>
+                <ul style={{columns: 2}}>
+                    {Array.from(relationshipSet).map((relationship) => <li>{relationship}</li>)}
+                </ul>
+            </div>,
+            width: "70%"
+        }
+    ];
+
+    const prepareRelationshipTableData = (relationshipDict) => {
+        const relationshipTableData = [];
+        const relationshipArray = Object.entries(relationshipDict);
+        relationshipArray.sort((a, b) => a[0].localeCompare(b[0]));
+
+        for (const [key, value] of relationshipArray) {
+            relationshipTableData.push({
+                concept_pair: key,
+                relationship: value,
+                key: key,
+            });
+        }
+        return relationshipTableData;
+    };
+
     const visualizationTabItems = [
         {
             key: "dot",
             label: "Hierarchy",
             children: <div id="graph" style={graphStyle}/>
+        },
+        {
+            key: "relationship-dict",
+            label: "Relationships",
+            children: <>
+                <Table dataSource={prepareRelationshipTableData(relationshipDict)}
+                       columns={relationshipTableColumns}
+                       pagination={false}
+                       scroll={{
+                           y: "calc(100vh - 320px)",
+                       }}
+                       size={"small"}
+                />
+            </>
         },
     ];
 

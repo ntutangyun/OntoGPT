@@ -48,3 +48,43 @@ export function extractDotHistory(lines) {
     }
     return dotHistory;
 }
+
+export function extractRelationship(lines) {
+    console.log(lines);
+    const relationshipDict = {};
+
+    let inResponse = false;
+    for (let line of lines) {
+        line = line.trim();
+        console.log(line);
+
+        if (line === "Response") {
+            inResponse = true;
+            continue;
+        } else if (line === "Prompt") {
+            inResponse = false;
+            continue;
+        }
+
+        if (!inResponse) {
+            continue;
+        }
+
+        if (line.startsWith("@") && line.includes("->")) {
+            if (line.endsWith(".")) {
+                line = line.substring(0, line.length - 1);
+            }
+
+            const parts = line.split("->").map((part) => part.trim());
+            const concept1 = parts[0].substring(1).trim();
+            const concept2 = parts[2].trim();
+            const relationship = parts[1].trim();
+            const key = `${concept1}->${concept2}`;
+            if (!relationshipDict.hasOwnProperty(key)) {
+                relationshipDict[key] = new Set();
+            }
+            relationshipDict[key].add(relationship);
+        }
+    }
+    return relationshipDict;
+}
