@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Button, Col, Form, Layout, message, Modal, Row, Radio, Tabs} from "antd";
 
 import * as d3 from "d3";
+import * as d3Graphviz from "d3-graphviz";
 import * as dotparser from "dotparser";
 
 import {Input} from "antd";

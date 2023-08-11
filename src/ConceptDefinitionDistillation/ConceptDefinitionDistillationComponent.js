@@ -3,6 +3,7 @@ import {Button, Col, Form, Layout, message, Modal, Row, Table, Tabs} from "antd"
 import {serializeGraph} from "@thi.ng/dot";
 
 import * as d3 from "d3";
+import * as d3Graphviz from "d3-graphviz";
 import * as dotparser from "dotparser";
 
 import {Input} from "antd";
@@ -499,7 +500,7 @@ export default function ConceptDefinitionDistillationComponent() {
             children: <Table size={"small"}
                              pagination={false}
                              scroll={{
-                                 y: 580,
+                                 y: "calc(100vh - 320px)",
                              }} columns={definitionTableColumns} dataSource={conceptDefinitionTableData}/>
         }
     ];

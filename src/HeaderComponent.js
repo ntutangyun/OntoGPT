@@ -77,25 +77,25 @@ export default function HeaderComponent() {
                 onMouseLeave={() => setLink1Hover(false)}
                 onClick={() =>
                     navigate("/concept-hierarchy-distillation")}>
-                Concept Hierarchy Distillation
+                Hierarchy
             </div>
             <div style={link2Hover ? linkHoverStyle : isLink2Active ? linkActiveStyle : linkStyle}
                  onMouseEnter={() => setLink2Hover(true)}
                  onMouseLeave={() => setLink2Hover(false)}
                  onClick={() => navigate("/concept-definition-distillation")}>
-                Concept Definition Distillation
+                Definition
             </div>
             <div style={link3Hover ? linkHoverStyle : isLink3Active ? linkActiveStyle : linkStyle}
                  onMouseEnter={() => setLink3Hover(true)}
                  onMouseLeave={() => setLink3Hover(false)}
                  onClick={() => navigate("/concept-relation-distillation")}>
-                Concept Relation Distillation
+                Relation
             </div>
             <div style={link4Hover ? linkHoverStyle : isLink4Active ? linkActiveStyle : linkStyle}
                  onMouseEnter={() => setLink4Hover(true)}
                  onMouseLeave={() => setLink4Hover(false)}
                  onClick={() => navigate("/concept-property-distillation")}>
-                Concept Property Distillation
+                Property
             </div>
         </div>
     </Header>;
