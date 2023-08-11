@@ -4,28 +4,16 @@ import {Col, Layout, Row, Tabs,} from "antd";
 import {Input} from "antd";
 import {CommonTextAreaStyle, contentStyle} from "../Common/Styles";
 import OntologyAnimator from "./OntologyAnimator";
+import OntologyViewer from "./OntologyViewer";
 
 const {TextArea} = Input;
 const {Content} = Layout;
 
-const dataIDList = {
-    ChatGPT35Auto: {
-        Hierarchy: "chatgpt-3.5-auto-hierarchy",
-        Definition: "chatgpt-3.5-auto-definition",
-        Relationship: "chatgpt-3.5-auto-relationship",
-        Property: "chatgpt-3.5-auto-property"
-    },
-    ChatGPT35Partial: {
-        Hierarchy: "chatgpt-3.5-partial-hierarchy",
-        Definition: "chatgpt-3.5-partial-definition",
-        Relationship: "chatgpt-3.5-partial-relationship",
-        Property: "chatgpt-3.5-partial-property"
-    }
-};
-
 const dataUrlList = {
-    [dataIDList["ChatGPT35Auto"]["Hierarchy"]]: "docs/demos/chatgpt-3.5-auto-concept-hierarchy-distillation.log",
-    [dataIDList["ChatGPT35Partial"]["Hierarchy"]]: "docs/demos/chatgpt-3.5-partial-concept-hierarchy-distillation.log"
+    "chatgpt-3.5-auto-hierarchy": "docs/demos/chatgpt-3.5-auto-concept-hierarchy-distillation.log",
+    "chatgpt-3.5-partial-hierarchy": "docs/demos/chatgpt-3.5-partial-concept-hierarchy-distillation.log",
+    "chatgpt-3.5-partial-definition-log": "docs/demos/chatgpt-3.5-partial-concept-definition-distillation.log",
+    "chatgpt-3.5-partial-definition-dot": "docs/demos/chatgpt-3.5-partial-concept-definition-distillation.dot",
 };
 
 export default function Documentation() {
@@ -57,6 +45,7 @@ export default function Documentation() {
         for (let data of loadedData) {
             docDataDict[data["id"]] = data;
         }
+        console.log(docDataDict);
         setDocumentationData(docDataDict);
     };
 
@@ -64,24 +53,68 @@ export default function Documentation() {
         loadDocumentData().then();
     }, []);
 
-    const generateApplicationResultTabs = (docData, name, hierarchyLogId, definitionLogId, relationLogId, propertyLogId) => {
-        const tabList = [];
-        if (hierarchyLogId) {
-            tabList.push({
-                key: "hierarchy",
-                label: `Hierarchy Viewer`,
-                children: <div>
-                    <OntologyAnimator canvasID={`${name}-hierarchy`} distillationLog={docData[hierarchyLogId].content}/>
-                </div>
-            });
-            tabList.push({
-                key: "hierarchy-log",
-                label: `Hierarchy Log`,
-                children: <TextArea style={CommonTextAreaStyle} value={docData[hierarchyLogId].content}/>
-            },);
+    if (documentationData === null) {
+        return <Content style={contentStyle}>
+            <br/>
+            <Row style={{justifyContent: "center", margin: "2rem"}}>
+                <Col span={16}>
+                    <h1>Documentation</h1>
+                    <p>Downloading and initializing documentation data ...</p>
+                </Col>
+            </Row>
+        </Content>;
+    }
+
+    const chatGPT35AutoResultTabs = [
+        {
+            key: "hierarchy",
+            label: `Hierarchy Viewer`,
+            children: <div>
+                <OntologyAnimator canvasID={`ChatGPT35DrivingAuto-hierarchy`}
+                                  distillationLog={documentationData["chatgpt-3.5-auto-hierarchy"].content}/>
+            </div>
+        },
+        {
+            key: "hierarchy-log",
+            label: `Hierarchy Log`,
+            children: <TextArea style={CommonTextAreaStyle}
+                                readOnly={true}
+                                value={documentationData["chatgpt-3.5-auto-hierarchy"].content}/>
         }
-        return tabList;
-    };
+    ];
+
+    const chatGPT35PartialResultTabs = [
+        {
+            key: "hierarchy",
+            label: `Hierarchy Viewer`,
+            children: <div>
+                <OntologyAnimator canvasID={`ChatGPT35DrivingPartial-hierarchy`}
+                                  distillationLog={documentationData["chatgpt-3.5-partial-hierarchy"].content}/>
+            </div>
+        },
+        {
+            key: "hierarchy-log",
+            label: `Hierarchy Log`,
+            children: <TextArea style={CommonTextAreaStyle}
+                                value={documentationData["chatgpt-3.5-partial-hierarchy"].content}
+                                readOnly={true}/>
+        },
+        {
+            key: "definition-dot",
+            label: `Definition Viewer`,
+            children: <div>
+                <OntologyViewer canvasID={"ChatGPT35DrivingPartial-definition"}
+                                dotContent={documentationData["chatgpt-3.5-partial-definition-dot"].content}/>
+            </div>
+        },
+        {
+            key: "definition-log",
+            label: `Definition Log`,
+            children: <TextArea style={CommonTextAreaStyle}
+                                readOnly={true}
+                                value={documentationData["chatgpt-3.5-partial-definition-log"].content}/>
+        }
+    ];
 
     return (
         <Content style={contentStyle}>
@@ -116,46 +149,26 @@ export default function Documentation() {
                     <hr/>
                 </Col>
             </Row>
-            {
-                documentationData ? <Row style={{justifyContent: "center"}}>
-                    <Col span={16}>
-                        <h1>Demo Result - ChatGPT 3.5 - Autonomous Driving Domain - Without manual intervention</h1>
-                        <Tabs
-                            items={generateApplicationResultTabs(
-                                documentationData,
-                                "ChatGPT35DrivingAuto",
-                                dataIDList["ChatGPT35Auto"]["Hierarchy"],
-                                dataIDList["ChatGPT35Auto"]["Definition"],
-                                dataIDList["ChatGPT35Auto"]["Relationship"],
-                                dataIDList["ChatGPT35Auto"]["Property"]
-                            )}>
-                        </Tabs>
-                    </Col>
-                </Row> : <p>Loading history data</p>
-            }
+            <Row style={{justifyContent: "center"}}>
+                <Col span={16}>
+                    <h1>Demo Result - ChatGPT 3.5 - Autonomous Driving Domain - Without manual intervention</h1>
+                    <Tabs items={chatGPT35AutoResultTabs}/>
+                </Col>
+            </Row>
             <Row style={{justifyContent: "center", margin: "1rem 0rem"}}>
                 <Col span={16}>
                     <hr/>
                 </Col>
             </Row>
-            {
-                documentationData ? <Row style={{justifyContent: "center"}}>
-                    <Col span={16}>
-                        <h1>Demo Result - ChatGPT 3.5 - Autonomous Driving Domain - With minimal manual
-                            intervention</h1>
-                        <Tabs
-                            items={generateApplicationResultTabs(
-                                documentationData,
-                                "ChatGPT35DrivingPartial",
-                                dataIDList["ChatGPT35Partial"]["Hierarchy"],
-                                dataIDList["ChatGPT35Partial"]["Definition"],
-                                dataIDList["ChatGPT35Partial"]["Relationship"],
-                                dataIDList["ChatGPT35Partial"]["Property"]
-                            )}>
-                        </Tabs>
-                    </Col>
-                </Row> : <p>Loading history data</p>
-            }
+            <Row style={{justifyContent: "center"}}>
+                <Col span={16}>
+                    <h1>Demo Result - ChatGPT 3.5 - Autonomous Driving Domain - With minimal manual
+                        intervention</h1>
+                    <Tabs
+                        items={chatGPT35PartialResultTabs}>
+                    </Tabs>
+                </Col>
+            </Row>
             <br/>
         </Content>
     );

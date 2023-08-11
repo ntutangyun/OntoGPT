@@ -1,0 +1,2133 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+RoadDrivingScenario, EnvironmentalConditions, RoadTopologyAndTrafficInfrastructure, TrafficParticipantAndBehavior, WeatherCondition, LightingCondition, WeatherIntensity, Road, Intersection, TrafficSignal
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@RoadDrivingScenario@ A representation of a specific situation involving the interaction of various elements on the road, including environmental conditions, road topology, traffic infrastructure, and the behavior of different traffic participants.@
+
+@EnvironmentalConditions@ Factors that contribute to the overall environment in which road scenarios occur. This includes aspects like weather conditions, lighting conditions, and the intensity of weather phenomena.@
+
+@RoadTopologyAndTrafficInfrastructure@ The physical layout and elements that make up the road environment. It encompasses features such as the road itself, intersections, traffic signals, road signs, and various traffic control devices.@
+
+@TrafficParticipantAndBehavior@ Describes the participants in a road scenario, including vehicles, pedestrians, cyclists, and more. It also covers the behavior exhibited by these participants, which can range from safe driving practices to traffic violations.@
+
+@WeatherCondition@ Represents the prevailing weather state that influences driving conditions. It includes conditions like rainy, snowy, foggy, sunny, hail, and stormy weather.@
+
+@LightingCondition@ Refers to the level of illumination present in the driving environment, which can vary from well-lit conditions to low-light or dark conditions.@
+
+@WeatherIntensity@ Indicates the degree of severity or strength of a specific weather condition. It can be classified as light, moderate, or heavy based on the intensity of phenomena like rain, snow, etc.@
+
+@Road@ The physical road surface along which vehicles travel. It comprises various features such as lanes, road conditions, hazards, road type, and associated infrastructure.@
+
+@Intersection@ A point where multiple roads intersect or cross each other, often requiring traffic to yield or follow specific rules to navigate safely.@
+
+@TrafficSignal@ A visual signaling device positioned at intersections or along roads to regulate the flow of traffic. It includes signals like red light, green light, and yellow light, which indicate when vehicles should stop, proceed, or exercise caution.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+RoadSigns, TrafficControlDevices, RoadFeatures, Lane, RoadCondition, RoadHazards, RoadWorkZone, RoadType, Highway, Street
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@RoadSigns@ Road signs are visual markers placed along the road to convey important information to drivers and other road users. They provide guidance, warnings, regulations, and information about the road and its conditions.@
+
+@TrafficControlDevices@ Traffic control devices are elements such as traffic signals, road markings, and signs that are strategically placed to regulate and guide traffic flow, ensuring safety and efficiency on the road.@
+
+@RoadFeatures@ Road features refer to various elements present on or around the road that influence driving conditions and behaviors. These include pedestrian crossings, roundabouts, tunnels, bridges, and speed bumps.@
+
+@Lane@ A lane is a designated portion of the road for the movement of vehicles. Lanes help organize traffic and facilitate safe driving by separating different streams of traffic, such as regular lanes, bus lanes, bicycle lanes, and carpool lanes.@
+
+@RoadCondition@ Road condition describes the state of the road surface in terms of factors like wetness, slipperiness, and snow coverage. Different road conditions can significantly affect how vehicles handle and require drivers to adjust their driving behavior accordingly.@
+
+@RoadHazards@ Road hazards are obstacles or conditions that can pose risks to road users. Examples of road hazards include potholes, uneven surfaces, and fallen trees, which can impact vehicle stability and require drivers to exercise caution.@
+
+@RoadWorkZone@ A road work zone refers to an area of the road where construction or maintenance activities are taking place. These zones often have reduced speed limits and changed traffic patterns to ensure the safety of both road workers and passing vehicles.@
+
+@RoadType@ Road type categorizes roads based on their characteristics and intended usage. Different road types include highways, streets, and country roads, each designed to accommodate specific traffic volumes and speeds.@
+
+@Highway@ A highway is a major road designed for high-speed travel between cities and regions. Highways typically have multiple lanes, controlled access, and higher speed limits compared to other road types.@
+
+@Street@ A street is a public road in an urban area that primarily serves local traffic, connecting residences, businesses, and other destinations. Streets often have lower speed limits and may feature intersections and pedestrian crossings.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+CountryRoad, RoadInfrastructure, Guardrails, ReflectiveMarkers, PedestrianCrossing, Roundabout, Tunnel, Bridge, SpeedBump, BusLane
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ CountryRoad @ A type of road that typically exists in rural or less developed areas outside of urban centers. Country roads are often narrower and may have less traffic compared to highways or urban streets. They are commonly used for traveling between towns or villages.@
+
+@ RoadInfrastructure @ The various physical structures and components that are built alongside or onto roads to enhance safety, organization, and functionality. Road infrastructure includes items like road signs, traffic signals, guardrails, and reflective markers.@
+
+@ Guardrails @ Protective barriers installed at the edges of roads, bridges, and highways to prevent vehicles from veering off the road and into potentially hazardous areas. Guardrails contribute to road safety by minimizing the risk of accidents involving vehicles leaving the road.@
+
+@ ReflectiveMarkers @ Small devices or strips placed along the road's edge or centerline that reflect light from vehicle headlights, making them more visible at night or in low-light conditions. Reflective markers help drivers stay within their lanes and improve road visibility.@
+
+@ PedestrianCrossing @ A designated area of the road, often marked with zebra stripes, where pedestrians can safely cross the road. Pedestrian crossings are equipped with signs, road markings, and sometimes traffic signals to ensure the safety of pedestrians.@
+
+@ Roundabout @ A circular intersection where vehicles move in a counterclockwise direction around a central island. Roundabouts are designed to improve traffic flow and safety by reducing the need for stopping and providing smoother merging and exiting maneuvers.@
+
+@ Tunnel @ An underground passage that allows roads to pass through obstacles like mountains or bodies of water. Tunnels are constructed to maintain road continuity and provide a safe passage for vehicles.@
+
+@ Bridge @ A structure that spans a physical obstacle, such as a river, valley, or another road, allowing vehicles to cross over. Bridges are built to provide a connection between separated road segments.@
+
+@ SpeedBump @ A raised portion of the road surface, typically made of asphalt or other materials, designed to slow down vehicles. Speed bumps are often placed in areas where reduced vehicle speed is necessary, such as near schools or in residential neighborhoods.@
+
+@ BusLane @ A dedicated lane on the road reserved for buses, which allows them to travel more efficiently and bypass regular traffic congestion. Bus lanes can help improve public transportation and encourage the use of buses as a mode of travel.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+BicycleLane, CarPoolLane, Dry, Wet, Icy, Slippery, SnowCovered, Potholes, UnevenSurface, FallenTrees
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@BicycleLane@ A designated lane on a road exclusively intended for bicycles. It provides a safe space for cyclists to travel separate from vehicular traffic, promoting sustainable and active modes of transportation.@
+
+@CarPoolLane@ Also known as a High Occupancy Vehicle (HOV) lane, this is a special lane on a road designated for vehicles with multiple occupants. It encourages carpooling and reduces traffic congestion by providing faster travel options for vehicles carrying more passengers.@
+
+@Dry@ Refers to road conditions where the pavement is free of moisture, resulting in good traction and reduced chances of skidding. This condition is favorable for driving as it minimizes the risk of accidents related to slippery surfaces.@
+
+@Wet@ Describes road conditions when the pavement is damp due to recent rainfall or other sources of water. Wet roads can reduce traction and increase the likelihood of skidding or hydroplaning, which requires cautious driving.@
+
+@Icy@ Denotes road conditions where the surface is covered with a layer of ice. Icy roads are extremely hazardous as they severely impact traction and vehicle control. Drivers must exercise extreme caution and adapt their driving behavior accordingly.@
+
+@Slippery@ Refers to road surfaces that are slick and prone to reduced traction due to factors such as rain, oil spills, or wet leaves. Slippery conditions can result in skidding or difficulty in controlling the vehicle's movement.@
+
+@SnowCovered@ Describes road conditions where the pavement is covered with snow. Snow-covered roads reduce traction and can lead to challenging driving conditions, requiring slower speeds and careful maneuvering.@
+
+@Potholes@ Refers to depressions or holes in the road surface caused by wear and tear, weathering, or traffic. Potholes can pose a hazard to vehicles as they can cause damage to tires, suspension, and other vehicle components.@
+
+@UnevenSurface@ Denotes a road surface that is not level or smooth due to irregularities, bumps, or changes in elevation. Uneven surfaces can affect vehicle stability and control, potentially leading to discomfort and reduced handling.@
+
+@FallenTrees@ Describes the presence of trees or large branches that have fallen onto the road, obstructing traffic. Fallen trees can result from severe weather conditions such as storms or strong winds and require immediate removal to ensure road safety.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+TrafficParticipant, Behavior, SafeDriving, TrafficViolation, DefensiveDriving, CourteousDriving, UsingSeatbelt, MaintainingSafeDistance, ObeyingTrafficRules, UsingIndicators
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ TrafficParticipant @ TrafficParticipant refers to any entity that is present or active on the road, interacting with other elements of the road scenario. This includes vehicles (such as cars, trucks, motorcycles, buses), pedestrians, bicyclists, animals, road workers, drivers, and motorcyclists. Traffic participants play a key role in the overall road dynamics and safety.@
+
+@ Behavior @ Behavior encompasses the actions and conduct displayed by traffic participants while navigating the road scenario. It encompasses a wide range of actions, from safe driving practices to traffic violations. Behaviors can be categorized into safe driving behaviors, where participants follow recommended practices, and traffic violations, where participants deviate from established traffic rules.@
+
+@ SafeDriving @ SafeDriving entails a set of positive behaviors exhibited by traffic participants to ensure road safety and minimize risks. This includes practicing defensive driving techniques, maintaining a safe distance from other vehicles, obeying traffic rules and signals, using indicators to signal intentions, adhering to speed limits, and avoiding distractions. Safe driving behaviors contribute to reducing accidents and promoting road safety.@
+
+@ TrafficViolation @ TrafficViolation refers to any behavior displayed by traffic participants that contravenes established traffic regulations or rules. These violations can encompass a wide range of actions, such as running red lights, speeding, tailgating, reckless driving, failure to signal, and more. Traffic violations can result in penalties, accidents, and compromised road safety.@
+
+@ DefensiveDriving @ DefensiveDriving is a proactive driving approach that emphasizes anticipating potential hazards and taking preventative actions to avoid accidents. It involves remaining alert to the actions of other road users, maintaining a safe following distance, avoiding aggressive maneuvers, and making split-second decisions to ensure personal safety and the safety of others.@
+
+@ CourteousDriving @ CourteousDriving reflects the practice of showing consideration and respect for other road users. It involves actions like yielding the right of way, letting pedestrians cross, allowing merging vehicles to enter, and refraining from aggressive behaviors. Courteous driving contributes to smoother traffic flow and a more harmonious road environment.@
+
+@ UsingSeatbelt @ UsingSeatbelt pertains to the act of fastening a seatbelt while operating a vehicle. Seatbelts are crucial safety devices that protect occupants in case of sudden stops or collisions. Using seatbelts significantly reduces the risk of injury and ejection during accidents, making it an essential practice for all vehicle occupants.@
+
+@ MaintainingSafeDistance @ MaintainingSafeDistance involves keeping a reasonable and safe gap between one's vehicle and the vehicle in front. This distance allows for adequate reaction time and braking distance, reducing the likelihood of rear-end collisions. Maintaining a safe following distance is a fundamental aspect of defensive driving and overall road safety.@
+
+@ ObeyingTrafficRules @ ObeyingTrafficRules entails adhering to the established laws and regulations governing road behavior. This includes respecting traffic signals, stop signs, speed limits, lane markings, and other rules of the road. Obeying traffic rules promotes predictability, minimizes conflicts, and enhances overall road safety.@
+
+@ UsingIndicators @ UsingIndicators involves activating turn signals or indicators to communicate intended maneuvers to other road users. Indicators notify nearby vehicles and pedestrians about upcoming lane changes, turns, or merges, allowing for smoother traffic flow and reducing the risk of collisions. Consistently using indicators contributes to effective communication on the road.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+AdheringToSpeedLimits, KeepingSafeFollowingDistance, ObservingTrafficSignals, AvoidingDistractions, SeatbeltViolation, RunningStopSign, DrivingUnderInfluence, Jaywalking, DistractedDriving, Tailgating
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@AdheringToSpeedLimits@ This concept refers to the responsible and safe practice of driving within the designated speed limits for a particular road or area. It involves adjusting your vehicle's speed to match the posted limits, taking into consideration the prevailing conditions.@
+
+@KeepingSafeFollowingDistance@ Keeping a safe following distance involves maintaining enough space between your vehicle and the vehicle in front of you. This distance allows you to react promptly to unexpected changes in traffic and road conditions, reducing the risk of collisions.@
+
+@ObservingTrafficSignals@ Observing traffic signals involves paying close attention to traffic lights and other signals on the road, such as stop signs and yield signs. Following these signals accurately helps in maintaining order and safety on the road.@
+
+@AvoidingDistractions@ This concept involves refraining from activities that can divert your attention from driving. Distractions like using a mobile phone, eating, or adjusting entertainment systems can compromise your ability to focus on the road.@
+
+@SeatbeltViolation@ Seatbelt violation refers to the act of not wearing a seatbelt while driving or riding in a vehicle. Seatbelts are crucial safety features that help reduce injuries in case of a collision.@
+
+@RunningStopSign@ Running a stop sign refers to the violation of not coming to a complete stop at an intersection where a stop sign is placed. Stop signs indicate that drivers must stop before proceeding to ensure safe crossing of other traffic.@
+
+@DrivingUnderInfluence@ Driving under the influence (DUI) refers to operating a vehicle while impaired by alcohol, drugs, or any other substance that affects your ability to drive safely. It is a serious violation and poses a significant risk to road safety.@
+
+@Jaywalking@ Jaywalking refers to pedestrians crossing the street at a location other than a designated crosswalk or pedestrian crossing. It can pose dangers to both pedestrians and drivers as it may disrupt the flow of traffic.@
+
+@DistractedDriving@ Distracted driving occurs when a driver's attention is diverted from the task of driving due to various activities such as texting, talking on the phone, eating, or engaging in other tasks not related to driving. This can lead to accidents and unsafe driving behavior.@
+
+@Tailgating@ Tailgating involves driving too closely behind another vehicle, leaving inadequate space for safe braking and maneuvering. Tailgating increases the risk of rear-end collisions and reduces the ability to react to sudden changes in traffic.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+RunningRedLight, Speeding, RecklessDriving, UnsafeLaneChange, FailureToSignal, FailureToYield, DrunkDriving, Vehicle, Pedestrian, Bicyclist
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ RunningRedLight @ Running a red traffic signal, indicating a violation where a vehicle proceeds through an intersection despite the traffic signal displaying a red light for their direction. This behavior disregards the requirement to stop and yield to cross traffic.@
+
+@ Speeding @ Speeding refers to driving a vehicle at a speed exceeding the posted speed limit or a safe speed for prevailing road and traffic conditions. It is a common traffic violation that can lead to reduced control over the vehicle and increased risk of accidents.@
+
+@ RecklessDriving @ Reckless driving involves operating a vehicle with a complete disregard for the safety of others. It encompasses dangerous behaviors such as excessive speeding, aggressive maneuvering, tailgating, and other actions that substantially increase the risk of accidents.@
+
+@ UnsafeLaneChange @ Unsafe lane change occurs when a driver changes lanes without properly checking blind spots, signaling their intention, or ensuring that the maneuver can be completed safely. This behavior can lead to collisions with other vehicles or disrupt the flow of traffic.@
+
+@ FailureToSignal @ Failure to signal refers to neglecting to use turn indicators or signals to communicate one's intention to other road users before making a turn or changing lanes. This omission can lead to confusion among other drivers and result in accidents.@
+
+@ FailureToYield @ Failure to yield happens when a driver fails to give the right-of-way to another road user who has the legal priority to proceed, such as at intersections or crosswalks. This violation can lead to collisions and endanger pedestrians and other vehicles.@
+
+@ DrunkDriving @ Drunk driving involves operating a vehicle while under the influence of alcohol or drugs, impairing one's ability to drive safely. This behavior greatly increases the risk of accidents and endangers the driver, passengers, and other road users.@
+
+@ Vehicle @ A vehicle is a means of transportation designed to carry people or goods. It includes various types such as cars, trucks, motorcycles, and buses, each serving different purposes and having distinct characteristics.@
+
+@ Pedestrian @ A pedestrian is a person traveling on foot, such as walking or running, along roads, sidewalks, crosswalks, or other designated pathways. Pedestrians are vulnerable road users and require special attention from drivers to ensure their safety.@
+
+@ Bicyclist @ A bicyclist, also known as a cyclist or biker, is an individual who rides a bicycle as a mode of transportation or recreation. Bicyclists share the road with motor vehicles and pedestrians and are subject to traffic rules and regulations.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+Animal, RoadWorker, Driver, Motorcyclist, Car, Truck, Motorcycle, Bus, EmergencyVehicle, Sedan
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ Animal @ A living creature that may occasionally enter the road and pose a hazard to traffic participants. Examples include wild animals like deer and squirrels.@
+
+@ RoadWorker @ An individual employed to perform maintenance, construction, or repairs on roads and infrastructure. Road workers often operate in or near traffic and use safety equipment to ensure their well-being.@
+
+@ Driver @ A person who operates a vehicle, responsible for controlling its movements and adhering to traffic regulations. Drivers should be attentive, follow road signs, and prioritize safe driving practices.@
+
+@ Motorcyclist @ A road user who operates a two-wheeled motor vehicle, commonly known as a motorcycle. Motorcyclists are vulnerable participants and must wear protective gear and follow traffic rules.@
+
+@ Car @ A type of motor vehicle designed primarily for the transportation of passengers. Cars usually have seating for a driver and multiple passengers, with various sizes and types such as sedans and SUVs.@
+
+@ Truck @ A larger motor vehicle used for transporting goods. Trucks come in different sizes and configurations, such as pickup trucks and delivery trucks, and are essential for freight transportation.@
+
+@ Motorcycle @ A motorized two-wheeled vehicle, commonly referred to as a bike. Motorcycles vary in types like sport motorcycles and cruisers, offering a fuel-efficient mode of transportation.@
+
+@ Bus @ A large vehicle designed to carry a significant number of passengers, often used for public transportation. Buses can be city buses or coach buses, catering to urban and intercity travel.@
+
+@ EmergencyVehicle @ Specialized vehicles, such as police cars, ambulances, and fire trucks, used by emergency services to respond quickly to incidents. These vehicles have priority on the road to ensure prompt assistance.@
+
+@ Sedan @ A type of car with four doors, typically featuring seating for four or more passengers. Sedans are known for their enclosed passenger compartment and separate trunk space.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+SUV, PickupTruck, DeliveryTruck, SportMotorcycle, CruiserMotorcycle, CityBus, CoachBus, AdultPedestrian, ChildPedestrian, ElderlyPedestrian
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@SUV@ A Sports Utility Vehicle (SUV) is a type of versatile and spacious vehicle designed to handle various terrains. It typically combines the features of a passenger car with those of an off-road vehicle, offering ample seating and cargo space.@
+
+@PickupTruck@ A Pickup Truck is a type of vehicle with an open cargo bed at the rear. It is designed for transporting goods and cargo. Pickup trucks often have seating for passengers in the front cabin and can be used for various purposes, including personal and commercial use.@
+
+@DeliveryTruck@ A Delivery Truck is a type of commercial vehicle used for transporting goods from one location to another. It is designed to carry and deliver various types of cargo, and it often features a closed cargo compartment to protect the goods from the elements.@
+
+@SportMotorcycle@ A Sport Motorcycle is a type of motorcycle designed for high-performance riding and agility. It usually features a more aggressive riding position, higher engine power, and enhanced handling capabilities, making it suitable for enthusiasts who enjoy spirited riding.@
+
+@CruiserMotorcycle@ A Cruiser Motorcycle is a type of motorcycle known for its relaxed and comfortable riding position. It often features a laid-back seat, lower handlebars, and a design that emphasizes style and comfort for long-distance cruising.@
+
+@CityBus@ A City Bus is a large public transportation vehicle designed to carry multiple passengers within a city or urban area. It features a spacious interior with seating for numerous passengers and often includes standing space as well.@
+
+@CoachBus@ A Coach Bus is a larger and more luxurious type of bus typically used for long-distance travel, tours, and intercity transportation. It offers comfortable seating, amenities, and sometimes even sleeping facilities for passengers during extended journeys.@
+
+@AdultPedestrian@ An Adult Pedestrian refers to a person who is walking on foot, typically considered to be of adult age. Pedestrians are individuals who use their own feet to move around, often on sidewalks, crosswalks, and pedestrian-friendly areas.@
+
+@ChildPedestrian@ A Child Pedestrian refers to a young individual who is walking on foot. Children are considered vulnerable pedestrians due to their limited understanding of traffic rules and their smaller size, requiring special attention and caution from drivers.@
+
+@ElderlyPedestrian@ An Elderly Pedestrian refers to a senior citizen who is walking on foot. Elderly pedestrians may have reduced mobility, slower walking speeds, and specific needs for crossing roads safely, making it important for drivers to be attentive and patient.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+Rainy, Snowy, Foggy, Sunny, Hail, Storm, DenseFog, MistyFog, ClearSky, PartiallyCloudy
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@Rainy@ Rainy weather condition refers to the presence of rainfall, which can vary in intensity from light drizzle to heavy rain. It often results in wet road surfaces and reduced visibility for drivers.@
+
+@Snowy@ Snowy weather condition involves the falling of snow, leading to accumulation on roads and other surfaces. It can create hazardous driving conditions due to reduced traction and visibility.@
+
+@Foggy@ Foggy weather condition occurs when there's a dense concentration of water vapor near the ground, leading to reduced visibility. Misty fog is a milder form of fog with slightly improved visibility compared to dense fog.@
+
+@Sunny@ Sunny weather condition is characterized by clear skies and abundant sunlight. Clear skies indicate an absence of clouds, while partially cloudy skies have a mixture of clouds and clear areas.@
+
+@Hail@ Hail is a type of precipitation that consists of balls of ice falling from the sky. It can cause damage to vehicles and create unsafe driving conditions.@
+
+@Storm@ A storm refers to severe weather conditions that can include heavy rain, strong winds, lightning, and thunder. Stormy conditions can lead to dangerous driving situations.@
+
+@DenseFog@ Dense fog refers to fog with very low visibility, often making it challenging for drivers to see the road and other vehicles clearly.@
+
+@MistyFog@ Misty fog is a milder form of fog compared to dense fog. It still reduces visibility but not as severely as dense fog.@
+
+@ClearSky@ Clear sky indicates that there are no significant clouds in the sky, allowing ample sunlight to pass through.@
+
+@PartiallyCloudy@ Partially cloudy weather means that there is a mix of clouds and clear areas in the sky. It can create changing lighting conditions throughout the day.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+Drizzle, HeavyRain, LightSnow, Blizzards, RedLight, GreenLight, YellowLight, Light, Moderate, Heavy
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@Drizzle@ Drizzle refers to light, fine rain characterized by very small, closely spaced water droplets falling from the sky. It often creates a misty or hazy effect and can make road surfaces slightly wet.@
+
+@HeavyRain@ Heavy rain is a meteorological condition where a significant amount of rain falls in a short period of time. It can lead to reduced visibility, slippery road conditions, and potential flooding.@
+
+@LightSnow@ Light snow refers to a gentle and thin layer of frozen precipitation that accumulates on the ground. It can cause road surfaces to become slippery, especially when it melts and refreezes.@
+
+@Blizzards@ Blizzards are severe winter weather events characterized by heavy snowfall, strong winds, and reduced visibility due to blowing snow. They can create treacherous driving conditions and lead to road closures.@
+
+@RedLight@ A red traffic light is a signal displayed at intersections to indicate that vehicles and pedestrians must come to a complete stop. It's a crucial aspect of traffic control to manage the flow of vehicles and ensure safety.@
+
+@GreenLight@ A green traffic light is a signal displayed at intersections to indicate that vehicles and pedestrians are allowed to proceed. It signals the right of way for vehicles in the direction of the green signal.@
+
+@YellowLight@ A yellow traffic light, also known as an amber light, is a signal displayed at intersections to warn that the signal is about to change from green to red. It prompts drivers to slow down and prepare to stop.@
+
+@Light@ In the context of weather intensity, "light" refers to a mild or gentle level of a weather condition. For example, light rain indicates a relatively low amount of rainfall.@
+
+@Moderate@ In the context of weather intensity, "moderate" indicates a middle-level intensity of a weather condition. For instance, moderate snowfall indicates a moderate amount of snow accumulating on the ground.@
+
+@Heavy@ In the context of weather intensity, "heavy" signifies a high or intense level of a weather condition. For example, heavy rain refers to a substantial amount of rain falling in a given period.@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I have a road driving scenario ontology as below (in DOT format).
+
+digraph Ontology {
+graph [rankdir=LR];
+
+RoadDrivingScenario -> EnvironmentalConditions;
+RoadDrivingScenario -> RoadTopologyAndTrafficInfrastructure;
+RoadDrivingScenario -> TrafficParticipantAndBehavior;
+
+EnvironmentalConditions -> WeatherCondition;
+EnvironmentalConditions -> LightingCondition;
+EnvironmentalConditions -> WeatherIntensity;
+
+RoadTopologyAndTrafficInfrastructure -> Road;
+RoadTopologyAndTrafficInfrastructure -> Intersection;
+RoadTopologyAndTrafficInfrastructure -> TrafficSignal;
+RoadTopologyAndTrafficInfrastructure -> RoadSigns;
+RoadTopologyAndTrafficInfrastructure -> TrafficControlDevices;
+
+Road -> RoadFeatures;
+Road -> Lane;
+Road -> RoadCondition;
+Road -> RoadHazards;
+Road -> RoadWorkZone;
+
+Road -> RoadType;
+RoadType -> Highway;
+RoadType -> Street;
+RoadType -> CountryRoad;
+
+Road -> RoadInfrastructure;
+RoadInfrastructure -> Guardrails;
+RoadInfrastructure -> ReflectiveMarkers;
+
+RoadFeatures -> PedestrianCrossing;
+RoadFeatures -> Roundabout;
+RoadFeatures -> Tunnel;
+RoadFeatures -> Bridge;
+RoadFeatures -> SpeedBump;
+
+Lane -> BusLane;
+Lane -> BicycleLane;
+Lane -> CarPoolLane;
+
+RoadCondition -> Dry;
+RoadCondition -> Wet;
+RoadCondition -> Icy;
+RoadCondition -> Slippery;
+RoadCondition -> SnowCovered;
+
+RoadHazards -> Potholes;
+RoadHazards -> UnevenSurface;
+RoadHazards -> FallenTrees;
+
+TrafficParticipantAndBehavior -> TrafficParticipant;
+TrafficParticipantAndBehavior -> Behavior;
+
+Behavior -> SafeDriving;
+Behavior -> TrafficViolation;
+
+SafeDriving -> DefensiveDriving;
+SafeDriving -> CourteousDriving;
+SafeDriving -> UsingSeatbelt;
+SafeDriving -> MaintainingSafeDistance;
+SafeDriving -> ObeyingTrafficRules;
+SafeDriving -> UsingIndicators;
+SafeDriving -> AdheringToSpeedLimits;
+SafeDriving -> KeepingSafeFollowingDistance;
+SafeDriving -> ObservingTrafficSignals;
+SafeDriving -> AvoidingDistractions;
+
+TrafficViolation -> SeatbeltViolation;
+TrafficViolation -> RunningStopSign;
+TrafficViolation -> DrivingUnderInfluence;
+TrafficViolation -> Jaywalking;
+TrafficViolation -> DistractedDriving;
+TrafficViolation -> Tailgating;
+TrafficViolation -> RunningRedLight;
+TrafficViolation -> Speeding;
+TrafficViolation -> RecklessDriving;
+TrafficViolation -> UnsafeLaneChange;
+TrafficViolation -> FailureToSignal;
+TrafficViolation -> FailureToYield;
+TrafficViolation -> DrunkDriving;
+
+TrafficParticipant -> Vehicle;
+TrafficParticipant -> Pedestrian;
+TrafficParticipant -> Bicyclist;
+TrafficParticipant -> Animal;
+TrafficParticipant -> RoadWorker;
+TrafficParticipant -> Driver;
+TrafficParticipant -> Motorcyclist;
+
+Vehicle -> Car;
+Vehicle -> Truck;
+Vehicle -> Motorcycle;
+Vehicle -> Bus;
+Vehicle -> EmergencyVehicle;
+
+Car -> Sedan;
+Car -> SUV;
+
+Truck -> PickupTruck;
+Truck -> DeliveryTruck;
+
+Motorcycle -> SportMotorcycle;
+Motorcycle -> CruiserMotorcycle;
+
+Bus -> CityBus;
+Bus -> CoachBus;
+
+Pedestrian -> AdultPedestrian;
+Pedestrian -> ChildPedestrian;
+Pedestrian -> ElderlyPedestrian;
+
+WeatherCondition -> Rainy;
+WeatherCondition -> Snowy;
+WeatherCondition -> Foggy;
+WeatherCondition -> Sunny;
+WeatherCondition -> Hail;
+WeatherCondition -> Storm;
+
+Foggy -> DenseFog;
+Foggy -> MistyFog;
+
+Sunny -> ClearSky;
+Sunny -> PartiallyCloudy;
+
+Rainy -> Drizzle;
+Rainy -> HeavyRain;
+
+Snowy -> LightSnow;
+Snowy -> Blizzards;
+
+TrafficSignal -> RedLight;
+TrafficSignal -> GreenLight;
+TrafficSignal -> YellowLight;
+
+WeatherIntensity -> Light;
+WeatherIntensity -> Moderate;
+WeatherIntensity -> Heavy;
+
+Vehicle -> ElectricVehicle;
+Vehicle -> AutonomousVehicle;
+}
+
+In the ontology context, describe the following concepts:
+
+ElectricVehicle, AutonomousVehicle
+
+Format your response in the following way. Keep concept name and description in one line. 
+@ concept name @ concept description @
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Response
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ ElectricVehicle @ An electric vehicle (EV) is a type of vehicle that operates using one or more electric motors powered by electricity stored in batteries. It does not rely on internal combustion engines and does not produce tailpipe emissions. Electric vehicles can include various types such as electric cars, electric trucks, electric buses, and electric motorcycles. They contribute to reducing air pollution and dependence on fossil fuels, promoting sustainability in transportation.@
+
+@ AutonomousVehicle @ An autonomous vehicle, also known as a self-driving car or driverless car, is a vehicle that can operate and navigate without direct human input. Autonomous vehicles utilize various technologies such as sensors, cameras, radar, Lidar, and advanced artificial intelligence to perceive their surroundings, make decisions, and control their movement. They can perform tasks like lane changing, braking, acceleration, and navigating complex traffic situations without requiring constant human intervention. Autonomous vehicles have the potential to enhance road safety, improve traffic efficiency, and provide mobility solutions for individuals who cannot drive.@

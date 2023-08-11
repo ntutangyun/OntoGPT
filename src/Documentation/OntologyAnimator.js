@@ -41,6 +41,6 @@ export default function OntologyAnimator({canvasID, distillationLog}) {
                             onChange={page => setLoopIndex(page - 1)}/>
 
             </div>}
-        <div id={canvasID} style={{...graphStyle, height: "calc(100vh - 150px)", maxHeight: "calc(100vh - 150px)"}}/>
+        <div id={canvasID} style={{...graphStyle, height: "calc(100vh - 180px)", maxHeight: "calc(100vh - 180px)"}}/>
     </>;
 }
