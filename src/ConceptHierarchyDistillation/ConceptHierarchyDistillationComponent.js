@@ -11,7 +11,7 @@ import {
     ResponseTemplate,
     HierarchyTemplate,
 } from "./PromptTemplates";
-import {extractDigraphString} from "../ResponseUtils";
+import {extractDigraphString} from "../DistillationUtils";
 import {DomainContextTemplate, PromptSeparator, ResponseSeparator} from "../Common/PromptTemplates";
 import {colStyle, CommonTextAreaStyle, contentStyle, graphStyle} from "../Common/Styles";
 
@@ -270,12 +270,11 @@ export default function ConceptHierarchyDistillationComponent() {
                     <h1>Prompt Engineering</h1>
                     <Tabs defaultActiveKey="prompt" items={promptEngineeringTabs}/>
                 </Col>
-                <Col span={6} style={colStyle}>
+                <Col span={4} style={colStyle}>
                     <h1 style={{textAlign: "center"}}>Execution</h1>
                     <Tabs defaultActiveKey={"controls"} items={executionTabs}/>
-
                 </Col>
-                <Col span={9} style={colStyle}>
+                <Col span={11} style={colStyle}>
                     <h1>Visualisation</h1>
                     <div id="graph" style={{...graphStyle, maxHeight: "calc(100vh - 220px)"}}/>
                 </Col>

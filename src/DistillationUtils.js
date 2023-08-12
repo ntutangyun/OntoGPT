@@ -88,3 +88,38 @@ export function extractRelationship(lines) {
     }
     return relationshipDict;
 }
+
+export function isCompleteTableLine(line, numEntries, delimiter = "|") {
+    const lineSplit = line.split(delimiter);
+    if (line.endsWith(delimiter) && lineSplit.length === (numEntries + 2)) {
+        return true;
+    }
+    return !line.endsWith(delimiter) && lineSplit.length === (numEntries + 1);
+}
+
+export function extractConceptFromAst(ast) {
+    console.log(ast);
+    const conceptDescriptionDict = {};
+    const edges = ast[0].children.filter((stmt) => stmt.type === "edge_stmt");
+    edges.forEach((edge) => {
+        const [from, to] = edge.edge_list;
+        if (from.type === "node_id") {
+            if (!conceptDescriptionDict.hasOwnProperty(from.id)) {
+                conceptDescriptionDict[from.id] = null;
+            }
+        }
+        if (to.type === "node_id") {
+            if (!conceptDescriptionDict.hasOwnProperty(to.id)) {
+                conceptDescriptionDict[to.id] = null;
+            }
+        }
+    });
+
+    const nodes = ast[0].children.filter(stmt => stmt.type === "node_stmt");
+    nodes.forEach(node => {
+        if (!conceptDescriptionDict.hasOwnProperty(node.node_id.id)) {
+            conceptDescriptionDict[node.node_id.id] = null;
+        }
+    });
+    return conceptDescriptionDict;
+}

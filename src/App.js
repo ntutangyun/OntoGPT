@@ -9,6 +9,7 @@ import ConceptDefinitionDistillationComponent
 import ConceptRelationshipDistillationComponent
     from "./ConceptRelationshipDistillation/ConceptRelationshipDistillationComponent";
 import Documentation from "./Documentation/Documentation";
+import ConceptPropertyDistillationComponent from "./ConceptPropertyDistillation/ConceptPropertyDistillationComponent";
 
 const {Footer} = Layout;
 
@@ -30,7 +31,8 @@ function App() {
                            element={<ConceptDefinitionDistillationComponent/>}/>
                     <Route path={"/concept-relation-distillation"}
                            element={<ConceptRelationshipDistillationComponent/>}/>
-                    <Route path={"/concept-property-distillation"} element={<p>UI Under Development</p>}/>
+                    <Route path={"/concept-property-distillation"}
+                           element={<ConceptPropertyDistillationComponent/>}/>
                     <Route path={"*"} element={<Navigate to={"/concept-hierarchy-distillation"} replace={true}/>}/>
                 </Routes>
                 <Footer style={footerStyle}>Yun Tang (yun.tang at warwick.ac.uk) @ WMG, University of Warwick, United

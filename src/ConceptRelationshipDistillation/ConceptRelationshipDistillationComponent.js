@@ -16,38 +16,13 @@ import {
 } from "./PromptTemplates";
 import {colStyle, CommonTextAreaStyle, contentStyle, graphStyle} from "../Common/Styles";
 import {ConceptSelectionTab} from "./ConceptSelectionTab";
-import {extractRelationship} from "../ResponseUtils";
+import {extractConceptFromAst, extractRelationship} from "../DistillationUtils";
 
 
 const {TextArea} = Input;
 const {Content} = Layout;
 
-function extractConceptFromAst(ast) {
-    console.log(ast);
-    const conceptDescriptionDict = {};
-    const edges = ast[0].children.filter((stmt) => stmt.type === "edge_stmt");
-    edges.forEach((edge) => {
-        const [from, to] = edge.edge_list;
-        if (from.type === "node_id") {
-            if (!conceptDescriptionDict.hasOwnProperty(from.id)) {
-                conceptDescriptionDict[from.id] = null;
-            }
-        }
-        if (to.type === "node_id") {
-            if (!conceptDescriptionDict.hasOwnProperty(to.id)) {
-                conceptDescriptionDict[to.id] = null;
-            }
-        }
-    });
 
-    const nodes = ast[0].children.filter(stmt => stmt.type === "node_stmt");
-    nodes.forEach(node => {
-        if (!conceptDescriptionDict.hasOwnProperty(node.node_id.id)) {
-            conceptDescriptionDict[node.node_id.id] = null;
-        }
-    });
-    return conceptDescriptionDict;
-}
 
 export default function ConceptRelationshipDistillationComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
@@ -407,7 +382,7 @@ export default function ConceptRelationshipDistillationComponent() {
             dataIndex: "relationship",
             key: "relationship",
             render: (relationshipSet) => <div>
-                <ul style={{columns: 2}}>
+                <ul style={{columns: 3}}>
                     {Array.from(relationshipSet).map((relationship) => <li>{relationship}</li>)}
                 </ul>
             </div>,
@@ -460,11 +435,11 @@ export default function ConceptRelationshipDistillationComponent() {
                     <Tabs activeKey={promptEngineeringTabKey} items={promptEngineeringTabs}
                           onChange={newKey => setPromptEngineeringTabKey(newKey)}/>
                 </Col>
-                <Col span={6} style={colStyle}>
+                <Col span={4} style={colStyle}>
                     <h1 style={{textAlign: "center"}}>Execution</h1>
                     <Tabs defaultActiveKey={"controls"} items={executionTabs}/>
                 </Col>
-                <Col span={9} style={colStyle}>
+                <Col span={11} style={colStyle}>
                     <h1>Visualisation</h1>
                     <Tabs defaulActiveKey={"dot"} items={visualizationTabItems}/>
                 </Col>

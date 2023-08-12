@@ -27,70 +27,70 @@ function prepareTableData(conceptDict) {
         tableData.push({
             key: concept,
             concept: concept,
-            definition: conceptDict[concept]
+            property: conceptDict[concept]
         });
     });
     return tableData;
 }
 
-function insertNewLineEveryNWords(input_string, n) {
-    const all_words = input_string.split(" ");
-    let res = "";
-    let i = 1;
-    for (const word of all_words) {
-        if (i === n) {
-            res += word + "\n";
-            i = 0;
-        } else {
-            res += word + " ";
-        }
-        i += 1;
-    }
-    return res;
-}
-
-const definitionTableColumns = [
+const propertyTableColumns = [
     {
         title: "Concept",
         dataIndex: "concept",
         key: "col-concept",
     },
     {
-        title: "Definition",
-        dataIndex: "definition",
-        key: "col-definition",
+        title: "Property",
+        dataIndex: "property",
+        key: "col-property",
+        width: "70%",
+        render: (propertySet) => {
+            if (propertySet) {
+                return <ul style={{columns: 3}}>
+                    {Array.from(propertySet).map((property) => <li>{property}</li>)}
+                </ul>;
+            } else {
+                return null;
+            }
+        }
     }
 ];
 
-export default function ConceptDefinitionDistillationComponent() {
+export default function ConceptPropertyDistillationComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
-    const [instructionInput, setInstructionInput] =
-        useState(InstructionTemplate);
+    const [instructionInput, setInstructionInput] = useState(InstructionTemplate);
     const [conceptInput, setConceptInput] = useState("");
-    const [formatInput, setFormatInput] =
-        useState(FormatTemplate);
+    const [formatInput, setFormatInput] = useState(FormatTemplate);
     const [generatedPrompt, setGeneratedPrompt] = useState("");
     const [historyString, setHistoryString] = useState("");
     const [responseModalOpen, setResponseModalOpen] = useState(false);
     const [conceptDict, setConceptDict] = useState({});
-    const [conceptDefinitionTableData, setConceptDefinitionTableData] = useState([]);
-    const [hierarchyWithDefinition, setHierarchyWithDefinition] = useState(HierarchyTemplate);
+    const [conceptPropertyTableData, setConceptPropertyTableData] = useState([]);
+    const [hierarchyWithProperty, setHierarchyWithProperty] = useState(HierarchyTemplate);
 
     const [promptEngineeringTabKey, setPromptEngineeringTabKey] = useState("prompt");
 
     useEffect(() => {
-        console.log("called");
-        // hierarchy has been manually edited. update the concept definition table
+        // hierarchy has been manually edited. update the concept property table
         const ast = dotparser(hierarchyInput);
         const newConceptDict = extractConceptFromAst(ast);
-        mergeConceptDict(newConceptDict);
+
+        const mergedConceptDict = {...newConceptDict};
+        Object.keys(conceptDict).forEach((concept) => {
+            if (newConceptDict.hasOwnProperty(concept)) {
+                mergedConceptDict[concept] = conceptDict[concept];
+            }
+        });
+        setConceptDict(mergedConceptDict);
+        console.log(mergedConceptDict);
+
     }, [hierarchyInput]);
 
     useEffect(() => {
         try {
-            d3.select("#graph-definition").graphviz({fit: true})
-                .renderDot(hierarchyWithDefinition)
+            d3.select("#graph-property").graphviz({fit: true})
+                .renderDot(hierarchyWithProperty)
                 .transition(function () {
                     return d3.transition()
                         .ease(d3.easeLinear)
@@ -99,12 +99,12 @@ export default function ConceptDefinitionDistillationComponent() {
         } catch (error) {
             console.log(error);
         }
-    }, [hierarchyWithDefinition]);
+    }, [hierarchyWithProperty]);
 
     useEffect(() => {
         if (conceptDict) {
-            setConceptDefinitionTableData(prepareTableData(conceptDict));
-            updateHierarchyWithDefinition();
+            setConceptPropertyTableData(prepareTableData(conceptDict));
+            updateHierarchyWithProperty();
         }
     }, [conceptDict]);
 
@@ -120,16 +120,6 @@ export default function ConceptDefinitionDistillationComponent() {
         formatInput,
         hierarchyInput
     ]);
-
-    const mergeConceptDict = (newConceptDict) => {
-        const mergedConceptDict = {...newConceptDict};
-        Object.keys(conceptDict).forEach((concept) => {
-            if (newConceptDict.hasOwnProperty(concept)) {
-                mergedConceptDict[concept] = conceptDict[concept];
-            }
-        });
-        setConceptDict(mergedConceptDict);
-    };
 
     const onCopyPromptGenerated = async () => {
         await setPromptEngineeringTabKey("prompt");
@@ -242,10 +232,6 @@ export default function ConceptDefinitionDistillationComponent() {
         );
     };
 
-    const isTableLine = (line, delimiter = "|") => {
-        return line.startsWith(delimiter);
-    };
-
     const extractTableLineEntries = (line, separator = "|", numCols = 4) => {
         //    def extract_table_line_entries(line, separator="|", num_cols=4):
         //     return list(map(lambda text: text.strip(), line.split(separator)[1:num_cols + 1]))
@@ -258,10 +244,24 @@ export default function ConceptDefinitionDistillationComponent() {
         const newConceptDict = {...conceptDict};
         const logLines = historyString.split("\n");
         let foundIssue = false;
+
+        let inResponse = false;
         for (let line of logLines) {
             line = line.trim();
 
-            if (!isTableLine(line, "@")) {
+            if (line === "Response") {
+                inResponse = true;
+                continue;
+            } else if (line === "Prompt") {
+                inResponse = false;
+                continue;
+            }
+
+            if (!inResponse) {
+                continue;
+            }
+
+            if (!line.startsWith("@")) {
                 continue;
             }
 
@@ -273,21 +273,18 @@ export default function ConceptDefinitionDistillationComponent() {
                 break;
             }
 
-            const [className, classDescription] = extractTableLineEntries(line, "@", 2);
-            console.log(`class name: ${className}, class description: ${classDescription}`);
-            if (className === "concept name") {
+            const [conceptName, conceptProperty] = extractTableLineEntries(line, "@", 2);
+            console.log(`concept name: ${conceptName}, concept description: ${conceptProperty}`);
+
+            if (!newConceptDict.hasOwnProperty(conceptName)) {
+                message.warning(`Seems that ChatGPT returned a new concept: ${conceptName} outside the hierarchy. ignored.`);
                 continue;
             }
 
-            if (!newConceptDict.hasOwnProperty(className)) {
-                message.warning(`Seems that ChatGPT returned a new concept: ${className} outside the hierarchy. ignored.`);
-                continue;
+            if (newConceptDict[conceptName] === null) {
+                newConceptDict[conceptName] = new Set();
             }
-
-            if (!newConceptDict[className] !== null) {
-                // message.warning(`The concept ${className} has been defined twice. The latter overwrites the former.`);
-            }
-            newConceptDict[className] = classDescription;
+            newConceptDict[conceptName].add(conceptProperty);
         }
 
         if (foundIssue) {
@@ -298,31 +295,30 @@ export default function ConceptDefinitionDistillationComponent() {
         setConceptDict(newConceptDict);
 
         // get 10 new concepts from the concept dict without description
-        const conceptListToExtractDefinitions = Object.keys(newConceptDict).filter(className => newConceptDict[className] === null).slice(0, 10);
-        setConceptInput(conceptListToExtractDefinitions.join(", "));
-        if (conceptListToExtractDefinitions.length > 0) {
+        const conceptListToExtractProperties = Object.keys(newConceptDict).filter(conceptName => newConceptDict[conceptName] === null || newConceptDict[conceptName].size === 0).slice(0, 10);
+        setConceptInput(conceptListToExtractProperties.join(", "));
+        if (conceptListToExtractProperties.length > 0) {
             message.success("Concept list updated.");
         } else {
-            message.info("All concepts have been defined.");
+            message.info("All concepts have distilled properties.");
         }
     };
 
-    const updateHierarchyWithDefinition = () => {
+    const updateHierarchyWithProperty = () => {
         const ast = dotparser(hierarchyInput);
-        // const newConceptDict = extractConceptFromAst(ast);
 
         // console.log(ast);
         const nodes = {};
-        Object.entries(conceptDict).forEach(([className, classDescription]) => {
-            nodes[className] = {
+        Object.entries(conceptDict).forEach(([conceptName, conceptProperty]) => {
+            nodes[conceptName] = {
                 color: "black",
             };
-            if (classDescription) {
-                nodes[className].label = `${className} | ${insertNewLineEveryNWords(classDescription, 5)}`;
-                nodes[className].shape = "record";
+            if (conceptProperty) {
+                nodes[conceptName].label = `${conceptName} | ${Array.from(conceptProperty).join("\n")}`;
+                nodes[conceptName].shape = "record";
             }
         });
-        // console.log(nodes);
+
         const edges = ast[0].children.filter(child => {
             if (child.type !== "edge_stmt") {
                 return false;
@@ -339,8 +335,8 @@ export default function ConceptDefinitionDistillationComponent() {
                 dest,
             };
         });
-        // console.log(edges);
-        const hierarchyWithDefinition = serializeGraph({
+
+        const hierarchyWithProperty = serializeGraph({
             directed: true,
             // graph attributes
             attribs: {
@@ -352,15 +348,15 @@ export default function ConceptDefinitionDistillationComponent() {
             // graph edges (w/ optional ports & extra attribs)
             edges
         });
-        // console.log(hierarchyWithDefinition);
-        setHierarchyWithDefinition(hierarchyWithDefinition);
+        // console.log(hierarchyWithProperty);
+        setHierarchyWithProperty(hierarchyWithProperty);
     };
 
     const onSaveDOT = () => {
         const link = document.createElement("a");
-        const file = new Blob([hierarchyWithDefinition], {type: "text/plain"});
+        const file = new Blob([hierarchyWithProperty], {type: "text/plain"});
         link.href = URL.createObjectURL(file);
-        link.download = "ontology_with_definition.dot";
+        link.download = "ontology_with_property.dot";
         link.click();
         URL.revokeObjectURL(link.href);
 
@@ -371,7 +367,7 @@ export default function ConceptDefinitionDistillationComponent() {
         const link = document.createElement("a");
         const file = new Blob([historyString], {type: "text/plain"});
         link.href = URL.createObjectURL(file);
-        link.download = "concept-definition-distillation.log";
+        link.download = "concept-property-distillation.log";
         link.click();
         URL.revokeObjectURL(link.href);
 
@@ -386,7 +382,7 @@ export default function ConceptDefinitionDistillationComponent() {
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
                         <Tooltip placement={"right"}
-                                 title={"Click to update the concept list for definition distillation."}>
+                                 title={"Click to analyze the log and pick a new concept without distilled properties."}>
                             <Button onClick={onUpdateConcepts} style={{width: "100%"}}>
                                 Update Concepts
                             </Button>
@@ -454,18 +450,18 @@ export default function ConceptDefinitionDistillationComponent() {
 
     const visualizationTabItems = [
         {
-            key: "dot_with_definition",
-            label: "Hierarchy with Definition",
-            children: <div id="graph-definition" style={graphStyle}/>
+            key: "dot_with_property",
+            label: "Hierarchy with Property",
+            children: <div id="graph-property" style={graphStyle}/>
         },
         {
             key: "Table",
-            label: "Definition Table",
+            label: "Property Table",
             children: <Table size={"small"}
                              pagination={false}
                              scroll={{
                                  y: "calc(100vh - 320px)",
-                             }} columns={definitionTableColumns} dataSource={conceptDefinitionTableData}/>
+                             }} columns={propertyTableColumns} dataSource={conceptPropertyTableData}/>
         }
     ];
 

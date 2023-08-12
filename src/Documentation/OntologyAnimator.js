@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {graphStyle} from "../Common/Styles";
-import {extractDotHistory} from "../ResponseUtils";
+import {extractDotHistory} from "../DistillationUtils";
 import * as d3 from "d3";
 import {Pagination} from "antd";
 
