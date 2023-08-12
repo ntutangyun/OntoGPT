@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Button, Col, Form, Layout, message, Modal, Row, Tabs,} from "antd";
+import {Button, Col, Form, Layout, message, Modal, Row, Tabs, Tooltip,} from "antd";
 
 import * as d3 from "d3";
 import * as d3Graphviz from "d3-graphviz";
@@ -188,65 +188,69 @@ export default function ConceptHierarchyDistillationComponent() {
             key: "controls",
             label: `Controls`,
             children: <div style={{textAlign: "left"}}>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={onCopyPromptGenerated} style={{width: "90%"}}>Copy & Execute</Button>
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to copy the prompt. Paste it in a new ChatGPT session
-                            to execute it.
-                        </div>
-                    </Col>
-                </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={() => setResponseModalOpen(true)} style={{width: "90%"}}>Log Response</Button>
-                        <AddResponseFormModal
-                            open={responseModalOpen}
-                            onAddResponse={onAddResponse}
-                            onCancel={() => {
-                                setResponseModalOpen(false);
-                            }}
-                        />
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to add the ChatGPT response into the log.</div>
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"Click to copy the prompt. Execute in a new ChatGPT session."}>
+                            <Button onClick={onCopyPromptGenerated}
+                                    style={{width: "100%"}}>
+                                Copy Prompt
+                            </Button>
+                        </Tooltip>
                     </Col>
                 </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={onUpdateHierarchy} style={{width: "90%"}}>
-                            Update Hierarchy
-                        </Button>
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to extract the latest hierarchy from the log.</div>
-                    </Col>
-                </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={(e) => {
-                            onSaveDOT();
-                            e.preventDefault();
-                        }} style={{width: "90%"}}>
-                            Download DOT
-                        </Button>
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to download the hierarchy to a local .dot file.</div>
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"click to add the ChatGPT response into the log."}>
+                            <Button onClick={() => setResponseModalOpen(true)}
+                                    style={{width: "100%"}}>
+                                Log Response</Button>
+                            <AddResponseFormModal
+                                open={responseModalOpen}
+                                onAddResponse={onAddResponse}
+                                onCancel={() => {
+                                    setResponseModalOpen(false);
+                                }}
+                            />
+                        </Tooltip>
                     </Col>
                 </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={e => {
-                            onSaveHistory();
-                            e.preventDefault();
-                        }} style={{width: "90%"}}>
-                            Download Log
-                        </Button>
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"Click to extract the latest hierarchy from the log."}>
+                            <Button onClick={onUpdateHierarchy}
+                                    style={{width: "100%"}}>
+                                Update Hierarchy
+                            </Button>
+                        </Tooltip>
                     </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to download the log to a local .log file.</div>
+                </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"Click to download the hierarchy to a local .dot file."}>
+                            <Button onClick={(e) => {
+                                onSaveDOT();
+                                e.preventDefault();
+                            }} style={{width: "100%"}}>
+                                Download DOT
+                            </Button>
+                        </Tooltip>
+                    </Col>
+                </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"Click to download the log to a local .log file."}>
+                            <Button onClick={e => {
+                                onSaveHistory();
+                                e.preventDefault();
+                            }} style={{width: "100%"}}>
+                                Download Log
+                            </Button>
+                        </Tooltip>
                     </Col>
                 </Row>
             </div>

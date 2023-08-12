@@ -33,7 +33,7 @@ export function ConceptSelectionTab({conceptDict, objectConcept, setObjectConcep
             <Col span={12} style={colStyle}>
                 <Table columns={subjectTableColumns}
                        dataSource={conceptList}
-                       scroll={{y: "calc(100vh - 300px)"}}
+                       scroll={{y: "calc(100vh - 335px)"}}
                        pagination={false}
                        rowSelection={{
                            type: "radio",
@@ -48,7 +48,7 @@ export function ConceptSelectionTab({conceptDict, objectConcept, setObjectConcep
             <Col span={12} style={colStyle}>
                 <Table columns={objectTableColumns}
                        dataSource={conceptList}
-                       scroll={{y: "calc(100vh - 300px)"}}
+                       scroll={{y: "calc(100vh - 335px)"}}
                        pagination={false}
                        rowSelection={{
                            type: "radio",

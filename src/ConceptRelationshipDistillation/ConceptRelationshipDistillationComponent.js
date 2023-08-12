@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import {Button, Col, Form, Layout, message, Modal, Row, Radio, Tabs, Table} from "antd";
+import {Button, Col, Form, Layout, message, Modal, Row, Radio, Tabs, Table, Tooltip} from "antd";
 
 import * as d3 from "d3";
 import * as d3Graphviz from "d3-graphviz";
@@ -149,6 +149,11 @@ export default function ConceptRelationshipDistillationComponent() {
     const onCopyPromptGenerated = async () => {
         await setPromptEngineeringTabKey("prompt");
 
+        if (!subjectConcept || !objectConcept) {
+            message.warning("Please select a subject and an object");
+            return;
+        }
+
         const textarea = document.getElementById("textarea-prompt-generated");
         textarea.select();
         document.execCommand("copy");
@@ -294,56 +299,6 @@ export default function ConceptRelationshipDistillationComponent() {
             label: `Controls`,
             children: <div style={{textAlign: "left"}}>
                 <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={onCopyPromptGenerated} style={{width: "90%"}}
-                                disabled={!subjectConcept || !objectConcept}>Copy & Execute</Button>
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to copy the prompt. Execute in a new ChatGPT
-                            session.
-                        </div>
-                    </Col>
-                </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={() => setResponseModalOpen(true)} style={{width: "90%"}}>Log
-                            Response</Button>
-                        <AddResponseFormModal
-                            open={responseModalOpen}
-                            onAddResponse={onAddResponse}
-                            onCancel={() => {
-                                setResponseModalOpen(false);
-                            }}
-                        />
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to add the ChatGPT response into the log.</div>
-                    </Col>
-                </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={processLog} style={{width: "90%"}}>
-                            Process Log
-                        </Button>
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Extract relationships from the log.</div>
-                    </Col>
-                </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
-                    <Col span={12}>
-                        <Button onClick={e => {
-                            onSaveHistory();
-                            e.preventDefault();
-                        }} style={{width: "90%"}}>
-                            Download Log
-                        </Button>
-                    </Col>
-                    <Col span={12}>
-                        <div style={{paddingLeft: "0.5rem"}}>Click to download the log to a local .log file.</div>
-                    </Col>
-                </Row>
-                <Row style={{alignItems: "center", marginBottom: "1rem"}}>
                     <Col span={24}>
                         <p>Click any concept in the hierarchy graph as {conceptRadioOption}.</p>
                         <Radio.Group
@@ -365,7 +320,7 @@ export default function ConceptRelationshipDistillationComponent() {
                         </div>
                     </Col>
                 </Row>
-                <Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={12}>
                         Selected object
                     </Col>
@@ -373,6 +328,59 @@ export default function ConceptRelationshipDistillationComponent() {
                         <div style={{paddingLeft: "0.5rem"}}>
                             {objectConcept ? objectConcept : "not selected"}
                         </div>
+                    </Col>
+                </Row>
+
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"Click to copy the prompt. Execute in a new ChatGPT session."}>
+                            <Button onClick={onCopyPromptGenerated}
+                                    style={{width: "100%"}}>
+                                Copy Prompt
+                            </Button>
+                        </Tooltip>
+                    </Col>
+                </Row>
+
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"click to add the ChatGPT response into the log."}>
+                            <Button onClick={() => setResponseModalOpen(true)}
+                                    style={{width: "100%"}}>
+                                Log Response</Button>
+                            <AddResponseFormModal
+                                open={responseModalOpen}
+                                onAddResponse={onAddResponse}
+                                onCancel={() => {
+                                    setResponseModalOpen(false);
+                                }}
+                            />
+                        </Tooltip>
+                    </Col>
+                </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"Extract relationships from the log."}>
+                            <Button onClick={processLog} style={{width: "100%"}}>
+                                Process Log
+                            </Button>
+                        </Tooltip>
+                    </Col>
+                </Row>
+                <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
+                    <Col span={24}>
+                        <Tooltip placement={"right"}
+                                 title={"Click to download the log to a local .log file."}>
+                            <Button onClick={e => {
+                                onSaveHistory();
+                                e.preventDefault();
+                            }} style={{width: "100%"}}>
+                                Download Log
+                            </Button>
+                        </Tooltip>
                     </Col>
                 </Row>
             </div>
