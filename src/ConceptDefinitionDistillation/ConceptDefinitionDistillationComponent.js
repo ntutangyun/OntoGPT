@@ -81,10 +81,14 @@ export default function ConceptDefinitionDistillationComponent() {
 
     useEffect(() => {
         console.log("called");
-        // hierarchy has been manually edited. update the concept definition table
-        const ast = dotparser(hierarchyInput);
-        const newConceptDict = extractConceptFromAst(ast);
-        mergeConceptDict(newConceptDict);
+        try {
+            // hierarchy has been manually edited. update the concept definition table
+            const ast = dotparser(hierarchyInput);
+            const newConceptDict = extractConceptFromAst(ast);
+            mergeConceptDict(newConceptDict);
+        } catch (err) {
+            console.log(err);
+        }
     }, [hierarchyInput]);
 
     useEffect(() => {

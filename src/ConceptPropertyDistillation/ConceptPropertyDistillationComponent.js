@@ -72,19 +72,22 @@ export default function ConceptPropertyDistillationComponent() {
     const [promptEngineeringTabKey, setPromptEngineeringTabKey] = useState("prompt");
 
     useEffect(() => {
-        // hierarchy has been manually edited. update the concept property table
-        const ast = dotparser(hierarchyInput);
-        const newConceptDict = extractConceptFromAst(ast);
+        try {
+            // hierarchy has been manually edited. update the concept property table
+            const ast = dotparser(hierarchyInput);
+            const newConceptDict = extractConceptFromAst(ast);
 
-        const mergedConceptDict = {...newConceptDict};
-        Object.keys(conceptDict).forEach((concept) => {
-            if (newConceptDict.hasOwnProperty(concept)) {
-                mergedConceptDict[concept] = conceptDict[concept];
-            }
-        });
-        setConceptDict(mergedConceptDict);
-        console.log(mergedConceptDict);
-
+            const mergedConceptDict = {...newConceptDict};
+            Object.keys(conceptDict).forEach((concept) => {
+                if (newConceptDict.hasOwnProperty(concept)) {
+                    mergedConceptDict[concept] = conceptDict[concept];
+                }
+            });
+            setConceptDict(mergedConceptDict);
+            console.log(mergedConceptDict);
+        } catch (err) {
+            console.log(err);
+        }
     }, [hierarchyInput]);
 
     useEffect(() => {

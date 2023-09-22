@@ -23,7 +23,6 @@ const {TextArea} = Input;
 const {Content} = Layout;
 
 
-
 export default function ConceptRelationshipDistillationComponent() {
     const [domainContextInput, setDomainContextInput] = useState(DomainContextTemplate);
     const [hierarchyInput, setHierarchyInput] = useState(HierarchyTemplate);
@@ -45,12 +44,12 @@ export default function ConceptRelationshipDistillationComponent() {
     optionStateRef.current = conceptRadioOption;
 
     useEffect(() => {
-        console.log("called");
-        // hierarchy has been manually edited. update the concept definition table
-        const ast = dotparser(hierarchyInput);
-        const newConceptDict = extractConceptFromAst(ast);
-        setConceptDict(newConceptDict);
         try {
+            console.log("called");
+            // hierarchy has been manually edited. update the concept definition table
+            const ast = dotparser(hierarchyInput);
+            const newConceptDict = extractConceptFromAst(ast);
+            setConceptDict(newConceptDict);
             d3.select("#graph")
                 .graphviz({fit: true})
                 .transition(function () {
@@ -59,8 +58,8 @@ export default function ConceptRelationshipDistillationComponent() {
                         .duration(100);
                 })
                 .renderDot(hierarchyInput, onDotRendered);
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            console.log(err);
         }
     }, [hierarchyInput]);
 
