@@ -384,7 +384,7 @@ export default function ConceptPropertyDistillationComponent() {
             children: <div style={{textAlign: "left"}}>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to analyze the log and pick a new concept without distilled properties."}>
                             <Button onClick={onUpdateConcepts} style={{width: "100%"}}>
                                 Update Concepts
@@ -394,7 +394,7 @@ export default function ConceptPropertyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to copy the prompt. Paste it in a new ChatGPT session to execute it."}>
                             <Button onClick={onCopyPromptGenerated} style={{width: "100%"}}>Copy Prompt</Button>
                         </Tooltip>
@@ -402,7 +402,7 @@ export default function ConceptPropertyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to add the ChatGPT response into the log."}>
                             <Button onClick={() => setResponseModalOpen(true)} style={{width: "100%"}}>Log
                                 Response</Button>
@@ -417,7 +417,7 @@ export default function ConceptPropertyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to download the hierarchy to a local .dot file."}>
                             <Button onClick={e => {
                                 onSaveDOT();
@@ -430,7 +430,7 @@ export default function ConceptPropertyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to download the log to a local .log file."}>
                             <Button onClick={e => {
                                 onSaveHistory();

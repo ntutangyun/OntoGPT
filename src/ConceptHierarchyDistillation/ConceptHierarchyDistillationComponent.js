@@ -190,7 +190,7 @@ export default function ConceptHierarchyDistillationComponent() {
             children: <div style={{textAlign: "left"}}>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to copy the prompt. Execute in a new ChatGPT session."}>
                             <Button onClick={onCopyPromptGenerated}
                                     style={{width: "100%"}}>
@@ -201,7 +201,7 @@ export default function ConceptHierarchyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"click to add the ChatGPT response into the log."}>
                             <Button onClick={() => setResponseModalOpen(true)}
                                     style={{width: "100%"}}>
@@ -218,7 +218,7 @@ export default function ConceptHierarchyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to extract the latest hierarchy from the log."}>
                             <Button onClick={onUpdateHierarchy}
                                     style={{width: "100%"}}>
@@ -229,7 +229,7 @@ export default function ConceptHierarchyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to download the hierarchy to a local .dot file."}>
                             <Button onClick={(e) => {
                                 onSaveDOT();
@@ -242,7 +242,7 @@ export default function ConceptHierarchyDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to download the log to a local .log file."}>
                             <Button onClick={e => {
                                 onSaveHistory();

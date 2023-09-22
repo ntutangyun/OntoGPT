@@ -307,7 +307,7 @@ export default function ConceptRelationshipDistillationComponent() {
 
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to copy the prompt. Execute in a new ChatGPT session."}>
                             <Button onClick={onCopyPromptGenerated}
                                     style={{width: "100%"}}>
@@ -319,7 +319,7 @@ export default function ConceptRelationshipDistillationComponent() {
 
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"click to add the ChatGPT response into the log."}>
                             <Button onClick={() => setResponseModalOpen(true)}
                                     style={{width: "100%"}}>
@@ -336,7 +336,7 @@ export default function ConceptRelationshipDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Extract relationships from the log."}>
                             <Button onClick={processLog} style={{width: "100%"}}>
                                 Process Log
@@ -346,7 +346,7 @@ export default function ConceptRelationshipDistillationComponent() {
                 </Row>
                 <Row style={{alignItems: "center", marginBottom: "1rem", justifyContent: "center"}}>
                     <Col span={24}>
-                        <Tooltip placement={"right"}
+                        <Tooltip placement={"left"}
                                  title={"Click to download the log to a local .log file."}>
                             <Button onClick={e => {
                                 onSaveHistory();
